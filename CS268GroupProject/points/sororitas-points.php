@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Adepta Sororitas</title>
         <link rel="stylesheet" href="../css/navbar.css">
         <link rel="stylesheet" href="../css/article-section.css">
@@ -11,45 +12,7 @@
         
         <div id="background-image"></div>
 
-        <div id="navbar">
-            <div id="inner1">
-                <a href="../index.html"><img id="warhammer-logo" src="../images/warhammer-logo-black.png" alt="Warhammer Logo"></a>
-            </div>
-            <div id="inner2">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn">Factions</button>
-                            <div class="dropdown-content">
-                              <a href="space-marine.html">Space Marines</a>
-                              <a href="necrons.html">Necrons</a>
-                              <a href="adepta-sororitas.html">Adepta Sororitas</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn">Points</button>
-                            <div class="dropdown-content">
-                              <a href="points/votann-points.html">Leagues of Votann</a>
-                              <a href="points/sororitas-points.html">Adepta Sororitas</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="../about.html">About</a></li>
-                </ul>
-            </div>
-            <div id="inner3">
-                <input type="text" placeholder="Search...">
-            </div>
-            <div id="inner4">
-                <a href="../search-sample.html"><img id="search-icon" src="../images/search-bar-icon.png" alt="Search Icon"></a>
-            </div>
-            <div id="inner5">
-                <a href="../account.html"><img id="account-icon" src="../images/account-logo-skull.svg" alt="Account Logo"></a>
-            </div>
-        </div>
+        <?php require '../../php/one-up-navbar.php'; ?>
         
         <div class="display">
             <div class="pad"></div>

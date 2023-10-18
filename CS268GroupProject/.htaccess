@@ -1,0 +1,5 @@
+# TODO. IDK if we can move this up one directory to get this file out of the root.
+# Technically, you can try to access this file as is, but you'll get a forbidden resource error.
+# Also, as of now, it can't do anything to subfolder files
+RewriteEngine on
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

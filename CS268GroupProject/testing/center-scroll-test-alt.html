@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .display {
+                display: flex;
+            }
+            #background-image {
+                /* Ensures that no matter what, the background image remains in the same place on the 
+                user's screen, even when scrolling. */
+                position: fixed;
+                /* Helps ensure that the background image stays behind all other elements */
+                z-index: -1;
+                background-image: url(images/warhammer-background.jpg);
+                width: 100vw;
+                height: 100vh;
+            }
+            #article {
+                width: 50vw;
+                /* Ensures the height of the readable area is at least 100% of the viewport height. If you want
+                to only have the height extend however much text is available, remove this line. */
+                min-height: 100vh;
+                /* 100% is different than 100vh. 100% refers to parent's element height whereas 100vh refers to 
+                the viewport height. The viewport height is always either the height of the entire screen or less 
+                whereas 100% allows expanding beyond the viewport height to accommodate elements (and then a 
+                scrollbar may be introduced to allow viewing of those elements beyond the viewport height). */
+                height: 100%;
+
+                padding: 2em;
+                background-color: white;
+
+                /* border: 1px solid red; */
+            }
+
+            .pad {
+                width: 25vw;
+
+                /* border: 1px solid blue; */
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="background-image"></div>
+
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article"> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores veniam dignissimos 
+                distinctio soluta deleniti repudiandae eos facilis perspiciatis necessitatibus. Consectetur veniam 
+                quaerat nulla nostrum vel dicta culpa repellat suscipit asperiores? Rerum dignissimos magni voluptates 
+                praesentium mollitia incidunt magnam laboriosam odio unde nemo corporis officia dolores hic delectus 
+                error excepturi cumque, libero ea debitis vel a quis provident doloremque ipsa. Deleniti consectetur 
+                ab, itaque ratione, nobis ipsam inventore fuga, asperiores libero amet quam perferendis. Quae dolore 
+                velit error deserunt animi ut rerum atque quis debitis, ipsum, similique incidunt repellat voluptatem 
+                cupiditate dignissimos aut magni facilis vero! Pariatur quae beatae natus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores veniam dignissimos 
+                distinctio soluta deleniti repudiandae eos facilis perspiciatis necessitatibus. Consectetur veniam 
+                quaerat nulla nostrum vel dicta culpa repellat suscipit asperiores? Rerum dignissimos magni voluptates 
+                praesentium mollitia incidunt magnam laboriosam odio unde nemo corporis officia dolores hic delectus 
+                error excepturi cumque, libero ea debitis vel a quis provident doloremque ipsa. Deleniti consectetur 
+                ab, itaque ratione, nobis ipsam inventore fuga, asperiores libero amet quam perferendis. Quae dolore 
+                velit error deserunt animi ut rerum atque quis debitis, ipsum, similique incidunt repellat voluptatem 
+                cupiditate dignissimos aut magni facilis vero! Pariatur quae beatae natus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores veniam dignissimos 
+                distinctio soluta deleniti repudiandae eos facilis perspiciatis necessitatibus. Consectetur veniam 
+                quaerat nulla nostrum vel dicta culpa repellat suscipit asperiores? Rerum dignissimos magni voluptates 
+                praesentium mollitia incidunt magnam laboriosam odio unde nemo corporis officia dolores hic delectus 
+                error excepturi cumque, libero ea debitis vel a quis provident doloremque ipsa. Deleniti consectetur 
+                ab, itaque ratione, nobis ipsam inventore fuga, asperiores libero amet quam perferendis. Quae dolore 
+                velit error deserunt animi ut rerum atque quis debitis, ipsum, similique incidunt repellat voluptatem 
+                cupiditate dignissimos aut magni facilis vero! Pariatur quae beatae natus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores veniam dignissimos 
+                distinctio soluta deleniti repudiandae eos facilis perspiciatis necessitatibus. Consectetur veniam 
+                quaerat nulla nostrum vel dicta culpa repellat suscipit asperiores? Rerum dignissimos magni voluptates 
+                praesentium mollitia incidunt magnam laboriosam odio unde nemo corporis officia dolores hic delectus 
+                error excepturi cumque, libero ea debitis vel a quis provident doloremque ipsa. Deleniti consectetur 
+                ab, itaque ratione, nobis ipsam inventore fuga, asperiores libero amet quam perferendis. Quae dolore 
+                velit error deserunt animi ut rerum atque quis debitis, ipsum, similique incidunt repellat voluptatem 
+                cupiditate dignissimos aut magni facilis vero! Pariatur quae beatae natus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores veniam dignissimos 
+                distinctio soluta deleniti repudiandae eos facilis perspiciatis necessitatibus. Consectetur veniam 
+                quaerat nulla nostrum vel dicta culpa repellat suscipit asperiores? Rerum dignissimos magni voluptates 
+                praesentium mollitia incidunt magnam laboriosam odio unde nemo corporis officia dolores hic delectus 
+                error excepturi cumque, libero ea debitis vel a quis provident doloremque ipsa. Deleniti consectetur 
+                ab, itaque ratione, nobis ipsam inventore fuga, asperiores libero amet quam perferendis. Quae dolore 
+                velit error deserunt animi ut rerum atque quis debitis, ipsum, similique incidunt repellat voluptatem 
+                cupiditate dignissimos aut magni facilis vero! Pariatur quae beatae natus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate asperiores veniam dignissimos 
+                distinctio soluta deleniti repudiandae eos facilis perspiciatis necessitatibus. Consectetur veniam 
+                quaerat nulla nostrum vel dicta culpa repellat suscipit asperiores? Rerum dignissimos magni voluptates 
+                praesentium mollitia incidunt magnam laboriosam odio unde nemo corporis officia dolores hic delectus 
+                error excepturi cumque, libero ea debitis vel a quis provident doloremque ipsa. Deleniti consectetur 
+                ab, itaque ratione, nobis ipsam inventore fuga, asperiores libero amet quam perferendis. Quae dolore 
+                velit error deserunt animi ut rerum atque quis debitis, ipsum, similique incidunt repellat voluptatem 
+                cupiditate dignissimos aut magni facilis vero! Pariatur quae beatae natus.
+            </div>
+            <div class="pad"></div>
+        </div>
+        
+    </body>
+</html> 

@@ -1,0 +1,7 @@
+#article ul li {
+    margin: 10px 0;
+}
+
+#article ul {
+    list-style-type: square;
+}
