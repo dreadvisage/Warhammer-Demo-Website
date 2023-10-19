@@ -39,7 +39,7 @@ echo <<< END
                 <a href="search-sample.php"><img id="search-icon" src="images/search-bar-icon.png" alt="Search Icon"></a>
             </div>
             <div id="inner5">
-                <a href="account.php"><img id="account-icon" src="images/account-logo-skull.svg" alt="Account Logo"></a>
+                <a href="account/login.php"><img id="account-icon" src="images/account-logo-skull.svg" alt="Account Logo"></a>
             </div>
         </div>
 END;

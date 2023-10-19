@@ -11,7 +11,7 @@
     <body>
         <div id="background-image"></div>
 
-        <?php require '../../php/one-up-navbar.php'; ?>
+        <?php require '../../utils/one-up-navbar.php'; ?>
         
         <div class="display">
             <div class="pad"></div>
