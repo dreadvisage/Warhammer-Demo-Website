@@ -127,11 +127,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
             </div>
         </div>
-
-        <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
 </body>
 </html>
