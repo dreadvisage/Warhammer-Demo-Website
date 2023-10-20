@@ -1,15 +1,13 @@
 <?php
-// Initialize the session
-session_start();
+require_once "../../utils/session-start.php";
+require_once "../../utils/is-logged-in.php";
+require_once "config.php";
  
 // Check if the user is logged in, otherwise redirect to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if(isNotLoggedIn()){
     header("location: login.php");
     exit;
 }
- 
-// Include config file
-require_once "config.php";
  
 // Define variables and initialize with empty values
 $new_password = $confirm_password = "";
@@ -99,8 +97,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <p class="invalid-feedback"><?php echo $confirm_password_err; ?></p>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn-primary" value="Submit">
-                    <a href="welcome.php" class="btn-secondary">Cancel</a>
+                    <input type="submit" class="btn-primary" value="Submit"> <!--Put a popup to confirm password reset-->
+                    <a href="user-profile.php" class="btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>

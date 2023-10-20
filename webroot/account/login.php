@@ -1,15 +1,14 @@
 <?php
-// Initialize the session
-session_start();
+require_once "../../utils/session-start.php";
+require_once "../../utils/is-logged-in.php";
+require_once "config.php";
  
-// Check if the user is already logged in, if yes then redirect them to the welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+// Check if the user is already logged in, if yes then redirect them to the user profile page
+if(isLoggedIn()){
+    header("location: user-profile.php");
     exit;
 }
- 
-// Include config file
-require_once "config.php";
+
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -69,8 +68,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
                             
-                            // Redirect user to welcome page
-                            header("location: welcome.php");
+                            // Redirect user to user profile page
+                            header("location: user-profile.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
