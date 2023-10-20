@@ -153,27 +153,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="form-wrapper">
         <div class="form-group">
             <div class="form-group">
-                <h2>Register</h2>
-                <p>Please fill this form to create an account.</p>
+                <h2 class="title">Register</h2>
+                <p class="instruct">Please fill this form to create an account.</p>
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" value="<?php echo $username ?>">
+                <input type="text" name="username" class="form-input <?php echo (!empty($username_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $username ?>">
+                <p class="invalid-feedback"><?php echo $username_err; ?></p>
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" value="<?php echo $password ?>">
+                <input type="password" name="password" class="form-input <?php echo (!empty($password_err)) ? 'invalid-input' : ''; ?>" alue="<?php echo $password ?>">
+                <p class="invalid-feedback"><?php echo $password_err; ?></p>
             </div>
             <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
+                <input type="password" name="confirm_password" class="form-input <?php echo (!empty($confirm_password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                <p class="invalid-feedback"><?php echo $confirm_password_err; ?></p>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
+                <input type="submit" class="btn-primary" value="Submit">
+                <input type="reset" class="btn-secondary" value="Reset">
             </div> 
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <p class="instruct">Already have an account? <a href="login.php">Login here</a>.</p>
         </div>
         </form>
     </div>

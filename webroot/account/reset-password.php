@@ -82,21 +82,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <?php require '../../utils/one-up-navbar.php'; ?>
 
     <div class="form-wrapper">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <div class="form-group">
             <div class="form-group">
-                <label>New Password</label>
-                <input type="password" name="new_password" value="<?php echo $new_password ?>">
+                <h2 class="title">Reset Password</h2>
+                <p class="instruct">Please fill out a new password.</p>
             </div>
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>">
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit">
-                <a href="welcome.php">Cancel</a>
-            </div>
-            
-        </form>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" name="new_password" class="form-input<?php echo (!empty($new_password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $new_password ?>">
+                    <p class="invalid-feedback"><?php echo $new_password_err; ?></p>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-input <?php echo (!empty($confirm_password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $confirm_password; ?>">
+                    <p class="invalid-feedback"><?php echo $confirm_password_err; ?></p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn-primary" value="Submit">
+                    <a href="welcome.php" class="btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
