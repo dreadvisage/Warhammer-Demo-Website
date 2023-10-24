@@ -1,0 +1,83 @@
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+    justify-content: center;
+    /* border: 2px solid salmon; */
+  /* width: 80%; */ 
+}
+  
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-table {  
+    background-color: #fefefe;
+    
+    /* border: 1px solid red; */
+    margin: auto;
+}
+
+/* My code */
+
+.wrapper-table {
+  /* This gives a reference point to anchor the close button to. */
+  position: relative;
+  /* Padding controls how much space is around the image table in a uniform matter because
+  of viewport image table data sizing. */
+  padding: 40px;
+  background-color: rgb(109, 15, 15);
+  display: block;
+  /* border: 1px solid green; */
+}
+
+.image-table tr td {
+    /* We set viewport width because all the pfps are the same width+height.
+    By setting just width, default behavior is to maintain aspect ratio. 
+    TODO. Have this either be width/height depending on whichever is less. */
+    width: 10vw;
+    
+    /* border: 1px solid blue; */
+}
+
+.image-table tr td input[type=image],
+.image-table tr td img {
+  height: 100%;
+  width: 100%;
+}
+
+.image-table tr td input[type=image]:hover,
+.image-table tr td img:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+  opacity: 0.9;
+}

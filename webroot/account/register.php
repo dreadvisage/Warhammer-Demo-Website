@@ -1,6 +1,7 @@
 <?php
-// Include config file
-require_once "config.php";
+$config_path = $_SERVER['DOCUMENT_ROOT'];
+$config_path .= "/project/../utils/config.php";
+require_once $config_path;
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -108,16 +109,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         /* Prepare an INSERT statement. We now know that we're good to insert a new 
         username/password into the database. */
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, path) VALUES (?, ?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ss", $param_username, $param_password);
+            $stmt->bind_param("ss", $param_username, $param_password, $param_path);
             
             // Set parameters
             $param_username = $username;
             // Hash the password to encrypt it. This also helps allow duplicate passwords to exist.
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+
+            // Sets the default profile picture to this path
+            $param_path = "images/pfp/pfp1.jpg";
             
             /* Attempt to execute the prepared statement. If success, then the new username/password
             is now in the database and the user can log in with their credentials. */
@@ -144,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>form</title>
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
 

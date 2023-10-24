@@ -1,7 +1,16 @@
 <?php
-require_once "../../utils/session-start.php";
-require_once "../../utils/is-logged-in.php";
-require_once "config.php";
+$config_path = $_SERVER['DOCUMENT_ROOT'];
+$config_path .= "/project/../utils/config.php";
+
+$session_start_path = $_SERVER['DOCUMENT_ROOT'];
+$session_start_path .= "/project/../utils/session-start.php";
+
+$is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
+$is_logged_in_path .= "/project/../utils/is-logged-in.php";
+
+require_once $config_path;
+require_once $session_start_path;
+require_once $is_logged_in_path;
  
 // Check if the user is already logged in, if yes then redirect them to the user profile page
 if(isLoggedIn()){
@@ -99,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
         <?php require '../../utils/one-up-navbar.php'; ?>

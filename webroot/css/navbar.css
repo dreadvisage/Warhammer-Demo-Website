@@ -218,11 +218,13 @@ unless we specify this directly from #inner2. */
 #inner5 {  
     border-left: 3px solid black;
     padding: 0 0.5em 0 0.5em;
-
-    /* border: 0.05em solid black; */
+    /* border: 0.05em solid black;  */
 }
 
 /* Account Icon has a fixed size */
 #account-icon {
     width: 3em;
+
+    /* Makes image a circle */
+    border-radius: 50%;
 }

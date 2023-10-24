@@ -1,3 +1,116 @@
-img {
+
+
+.left-panel {
+    display: block;
+    margin-top: 4em;
+    width: 20vw;
+    background-color: rgb(212, 212, 212);
+    height: calc(100vh - 4em);
+    border-right: 1px solid black;
+}
+
+.profile-picture-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.profile-picture-frame {
+
+    display: grid;
+    margin-top: 20px;
     width: 200px;
+    height: 200px;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+.profile-picture {
+
+    width: 100%;
+    
+    grid-column: 1;
+    grid-row: 1;
+
+    /* Makes image a circle */
+    border-radius: 50%;
+}
+
+.profile-picture-frame:hover {
+    cursor: pointer;
+}
+
+.profile-picture-frame:hover > .profile-picture {
+    opacity: 0.5;
+}
+
+.profile-picture-frame:hover > .file-upload-icon {
+    display: block;
+}
+
+.file-upload-icon {
+
+    display: none;
+
+    width: 50%;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: center;
+    align-self: center;
+
+    z-index: 1;
+}
+
+.profile-name {
+    margin: 20px 0 20px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.left-panel-padding {
+    height: calc(100% - 400px);
+}
+
+.account-control {
+    display: block;
+}
+
+hr {
+    margin: 10px 0 10px 0;
+}
+
+.section_header {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+}
+
+.account-control-btns {
+    display: flex;
+    justify-content: center;
+}
+
+a.btn-option {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    /* No border element. Makes the 'a' button too big if there's any border*/
+    border-radius: 4px;
+    background-color: rgb(127, 145, 165);
+    font-family: NotoSans-Regular;
+    width: 110px;
+    height: 35px;
+}
+
+a.btn-option:hover {
+    background-color: rgb(104, 114, 126);
+}
+
+a.btn-pad {
+    margin-right: 8px;
 }
