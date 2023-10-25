@@ -66,8 +66,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     
+    <?php 
+        require '../../utils/navbar.php'; 
+        echoNavbar(1);
+    ?>
 
-    <?php require '../../utils/one-up-navbar.php'; ?>
     <div class="left-panel">
         <div class="profile-picture-content">
             <div id="pfp-frame-id" class="profile-picture-frame">

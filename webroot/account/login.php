@@ -111,37 +111,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
-        <?php require '../../utils/one-up-navbar.php'; ?>
+    <?php 
+        require '../../utils/navbar.php'; 
+        echoNavbar(1);
+    ?>
 
-        <?php 
-        if(!empty($login_err)){
-            echo '<div>' . $login_err . '</div>';
-        }        
-        ?>
+    
 
-        <div class="form-wrapper">
+    <div class="form-wrapper">
+        <div class="form-group">
             <div class="form-group">
-                <div class="form-group">
-                    <h2 class="title">Login</h2>
-                    <p class="instruct">Please fill in your credentials to login.</p>
-                </div>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-input <?php echo (!empty($username_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $username ?>">
-                        <p class="invalid-feedback"><?php echo $username_err; ?></p>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-input <?php echo (!empty($password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $password ?>">
-                        <p class="invalid-feedback"><?php echo $password_err; ?></p>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn-primary" value="Login">
-                    </div>
-                </form>
-                <p class="instruct">Don't have an account? <a href="register.php">Register now</a>.</p>
+                <h2 class="title">Login</h2>
+                <p class="instruct">Please fill in your credentials to login.</p>
             </div>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-input <?php echo (!empty($username_err) || !empty($login_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $username ?>">
+                    <p class="invalid-feedback"><?php echo $username_err; ?></p>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-input <?php echo (!empty($password_err) || !empty($login_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $password ?>">
+                    <p class="invalid-feedback"><?php echo $password_err; ?></p>
+                </div>
+                <?php 
+                    if(!empty($login_err)){
+                        echo '<p style="font-size: 14px;" class="invalid-feedback">' . $login_err . '</p>';
+                    }        
+                ?>
+                <div class="form-group">
+                    <input type="submit" class="btn-primary" value="Login">
+                </div>
+                
+            </form>
+            <p class="instruct">Don't have an account? <a href="register.php">Register now</a>.</p>
         </div>
+    </div>
 </body>
 </html>

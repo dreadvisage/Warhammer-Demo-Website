@@ -152,7 +152,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
 
-    <?php require '../../utils/one-up-navbar.php'; ?>
+    <?php 
+        require '../../utils/navbar.php'; 
+        echoNavbar(1);
+    ?>
 
     <div class="form-wrapper">
         <div class="form-group">
@@ -168,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-input <?php echo (!empty($password_err)) ? 'invalid-input' : ''; ?>" alue="<?php echo $password ?>">
+                <input type="password" name="password" class="form-input <?php echo (!empty($password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $password ?>">
                 <p class="invalid-feedback"><?php echo $password_err; ?></p>
             </div>
             <div class="form-group">

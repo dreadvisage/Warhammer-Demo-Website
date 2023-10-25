@@ -61,6 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
+                $mysqli->close();
                 header("location: login.php");
                 exit();
             } else{
@@ -70,10 +71,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Close statement
             $stmt->close();
         }
+        
     }
     
-    // Close connection
-    $mysqli->close();
+    
 }
 ?>
  
@@ -86,7 +87,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
-    <?php require '../../utils/one-up-navbar.php'; ?>
+    <?php 
+        require '../../utils/navbar.php'; 
+        echoNavbar(1);
+    ?>
 
     <div class="form-wrapper">
         <div class="form-group">
@@ -97,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
                     <label>New Password</label>
-                    <input type="password" name="new_password" class="form-input<?php echo (!empty($new_password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $new_password ?>">
+                    <input type="password" name="new_password" class="form-input <?php echo (!empty($new_password_err)) ? 'invalid-input' : ''; ?>" value="<?php echo $new_password ?>">
                     <p class="invalid-feedback"><?php echo $new_password_err; ?></p>
                 </div>
                 <div class="form-group">

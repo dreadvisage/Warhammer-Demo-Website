@@ -12,7 +12,11 @@
 </head>
 <body>
     <div id="background-image"></div>
-    <?php require '../utils/navbar.php'; ?>
+    
+    <?php 
+        require '../utils/navbar.php'; 
+        echoNavbar(0); 
+    ?>
 
     <div class="display">
         <div class="pad"></div>
