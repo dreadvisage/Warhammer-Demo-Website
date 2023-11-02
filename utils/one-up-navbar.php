@@ -25,6 +25,8 @@ echo <<< END
                             <div class="dropdown-content">
                               <a href="../points/votann-points.php">Leagues of Votann</a>
                               <a href="../points/sororitas-points.php">Adepta Sororitas</a>
+                              <a href="../points/custodes-points.php">Adeptus Custodes</a>
+                              <a href="../points/mechanicus-points.php">Adeptus Mechanicus</a>
                             </div>
                         </div>
                     </li>
