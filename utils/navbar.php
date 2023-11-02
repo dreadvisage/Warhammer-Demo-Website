@@ -18,6 +18,8 @@ echo <<< END
                               <a href="factions/adepta-sororitas.php">Adepta Sororitas</a>
                               <a href="factions/adeptus-custodes.php">Adeptus Custodes</a>
                               <a href="factions/adeptus-mechanicus.php">Adeptus Mechanicus</a>
+                              <a href="factions/adeptus-titanicus.php">Adeptus Titanicus</a>
+                              <a href="factions/aeldari.php">Aeldari</a>
                             </div>
                         </div>
                     </li>
@@ -30,6 +32,7 @@ echo <<< END
                               <a href="points/custodes-points.php">Adeptus Custodes</a>
                               <a href="points/mechanicus-points.php">Adeptus Mechanicus</a>
                               <a href="points/titanicus-points.php">Adeptus Titanicus</a>
+                              <a href="points/aeldari-points.php">Aeldari</a>
                             </div>
                         </div>
                     </li>
