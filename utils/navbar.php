@@ -16,6 +16,8 @@ echo <<< END
                               <a href="factions/space-marine.php">Space Marines</a>
                               <a href="factions/necrons.php">Necrons</a>
                               <a href="factions/adepta-sororitas.php">Adepta Sororitas</a>
+                              <a href="factions/adeptus-custodes.php">Adeptus Custodes</a>
+                              <a href="factions/adeptus-mechanicus.php">Adeptus Mechanicus</a>
                             </div>
                         </div>
                     </li>
@@ -25,8 +27,9 @@ echo <<< END
                             <div class="dropdown-content">
                               <a href="points/votann-points.php">Leagues of Votann</a>
                               <a href="points/sororitas-points.php">Adepta Sororitas</a>
-                              <a href="../points/custodes-points.php">Adeptus Custodes</a>
-                              <a href="../points/mechanicus-points.php">Adeptus Mechanicus</a>
+                              <a href="points/custodes-points.php">Adeptus Custodes</a>
+                              <a href="points/mechanicus-points.php">Adeptus Mechanicus</a>
+                              <a href="points/titanicus-points.php">Adeptus Titanicus</a>
                             </div>
                         </div>
                     </li>
