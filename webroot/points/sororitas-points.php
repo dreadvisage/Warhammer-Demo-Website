@@ -154,6 +154,38 @@
                     <ul style = "color:black">
                       <li>5 models............115 pts <button type="button">➕</button></li>
                     </ul>
+
+                    <li>Saint Celestine</li>
+                    <ul style = "color:black">
+                      <li>3 models............135 pts <button type="button">➕</button></li>
+                    </ul>
+
+                    <li>Seraphim Squad</li>
+                    <ul style = "color:black">
+                      <li>5 models..............70 pts <button type="button">➕</button></li>
+                      <li>10 models..........140 pts <button type="button">➕</button></li>
+                    </ul>
+
+                    <li>Sisters Notivate Squad</li>
+                    <ul style = "color:black">
+                      <li>10 models............85 pts <button type="button">➕</button></li>
+                    </ul>
+
+                    <li>Sororitas Rhino</li>
+                    <ul style = "color:black">
+                      <li>1 models..............75 pts <button type="button">➕</button></li>
+                    </ul>
+
+                    <li>Triumph of Saint Katherine</li>
+                    <ul style = "color:black">
+                      <li>1 models............125 pts <button type="button">➕</button></li>
+                    </ul>
+
+                    <li>Zephyrim Squad</li>
+                    <ul style = "color:black">
+                      <li>5 models..............70 pts <button type="button">➕</button></li>
+                      <li>10 models..........140 pts <button type="button">➕</button></li>
+                    </ul>
                 </ul>
             </div>
             <div class="pad"></div>

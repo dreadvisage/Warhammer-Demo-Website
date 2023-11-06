@@ -20,6 +20,9 @@ echo <<< END
                               <a href="../factions/adeptus-mechanicus.php">Adeptus Mechanicus</a>
                               <a href="../factions/adeptus-titanicus.php">Adeptus Titanicus</a>
                               <a href="../factions/aeldari.php">Aeldari</a>
+                              <a href="../factions/agents-of-imperium.php">Agents of the Imperium</a>
+                              <a href="../factions/astra-militarum.php">Astra Militarum</a>
+                              <a href="../factions/black-templars.php">Black Templars</a>
                             </div>
                         </div>
                     </li>
@@ -33,6 +36,9 @@ echo <<< END
                               <a href="../points/mechanicus-points.php">Adeptus Mechanicus</a>
                               <a href="../points/titanicus-points.php">Adeptus Titanicus</a>
                               <a href="../points/aeldari-points.php">Aeldari</a>
+                              <a href="../points/agents-points.php">Agents of the Imperium</a>
+                              <a href="../points/militarum-points.php">Astra Militarum</a>
+                              <a href="../points/templars-points.php">Black Templars</a>
                             </div>
                         </div>
                     </li>
