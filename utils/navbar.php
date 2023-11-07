@@ -26,6 +26,8 @@ echo <<< END
                               <a href="factions/blood-angels.php">Blood Angels</a>
                               <a href="factions/chaos-daemons.php">Chaos Daemons</a>
                               <a href="factions/chaos-knights.php">Chaos Knights</a>
+                              <a href="factions/chaos-marines.php">Chaos Space Marines</a>
+                              <a href="factions/dark-angels.php">Dark Angels</a>
                             </div>
                         </div>
                     </li>
@@ -45,6 +47,8 @@ echo <<< END
                               <a href="points/blood-angels-points.php">Blood Angels</a>
                               <a href="points/daemons-points.php">Chaos Daemons</a>
                               <a href="points/chaos-knights-points.php">Chaos Knights</a>
+                              <a href="points/chaos-marines-points.php">Chaos Space Marines</a>
+                              <a href="points/dark-angels-points.php">Dark Angels</a>
                             </div>
                         </div>
                     </li>
