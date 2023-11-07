@@ -21,6 +21,9 @@
             <div id="article"> 
                 <h2>Adepta Sororitas</h2>
                 <hr>
+
+                <img src = "../images/sororitas-images.webp" alt = "Sisters of Battle" height = "300" width = "500">
+
                 <p>The Adepta Sororitas, also known as the Sisters of Battle, is a faction in the Warhammer 40,000 universe known 
                     for their unwavering devotion to the God-Emperor of Mankind and their militant and religious zeal. Here's a 
                     summary of the Adepta Sororitas:</p>
