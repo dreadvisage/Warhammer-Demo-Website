@@ -1,4 +1,13 @@
 
+.main-wrapper {
+    display: flex;
+    
+}
+
+.main-content {
+    display: block;
+    margin-top: 4em;
+}
 
 .left-panel {
     display: block;

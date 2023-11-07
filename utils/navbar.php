@@ -35,17 +35,21 @@ function echoNavbar($num_dirs_up) {
                     </div>
                 </div>
             </li>
-            <li><a href="' . getDirsUp($num_dirs_up) . 'about.php">About</a></li>
-            <li>
-                <div class="dropdown">
-                    <button class="dropbtn">Points</button>
-                    <div class="dropdown-content">
-                        <a href="' . getDirsUp($num_dirs_up) . 'points/votann-points.php">Leagues of Votann</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'points/sororitas-points.php">Adepta Sororitas</a>
+            <li><a href="' . getDirsUp($num_dirs_up) . 'about.php">About</a></li>';
+            if (isLoggedIn()) {
+                echo 
+                '<li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Points</button>
+                        <div class="dropdown-content">
+                            <a href="' . getDirsUp($num_dirs_up) . 'points/votann-points.php">Leagues of Votann</a>
+                            <a href="' . getDirsUp($num_dirs_up) . 'points/sororitas-points.php">Adepta Sororitas</a>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>';
+            }
+            
+        echo '</ul>
     </div>
     <div id="inner3">
         <input type="text" placeholder="Search...">

@@ -109,11 +109,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         /* Prepare an INSERT statement. We now know that we're good to insert a new 
         username/password into the database. */
-        $sql = "INSERT INTO users (username, password, path) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO users (username, password, pfp_path) VALUES (?, ?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ss", $param_username, $param_password, $param_path);
+            $stmt->bind_param("sss", $param_username, $param_password, $param_path);
             
             // Set parameters
             $param_username = $username;
@@ -122,12 +122,38 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Sets the default profile picture to this path
             $param_path = "images/pfp/pfp1.jpg";
+
+            
+            
             
             /* Attempt to execute the prepared statement. If success, then the new username/password
             is now in the database and the user can log in with their credentials. */
             if($stmt->execute()){
-                // Redirect to login page
-                header("location: login.php");
+
+                /* Create a table specific to each user that will contain each of their unit lists */
+                $create_user_unit_table = 'CREATE TABLE `' . $username . '_unit_table` (
+                    `id` INT(11) NOT NULL AUTO_INCREMENT,
+                    `unit_name` varchar(255) NOT NULL,
+                    `num_models` INT(11) NOT NULL,
+                    `unit_points` INT(11) NOT NULL,
+                    PRIMARY KEY(`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci';
+                if ($stmt_unit_table = $mysqli->prepare($create_user_unit_table)) {
+                    /*$stmt_unit_table->bind_param("s", $param_table_name);
+                    $param_table_name = $username;*/
+                    if ($stmt_unit_table->execute()) {
+                        $stmt_unit_table->close();
+                        // Redirect to login page
+                        header("location: login.php");
+                        exit;
+                    } else {
+                        echo "Oops! Something went wrong. Please try again later.";
+                    }
+                    $stmt_unit_table->close();
+                } else {
+                    echo "Failed to create user's table.";
+                }
+
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }

@@ -13,14 +13,6 @@ $session_start_path .= "/project/../utils/session-start.php";
 require_once $config_path;
 require_once $session_start_path;
 
-function debug_to_console($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('PHP Debug Objects: " . $output . "' );</script>";
-}
-
 $query = "SELECT * FROM default_pfps";
 $results = $mysqli->query($query);
 
