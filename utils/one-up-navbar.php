@@ -23,6 +23,9 @@ echo <<< END
                               <a href="../factions/agents-of-imperium.php">Agents of the Imperium</a>
                               <a href="../factions/astra-militarum.php">Astra Militarum</a>
                               <a href="../factions/black-templars.php">Black Templars</a>
+                              <a href="../factions/blood-angels.php">Blood Angels</a>
+                              <a href="../factions/chaos-daemons.php">Chaos Daemons</a>
+                              <a href="../factions/chaos-knights.php">Chaos Knights</a>
                             </div>
                         </div>
                     </li>
@@ -39,6 +42,9 @@ echo <<< END
                               <a href="../points/agents-points.php">Agents of the Imperium</a>
                               <a href="../points/militarum-points.php">Astra Militarum</a>
                               <a href="../points/templars-points.php">Black Templars</a>
+                              <a href="../points/blood-angels-points.php">Blood Angels</a>
+                              <a href="../points/daemons-points.php">Chaos Daemons</a>
+                              <a href="../points/chaos-knights-points.php">Chaos Knights</a>
                             </div>
                         </div>
                     </li>
