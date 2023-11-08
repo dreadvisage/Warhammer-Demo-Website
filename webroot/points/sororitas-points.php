@@ -11,12 +11,8 @@ if(isNotLoggedIn()){
   header("location: ../account/login.php");
   exit;
 }
-/* https://markusurban.medium.com/how-to-execute-a-php-script-without-reloading-the-page-a88507fa1ab9 */
-
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +28,8 @@ if(isNotLoggedIn()){
       <div id="background-image"></div>
 
       <?php 
-      require '../../utils/navbar.php'; 
-      echoNavbar(1);
+        require '../../utils/navbar.php'; 
+        echoNavbar(1);
       ?>
         
       <div class="display">
@@ -43,9 +39,9 @@ if(isNotLoggedIn()){
           <hr>
 
           <form action="insert-into-unit-table.php" method="post">
-            <input id="unit-name" type="hidden" name="unit-name" value="">
-            <input id="num-models" type="hidden" name="num-models" value="">
-            <input id="unit-points" type="hidden" name="unit-points" value="">
+            <input id="name" type="hidden" name="name" value="">
+            <input id="models" type="hidden" name="models" value="">
+            <input id="points" type="hidden" name="points" value="">
 
             <ul style = "list-style: none; color:darkred">
               <?php 
@@ -115,7 +111,6 @@ if(isNotLoggedIn()){
               echo_html_unit_model("Penitent Engines", 2, 12, 120);
               echo_html_unit_end();
 
-<<<<<<< HEAD
               echo_html_unit("Paragon Warsuits", 1, 14, 40);
 
               echo_html_unit("Repentia Squad", 5, 12, 115);
@@ -123,47 +118,6 @@ if(isNotLoggedIn()){
 
             </ul>
           </form>
-=======
-                    <li>Repentia Squad</li>
-                    <ul style = "color:black">
-                      <li>5 models............115 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Saint Celestine</li>
-                    <ul style = "color:black">
-                      <li>3 models............135 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Seraphim Squad</li>
-                    <ul style = "color:black">
-                      <li>5 models..............70 pts <button type="button">➕</button></li>
-                      <li>10 models..........140 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Sisters Notivate Squad</li>
-                    <ul style = "color:black">
-                      <li>10 models............85 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Sororitas Rhino</li>
-                    <ul style = "color:black">
-                      <li>1 models..............75 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Triumph of Saint Katherine</li>
-                    <ul style = "color:black">
-                      <li>1 models............125 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Zephyrim Squad</li>
-                    <ul style = "color:black">
-                      <li>5 models..............70 pts <button type="button">➕</button></li>
-                      <li>10 models..........140 pts <button type="button">➕</button></li>
-                    </ul>
-                </ul>
-            </div>
-            <div class="pad"></div>
->>>>>>> sethsBranch
         </div>
         <div class="pad"></div>
       </div>

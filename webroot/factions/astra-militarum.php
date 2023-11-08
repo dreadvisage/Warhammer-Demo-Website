@@ -12,7 +12,10 @@
         
         <div id="background-image"></div>
 
-        <?php require '../../utils/one-up-navbar.php'; ?>
+        <?php 
+            require '../../utils/navbar.php'; 
+            echoNavbar(1);
+        ?>
         
         <div class="display">
             <div class="pad"></div>

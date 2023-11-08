@@ -1,3 +1,19 @@
+<?php
+
+$is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
+$is_logged_in_path .= "/project/../utils/is-logged-in.php";
+require_once $is_logged_in_path;
+
+require_once 'create-unit-helper.php';
+require_once 'insert-into-unit-table.php';;
+
+if(isNotLoggedIn()){
+  header("location: ../account/login.php");
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,8 +28,8 @@
       <div id="background-image"></div>
 
       <?php 
-      require '../../utils/navbar.php'; 
-      echoNavbar(1);
+        require '../../utils/navbar.php'; 
+        echoNavbar(1);
       ?>
         
       <div class="display">
@@ -21,72 +37,71 @@
         <div id="article"> 
           <h2>Leagues of Votann</h2>
           <hr>
-            
-          <ul style = "list-style: none; color:darkred">
-            <li>Brôkhy Iron-master</li>
-            <ul style = "color:black">
-              <li>5 models..............65 pts <button type="button">➕</button></li>
-            </ul>
 
-            <li>Brôkhy Thunderkyn</li>
-            <ul style = "color:black">
-              <li>3 models..............75 pts <button type="button">➕</button></li>
-              <li>6 models............150 pts <button type="button">➕</button></li>
-            </ul>
-      
-            <li>Cthonian Beserks</li>
-            <ul style = "color:black">
-              <li>5 models............100 pts <button type="button">➕</button></li>
-              <li>10 models..........200 pts <button type="button">➕</button></li>
-            </ul>
-        
-            <li>Einhyr Champion</li>
-            <ul style = "color:black">
-              <li>1 models..............60 pts <button type="button">➕</button></li>
-            </ul>
-      
-            <li>Einhyr Hearthguard</li>
-            <ul style = "color:black">
-              <li>5 models............150 pts <button type="button">➕</button></li>
-              <li>10 models..........300 pts <button type="button">➕</button></li>
-            </ul>
-
-            <li>Grimnyr</li>
-            <ul style = "color:black">
-              <li>3 models..............65 pts <button type="button">➕</button></li>
-            </ul>
+          <form action="insert-into-unit-table.php" method="post">
+            <input id="name" type="hidden" name="name" value="">
+            <input id="models" type="hidden" name="models" value="">
+            <input id="points" type="hidden" name="points" value="">
+            <ul style = "list-style: none; color:darkred">
+            <?php
+            echo_html_unit_start("Brôkhy Iron-master");
+            echo_html_unit_model("Brôkhy Iron-master", 5, 14, 65);
+            echo_html_unit_end();
             
-            <li>Hearthkyn Warriors</li>
-            <ul style = "color:black">
-              <li>5 models............110 pts <button type="button">➕</button></li>
-            </ul>
-
-            <li>Hekaton Land Fortress</li>
-            <ul style = "color:black">
-              <li>1 models............225 pts <button type="button">➕</button></li>
-            </ul>
-          
-            <li>Hernkyn Pioneers</li>
-            <ul style = "color:black">
-              <li>3 models..............90 pts <button type="button">➕</button></li>
-              <li>6 models............180 pts <button type="button">➕</button></li>
-            </ul>
-          
-            <li>Kâhl</li>
-            <ul style = "color:black">
-              <li>1 models..............70 pts <button type="button">➕</button></li>
-            </ul>
-          
-            <li>Sagitaur</li>
-            <ul style = "color:black">
-              <li>1 models............100 pts <button type="button">➕</button></li>
-            </ul>
+            echo_html_unit_start("Brôkhy Thunderkyn");
+            echo_html_unit_model("Brôkhy Thunderkyn", 3, 14, 75);
+            echo_html_unit_model("Brôkhy Thunderkyn", 6, 12, 150);
+            echo_html_unit_end();
             
-            <li>Ûthar the Destined</li>
-            <ul style = "color:black">
-              <li>1 models..............90 pts <button type="button">➕</button></li>
-            </ul>
+            echo_html_unit_start("Cthonian Beserks");
+            echo_html_unit_model("Cthonian Beserks", 5, 12, 100);
+            echo_html_unit_model("Cthonian Beserks", 10, 10, 200);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Einhyr Champion");
+            echo_html_unit_model("Einhyr Champion", 1, 14, 60);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Einhyr Hearthguard");
+            echo_html_unit_model("Einhyr Hearthguard", 5, 12, 150);
+            echo_html_unit_model("Einhyr Hearthguard", 10, 10, 300);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Grimnyr");
+            echo_html_unit_model("Grimnyr", 3, 14, 65);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Hearthkyn Warriors");
+            echo_html_unit_model("Hearthkyn Warriors", 5, 12, 110);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Hekaton Land Fortress");
+            echo_html_unit_model("Hekaton Land Fortress", 1, 12, 225);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Hernkyn Pioneers");
+            echo_html_unit_model("Hernkyn Pioneers", 3, 14, 90);
+            echo_html_unit_model("Hernkyn Pioneers", 6, 12, 180);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Kâhl");
+            echo_html_unit_model("Kâhl", 1, 14, 70);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Sagitaur");
+            echo_html_unit_model("Sagitaur", 1, 12, 100);
+            echo_html_unit_end();
+            
+            echo_html_unit_start("Ûthar the Destined");
+            echo_html_unit_model("Ûthar the Destined", 1, 14, 90);
+            echo_html_unit_end();
+            
+            
+            ?>
           </ul>
+          </form>
+            
+          
         </div>
         <div class="pad"></div>
       </div>

@@ -133,9 +133,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 /* Create a table specific to each user that will contain each of their unit lists */
                 $create_user_unit_table = 'CREATE TABLE `' . $username . '_unit_table` (
                     `id` INT(11) NOT NULL AUTO_INCREMENT,
-                    `unit_name` varchar(255) NOT NULL,
-                    `num_models` INT(11) NOT NULL,
-                    `unit_points` INT(11) NOT NULL,
+                    `name` varchar(255) NOT NULL,
+                    `models` varchar(255) NOT NULL,
+                    `points` varchar(255) NOT NULL,
                     PRIMARY KEY(`id`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci';
                 if ($stmt_unit_table = $mysqli->prepare($create_user_unit_table)) {

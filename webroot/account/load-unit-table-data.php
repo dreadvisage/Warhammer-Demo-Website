@@ -27,11 +27,11 @@ function echo_unit_table_data() {
     $query = "SELECT * FROM " . $_SESSION['username'] . '_unit_table';
     $results = $mysqli->query($query);
     while($unit_table_row = mysqli_fetch_array($results)) {
-        $unit_name = $unit_table_row['unit_name'];
-        $num_models = $unit_table_row['num_models'];
-        $unit_points = $unit_table_row['unit_points'];
+        $name = $unit_table_row['name'];
+        $models = $unit_table_row['models'];
+        $points = $unit_table_row['points'];
 
-        echo '<p>' . 'Unit Name:' . $unit_name  . ', Num Models:' . $num_models . ', Unit Points:' . $unit_points . '</p>';
+        echo '<p>' . 'Unit Name:' . $name  . ', Num Models:' . $models . ', Unit Points:' . $points . '</p>';
     }
 }
 

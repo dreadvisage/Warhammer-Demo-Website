@@ -1,3 +1,19 @@
+<?php
+
+$is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
+$is_logged_in_path .= "/project/../utils/is-logged-in.php";
+require_once $is_logged_in_path;
+
+require_once 'create-unit-helper.php';
+require_once 'insert-into-unit-table.php';;
+
+if(isNotLoggedIn()){
+  header("location: ../account/login.php");
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +28,10 @@
         
         <div id="background-image"></div>
 
-        <?php require '../../utils/one-up-navbar.php'; ?>
+        <?php 
+            require '../../utils/navbar.php'; 
+            echoNavbar(1);
+        ?>
         
         <div class="display">
             <div class="pad"></div>
@@ -20,169 +39,151 @@
                 
                 <h2>Adeptus Mechanicus</h2>
                 <hr>
-                
-                <ul style = "list-style: none; color:darkred">
+
+                <form action="insert-into-unit-table.php" method="post">
+                  <input id="name" type="hidden" name="name" value="">
+                  <input id="models" type="hidden" name="models" value="">
+                  <input id="points" type="hidden" name="points" value="">
+                  <ul style = "list-style: none; color:darkred">
+                    <?php
+                    echo_html_unit_start("Archaeopter Fusilave");
+                    echo_html_unit_model("Archaeopter Fusilave", 1, 12, 155);
+                    echo_html_unit_end();
                     
-                  <li>Archaeopter Fusilave</li>
-                  <ul style = "color:black">
-                    <li>1 models............155 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Archaeopter Stratoraptor</li>
-                  <ul style = "color:black">
-                    <li>1 models............165 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Archaeopter Transvector</li>
-                  <ul style = "color:black">
-                    <li>1 models............140 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Belisarius Cawl</li>
-                  <ul style = "color:black">
-                    <li>1 models............185 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Corpuscarii Electro-Priests</li>
-                  <ul style = "color:black">
-                    <li>5 models..............55 pts <button type="button">➕</button></li>
-                    <li>10 models..........110 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Cybernetica Datasmith</li>
-                  <ul style = "color:black">
-                    <li>1 models..............35 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Fulgurite Electro-Priests</li>
-                  <ul style = "color:black">
-                    <li>5 models..............60 pts <button type="button">➕</button></li>
-                    <li>10 models..........120 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Ironstrider Ballistarii</li>
-                  <ul style = "color:black">
-                    <li>1 models..............50 pts <button type="button">➕</button></li>
-                    <li>2 models............100 pts <button type="button">➕</button></li>
-                    <li>3 models............150 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Kastelan Robots</li>
-                  <ul style = "color:black">
-                    <li>2 models............200 pts <button type="button">➕</button></li>
-                    <li>4 models............400 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Kataphron Breachers</li>
-                  <ul style = "color:black">
-                    <li>3 models............145 pts <button type="button">➕</button></li>
-                    <li>6 models............290 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Kataphron Destroyers</li>
-                  <ul style = "color:black">
-                    <li>3 models............115 pts <button type="button">➕</button></li>
-                    <li>6 models............230 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Onager Dunecrawler</li>
-                  <ul style = "color:black">
-                    <li>1 models............140 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Pteraxii Skystalkers</li>
-                  <ul style = "color:black">
-                    <li>5 models..............65 pts <button type="button">➕</button></li>
-                    <li>10 models..........130 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Pteraxii Sterylizors</li>
-                  <ul style = "color:black">
-                    <li>5 models..............70 pts <button type="button">➕</button></li>
-                    <li>10 models..........140 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Serberys Raiders</li>
-                  <ul style = "color:black">
-                    <li>3 models..............60 pts <button type="button">➕</button></li>
-                    <li>6 models............120 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Serberys Sulphurhounds</li>
-                  <ul style = "color:black">
-                    <li>3 models..............55 pts <button type="button">➕</button></li>
-                    <li>6 models............110 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Servitors</li>
-                  <ul style = "color:black">
-                    <li>4 models..............50 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Sicarian Infiltrators</li>
-                  <ul style = "color:black">
-                    <li>5 models..............70 pts <button type="button">➕</button></li>
-                    <li>10 models..........140 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Sicarian Ruststalkers</li>
-                  <ul style = "color:black">
-                    <li>5 models..............70 pts <button type="button">➕</button></li>
-                    <li>10 models..........140 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Skitarii Marshal</li>
-                  <ul style = "color:black">
-                    <li>1 models..............35 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Skitarii Rangers</li>
-                  <ul style = "color:black">
-                    <li>10 models............90 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Skitarii Vanguard</li>
-                  <ul style = "color:black">
-                    <li>8 models..............80 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Skorpius Disintegrator</li>
-                  <ul style = "color:black">
-                    <li>1 models............180 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Skorpius Dunerider</li>
-                  <ul style = "color:black">
-                    <li>1 models..............80 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Sydonian Dragoons</li>
-                  <ul style = "color:black">
-                    <li>1 models..............60 pts <button type="button">➕</button></li>
-                    <li>2 models............120 pts <button type="button">➕</button></li>
-                    <li>3 models............180 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Tech-Priest Dominus</li>
-                  <ul style = "color:black">
-                    <li>1 models..............75 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Tech-Priest Enginseer</li>
-                  <ul style = "color:black">
-                    <li>1 models..............40 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Tech-Priest Manipulus</li>
-                  <ul style = "color:black">
-                    <li>1 models..............55 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Technoarcheologist</li>
-                  <ul style = "color:black">
-                    <li>1 models..............45 pts <button type="button">➕</button></li>
-                  </ul>
+                    echo_html_unit_start("Archaeopter Stratoraptor");
+                    echo_html_unit_model("Archaeopter Stratoraptor", 1, 12, 165);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Archaeopter Transvector");
+                    echo_html_unit_model("Archaeopter Transvector", 1, 12, 140);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Belisarius Cawl");
+                    echo_html_unit_model("Belisarius Cawl", 1, 12, 185);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Corpuscarii Electro-Priests");
+                    echo_html_unit_model("Corpuscarii Electro-Priests", 5, 14, 55);
+                    echo_html_unit_model("Corpuscarii Electro-Priests", 10, 10, 110);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Cybernetica Datasmith");
+                    echo_html_unit_model("Cybernetica Datasmith", 1, 14, 35);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Fulgurite Electro-Priests");
+                    echo_html_unit_model("Fulgurite Electro-Priests", 5, 14, 60);
+                    echo_html_unit_model("Fulgurite Electro-Priests", 10, 10, 120);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Ironstrider Ballistarii");
+                    echo_html_unit_model("Ironstrider Ballistarii", 1, 14, 50);
+                    echo_html_unit_model("Ironstrider Ballistarii", 2, 12, 100);
+                    echo_html_unit_model("Ironstrider Ballistarii", 3, 12, 150);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Kastelan Robots");
+                    echo_html_unit_model("Kastelan Robots", 2, 12, 200);
+                    echo_html_unit_model("Kastelan Robots", 4, 12, 400);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Kataphron Breachers");
+                    echo_html_unit_model("Kataphron Breachers", 3, 12, 145);
+                    echo_html_unit_model("Kataphron Breachers", 6, 12, 290);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Kataphron Destroyers");
+                    echo_html_unit_model("Kataphron Destroyers", 3, 12, 115);
+                    echo_html_unit_model("Kataphron Destroyers", 6, 12, 230);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Onager Dunecrawler");
+                    echo_html_unit_model("Onager Dunecrawler", 1, 12, 140);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Pteraxii Skystalkers");
+                    echo_html_unit_model("Pteraxii Skystalkers", 5, 14, 65);
+                    echo_html_unit_model("Pteraxii Skystalkers", 10, 10, 130);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Pteraxii Sterylizors");
+                    echo_html_unit_model("Pteraxii Sterylizors", 5, 14, 70);
+                    echo_html_unit_model("Pteraxii Sterylizors", 10, 10, 140);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Serberys Raiders");
+                    echo_html_unit_model("Serberys Raiders", 3, 14, 60);
+                    echo_html_unit_model("Serberys Raiders", 6, 12, 120);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Serberys Sulphurhounds");
+                    echo_html_unit_model("Serberys Sulphurhounds", 3, 14, 55);
+                    echo_html_unit_model("Serberys Sulphurhounds", 6, 12, 110);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Servitors");
+                    echo_html_unit_model("Servitors", 4, 14, 50);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Sicarian Infiltrators");
+                    echo_html_unit_model("Sicarian Infiltrators", 5, 14, 70);
+                    echo_html_unit_model("Sicarian Infiltrators", 10, 10, 140);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Sicarian Ruststalkers");
+                    echo_html_unit_model("Sicarian Ruststalkers", 5, 14, 70);
+                    echo_html_unit_model("Sicarian Ruststalkers", 10, 10, 140);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Skitarii Marshal");
+                    echo_html_unit_model("Skitarii Marshal", 1, 14, 35);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Skitarii Rangers");
+                    echo_html_unit_model("Skitarii Rangers", 10, 12, 90);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Skitarii Vanguard");
+                    echo_html_unit_model("Skitarii Vanguard", 8, 14, 80);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Skorpius Disintegrator");
+                    echo_html_unit_model("Skorpius Disintegrator", 1, 12, 180);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Skorpius Dunerider");
+                    echo_html_unit_model("Skorpius Dunerider", 1, 14, 80);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Sydonian Dragoons");
+                    echo_html_unit_model("Sydonian Dragoons", 1, 14, 60);
+                    echo_html_unit_model("Sydonian Dragoons", 2, 12, 120);
+                    echo_html_unit_model("Sydonian Dragoons", 3, 12, 180);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Tech-Priest Dominus");
+                    echo_html_unit_model("Tech-Priest Dominus", 1, 14, 75);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Tech-Priest Enginseer");
+                    echo_html_unit_model("Tech-Priest Enginseer", 1, 14, 40);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Tech-Priest Manipulus");
+                    echo_html_unit_model("Tech-Priest Manipulus", 1, 14, 55);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Technoarcheologist");
+                    echo_html_unit_model("Technoarcheologist", 1, 14, 45);
+                    echo_html_unit_end();
+                    
+                    
+                    ?>
+                  
                 </ul>
+                </form>
+                
+                
             </div>
             <div class="pad"></div>
         </div>

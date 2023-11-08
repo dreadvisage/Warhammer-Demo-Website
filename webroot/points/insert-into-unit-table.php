@@ -22,18 +22,18 @@ $num_models = 0;
 $unit_points = 0;
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $unit_name = $_POST["unit-name"];
-    $num_models = $_POST["num-models"];
-    $unit_points = $_POST["unit-points"];
+    $name = $_POST["name"];
+    $models = $_POST["models"];
+    $points = $_POST["points"];
 
 
     /* For each user, create a table for them so that we can insert their units into it */
-    $query = 'INSERT INTO ' . $_SESSION['username'] . '_unit_table (unit_name, num_models, unit_points) VALUES (?,?,?)';
+    $query = 'INSERT INTO ' . $_SESSION['username'] . '_unit_table (name, models, points) VALUES (?,?,?)';
     if($stmt = $mysqli->prepare($query)) {
-    $stmt->bind_param("sii", $param_unit_name, $param_num_models, $param_unit_points);
-    $param_unit_name = $unit_name;
-    $param_num_models = $num_models;
-    $param_unit_points = $unit_points;
+    $stmt->bind_param("sss", $param_name, $param_models, $param_points);
+    $param_name = $name;
+    $param_models = $models;
+    $param_points = $points;
     if ($stmt->execute()) {
         header("location: " . $_SERVER['HTTP_REFERER']);
         exit;

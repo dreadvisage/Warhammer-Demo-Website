@@ -1,3 +1,19 @@
+<?php
+
+$is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
+$is_logged_in_path .= "/project/../utils/is-logged-in.php";
+require_once $is_logged_in_path;
+
+require_once 'create-unit-helper.php';
+require_once 'insert-into-unit-table.php';;
+
+if(isNotLoggedIn()){
+  header("location: ../account/login.php");
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +28,10 @@
         
         <div id="background-image"></div>
 
-        <?php require '../../utils/one-up-navbar.php'; ?>
+        <?php 
+            require '../../utils/navbar.php'; 
+            echoNavbar(1);
+        ?>
         
         <div class="display">
             <div class="pad"></div>
@@ -20,32 +39,37 @@
                 
                 <h2>Adeptus Titanicus</h2>
                 <hr>
-                
-                <ul style = "list-style: none; color:darkred">
+
+                <form action="insert-into-unit-table.php" method="post">
+                  <input id="name" type="hidden" name="name" value="">
+                  <input id="models" type="hidden" name="models" value="">
+                  <input id="points" type="hidden" name="points" value="">
+                  <ul style = "list-style: none; color:darkred">
                     
                     <h2>Forge World Units</h2>
 
-                    <li>Reaver Titan</li>
-                    <ul style = "color:black">
-                      <li>1 models............2200 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Warbringer Nemesis Titan</li>
-                    <ul style = "color:black">
-                      <li>1 models............2600 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Warhound Titan</li>
-                    <ul style = "color:black">
-                      <li>1 models............1100 pts <button type="button">➕</button></li>
-                    </ul>
-
-                    <li>Warlord Titan</li>
-                    <ul style = "color:black">
-                      <li>1 models............3500 pts <button type="button">➕</button></li>
-                    </ul>
+                    <?php
+                    echo_html_unit_start("Reaver Titan");
+                    echo_html_unit_model("Reaver Titan", 1, 12, 2200);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Warbringer Nemesis Titan");
+                    echo_html_unit_model("Warbringer Nemesis Titan", 1, 12, 2600);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Warhound Titan");
+                    echo_html_unit_model("Warhound Titan", 1, 12, 1100);
+                    echo_html_unit_end();
+                    
+                    echo_html_unit_start("Warlord Titan");
+                    echo_html_unit_model("Warlord Titan", 1, 12, 3500);
+                    echo_html_unit_end();
+                    ?>
                 
                 </ul>
+                </form>
+                
+                
             </div>
             <div class="pad"></div>
         </div>

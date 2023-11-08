@@ -1,3 +1,19 @@
+<?php
+
+$is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
+$is_logged_in_path .= "/project/../utils/is-logged-in.php";
+require_once $is_logged_in_path;
+
+require_once 'create-unit-helper.php';
+require_once 'insert-into-unit-table.php';;
+
+if(isNotLoggedIn()){
+  header("location: ../account/login.php");
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +28,10 @@
         
         <div id="background-image"></div>
 
-        <?php require '../../utils/one-up-navbar.php'; ?>
+        <?php 
+            require '../../utils/navbar.php'; 
+            echoNavbar(1);
+        ?>
         
         <div class="display">
             <div class="pad"></div>
@@ -20,84 +39,81 @@
                 
                 <h2>Black Templars</h2>
                 <hr>
-                
-                <ul style = "list-style: none; color:darkred">
+
+                <form action="insert-into-unit-table.php" method="post">
+                  <input id="name" type="hidden" name="name" value="">
+                  <input id="models" type="hidden" name="models" value="">
+                  <input id="points" type="hidden" name="points" value="">
+                  <ul style = "list-style: none; color:darkred">
                     
-                  <li>Black Templars Gladiator Lancer</li>
-                  <ul style = "color:black">
-                    <li>1 models............165 pts <button type="button">➕</button></li>
-                  </ul>
+                  <?php
+                  echo_html_unit_start("Black Templars Gladiator Lancer");
+                  echo_html_unit_model("Black Templars Gladiator Lancer", 1, 12, 165);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Black Templars Gladiator Reaper");
+                  echo_html_unit_model("Black Templars Gladiator Reaper", 1, 12, 155);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Black Templars Gladiator Valiant");
+                  echo_html_unit_model("Black Templars Gladiator Valiant", 1, 12, 155);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Black Templars Impulsor");
+                  echo_html_unit_model("Black Templars Impulsor", 1, 14, 85);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Black Templars Repulsor");
+                  echo_html_unit_model("Black Templars Repulsor", 1, 12, 200);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Black Templars Gladiator Executioner");
+                  echo_html_unit_model("Black Templars Gladiator Executioner", 1, 12, 235);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Castellan");
+                  echo_html_unit_model("Castellan", 1, 14, 65);
+                  echo_html_unit_end();
 
-                  <li>Black Templars Gladiator Reaper</li>
-                  <ul style = "color:black">
-                    <li>1 models............155 pts <button type="button">➕</button></li>
-                  </ul>
+                  echo_html_unit_start("Chaplain Grimaldus");
+                  echo_html_unit_model("Chaplain Grimaldus", 1, 14, 95);
+                  echo_html_unit_end();
 
-                  <li>Black Templars Gladiator Valiant</li>
-                  <ul style = "color:black">
-                    <li>1 models............155 pts <button type="button">➕</button></li>
-                  </ul>
+                  echo_html_unit_start("Crusader Squad");
+                  echo_html_custom_unit_model("Crusader Squad", "1 Sword Brother, 4 Initiates", 30, 65);
+                  echo_html_custom_unit_model("Crusader Squad", "1 Sword Brother, 9 Initiates", 28, 125);
+                  echo_html_custom_unit_model("Crusader Squad", "1 Sword Brother, 4 Initiates, 5 Neophytes", 6, 125);
+                  echo_html_custom_unit_model("Crusader Squad", "1 Sword Brother, 9 Initiates, 10 Neophytes", 4, 250);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("High Marshal Helbrecht");
+                  echo_html_unit_model("High Marshal Helbrecht", 1, 14, 95);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Marshal");
+                  echo_html_unit_model("Marshal", 1, 14, 80);
+                  echo_html_unit_end();
 
-                  <li>Black Templars Impulsor</li>
-                  <ul style = "color:black">
-                    <li>1 models..............85 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Black Templars Repulsor</li>
-                  <ul style = "color:black">
-                    <li>1 models............200 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Black Templars Gladiator Executioner</li>
-                  <ul style = "color:black">
-                    <li>1 models............235 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Castellan</li>
-                  <ul style = "color:black">
-                    <li>1 models..............65 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Chaplain Grimaldus</li>
-                  <ul style = "color:black">
-                    <li>1 models..............95 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Crusader Squad</li>
-                  <ul style = "color:black">
-                    <li>1 Sword Brother, 4 Initiates <br>..............................65 pts <button type="button">➕</button></li>
-                    <li>1 Sword Brother, 9 Initiates <br>............................125 pts <button type="button">➕</button></li>
-                    <li>1 Sword Brother, 4 Initiates, <br> 5 Neophytes......125 pts <button type="button">➕</button></li>
-                    <li>1 Sword Brother, 9 Initiates, <br> 10 Neophytes....250 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>High Marshal Helbrecht</li>
-                  <ul style = "color:black">
-                    <li>1 models..............95 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Marshal</li>
-                  <ul style = "color:black">
-                    <li>1 models..............80 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Primaris Crusader Squad</li>
-                  <ul style = "color:black">
-                    <li>1 Sword Brother, 5 Initiates, <br> 4 Neophytes......140 pts <button type="button">➕</button></li>
-                    <li>1 Sword Brother, 11 Initiates, <br> 8 Neophytes......280 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>Primaris Sword Brethren</li>
-                  <ul style = "color:black">
-                    <li>5 models............140 pts <button type="button">➕</button></li>
-                    <li>10 models..........280 pts <button type="button">➕</button></li>
-                  </ul>
-
-                  <li>The Emperor's Champion</li>
-                  <ul style = "color:black">
-                    <li>1 models..............75 pts <button type="button">➕</button></li>
-                  </ul>
+                  echo_html_unit_start("Primaris Crusader Squad");
+                  echo_html_custom_unit_model("Primaris Crusader Squad", "1 Sword Brother, 5 Initiates, 4 Neophytes", 6, 140);
+                  echo_html_custom_unit_model("Primaris Crusader Squad", "1 Sword Brother, 11 Initiates, 8 Neophytes", 6, 280);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("Primaris Sword Brethren");
+                  echo_html_unit_model("Primaris Sword Brethren", 5, 12, 140);
+                  echo_html_unit_model("Primaris Sword Brethren", 10, 10, 280);
+                  echo_html_unit_end();
+                  
+                  echo_html_unit_start("The Emperor's Champion");
+                  echo_html_unit_model("The Emperor's Champion", 1, 14, 75);
+                  echo_html_unit_end();
+                  
+                  
+                  ?>
                 </ul>
+                </form>
+                
+                
             </div>
             <div class="pad"></div>
         </div>
