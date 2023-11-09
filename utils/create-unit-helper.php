@@ -6,7 +6,7 @@ class HtmlUnitEchoBuilder {
 
     private function __construct($name) {
         $this->html .= '<li>' . $name . '</li>';
-        $this->html .= '<ul style = "color:black">';
+        $this->html .= '<ul class="unit-type-list">';
     }
 
     public static function new($name): HtmlUnitEchoBuilder {
@@ -29,7 +29,7 @@ class HtmlUnitEchoBuilder {
 
     public static function echoUnit($name, $models, $padding, $points) {
         $html = '<li>' . $name . '</li>';
-        $html .= '<ul style = "color:black">';
+        $html .= '<ul class="unit-type-list">';
         $html .= '<li>' . $models . ' models' . Self::createPadding($padding) . $points . ' pts ';
         $html .= '<button type="submit" onclick="' . Self::getJs($name, $models, $points) . '">➕</button></li></ul>';
         echo $html;

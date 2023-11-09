@@ -3,11 +3,13 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-require_once "insert-into-unit-table.php";
+require_once "db/insert-into-unit-table.php";
 
 $create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
 $create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
 require_once $create_unit_helper_path;
+
+require '../../utils/navbar.php';
 
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
@@ -28,13 +30,13 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/article-contents.css">
+    <link rel="stylesheet" href="../css/points.css">
 </head>
 
 <body>
     <div id="background-image"></div>
 
     <?php
-    require '../../utils/navbar.php';
     echoNavbar(1);
     ?>
 
@@ -45,11 +47,11 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Dark Angels</h2>
             <hr>
 
-            <form action="insert-into-unit-table.php" method="post">
+            <form action="db/insert-into-unit-table.php" method="post">
                 <input id="name" type="hidden" name="name" value="">
                 <input id="models" type="hidden" name="models" value="">
                 <input id="points" type="hidden" name="points" value="">
-                <ul style="list-style: none; color:darkred">
+                <ul class="points-list">
                     <?php
                     Builder::echoUnit("Asmodai", 1, 14, 70);
 
