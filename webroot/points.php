@@ -1,3 +1,8 @@
+<?php
+session_start();
+require '../utils/navbar.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +11,18 @@
     <title>About</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/article-section.css">
-    <link rel="stylesheet" href="css/article-contents.css">
 </head>
 <body>
     <div id="background-image"></div>
 
     <?php 
-        require '../utils/navbar.php'; 
         echoNavbar(0);
     ?>
 
     <div class="display">
         <div class="pad"></div>
         <div id="article"> 
-            <p>This is the lore page!</p>
+            <p>This is the points page!</p>
         </div>
         <div class="pad"></div>
     </div>    

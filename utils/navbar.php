@@ -20,10 +20,10 @@ function echoNavbar($num_dirs_up) {
     </div>
     <div id="inner2">
         <ul>
-            <li><a href="' . getDirsUp($num_dirs_up) . 'index.php">Home</a></li>
+            <li><a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <button class="dropbtn">Factions</button>
+                    <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'factions.php">Factions</a>
                     <div class="dropdown-content">
                         <a href="' . getDirsUp($num_dirs_up) . 'factions/space-marine.php">Space Marines</a>
                         <a href="' . getDirsUp($num_dirs_up) . 'factions/necrons.php">Necrons</a>
@@ -43,12 +43,12 @@ function echoNavbar($num_dirs_up) {
                     </div>
                 </div>
             </li>
-            <li><a href="' . getDirsUp($num_dirs_up) . 'about.php">About</a></li>';
+            <li><a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'about.php">About</a></li>';
             if (isLoggedIn()) {
                 echo 
                 '<li>
                     <div class="dropdown">
-                        <button class="dropbtn">Points</button>
+                    <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>
                         <div class="dropdown-content">
                             <a href="' . getDirsUp($num_dirs_up) . 'points/votann-points.php">Leagues of Votann</a>
                             <a href="' . getDirsUp($num_dirs_up) . 'points/sororitas-points.php">Adepta Sororitas</a>

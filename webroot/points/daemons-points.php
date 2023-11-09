@@ -1,15 +1,16 @@
 <?php
+session_start();
+
+require '../../utils/navbar.php';
+
 $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
-
-require_once "db/insert-into-unit-table.php";
 
 $create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
 $create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
 require_once $create_unit_helper_path;
 
-require '../../utils/navbar.php';
 
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");

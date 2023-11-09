@@ -13,7 +13,6 @@ require '../utils/navbar.php';
     <title>Home</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/article-section.css">
-    <link rel="stylesheet" href="css/article-contents.css">
 </head>
 <body>
     <div id="background-image"></div>

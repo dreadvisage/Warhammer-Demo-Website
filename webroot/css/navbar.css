@@ -99,12 +99,11 @@ body {
 
 
 /* https://css-tricks.com/fun-viewport-units/ */
-#inner2 li a, #inner2 li button {
+#inner2 li a {
     display: block;
     color: white;
     padding: 14px 16px;
     text-decoration: none;
-    text-align: center;
     font-size: calc(0.1em + 1vw); /* similar calc(8px + 1vw) */
     font-family: WHFont;
     
@@ -114,7 +113,7 @@ body {
 /* Sets minimum font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (max-width: 70em) {
-    #inner2 li a, #inner2 li button {
+    #inner2 li a {
       font-size: 0.8em;
     }
 }
@@ -122,19 +121,15 @@ body {
 /* Sets max font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (min-width: 90em) {
-    #inner2 li a, #inner2 li button {
+    #inner2 li a {
       font-size: 1em;
     }
 }
 
-/* Used to stylize the vertical dropdown buttons */
-#inner2 li button {
+/* Used to stylize the vertical dropdown <a> tags */
+#inner2 li a {
     /* https://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin-0-auto#:~:text=8-,margin%3A0%20auto%3B,then%20margin%3Aauto%20works%20perfectly. */
-    margin: 0 auto;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    /* border: 3px solid blue; */
+    /*  */
     cursor: pointer;
 }
 /* Dropdown content (hidden by default) */
@@ -151,6 +146,11 @@ body {
 .dropdown-content a:hover {
     background-color: #8f2f2f;
 }
+
+#nav-link {
+    text-align: center;
+}
+
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
@@ -159,7 +159,6 @@ body {
 unless we specify this directly from #inner2. */
 #inner2 li div a {
     float: none;
-    text-align: left;
 }
   
 
