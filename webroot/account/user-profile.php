@@ -1,15 +1,11 @@
 <?php
-$session_start_path = $_SERVER['DOCUMENT_ROOT'];
-$session_start_path .= "/project/../utils/session-start.php";
-
+session_start();
 $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 
 $get_user_pfp_path = $_SERVER['DOCUMENT_ROOT'];
 $get_user_pfp_path .= "/project/../utils/get-user-pfp.php";
     
-
-require_once $session_start_path;
 require_once $is_logged_in_path;
 require_once $get_user_pfp_path;
  

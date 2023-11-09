@@ -1,8 +1,5 @@
 <?php
-$session_start_path = $_SERVER['DOCUMENT_ROOT'];
-$session_start_path .= "/project/../utils/session-start.php";
-
-require_once $session_start_path;
+session_start();
  
 // Unset all of the session variables
 $_SESSION = array();

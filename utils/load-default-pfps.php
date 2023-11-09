@@ -1,4 +1,5 @@
 <?php
+session_start();
 /* The 'DOCUMENT_ROOT' for XAMPP is .../XAMPP/htdocs . But we need to follow the symlink we created. 
 So we add on /project . Then wherever the 'project' folder is, we go up one directory. And then we are
 able to access the required folder from our project root. We do this because not every file that 
@@ -7,11 +8,7 @@ use PHP's built-in tools to navigate from the 'DOCUMENT_ROOT' instead which is a
 $config_path = $_SERVER['DOCUMENT_ROOT'];
 $config_path .= "/project/../utils/config.php";
 
-$session_start_path = $_SERVER['DOCUMENT_ROOT'];
-$session_start_path .= "/project/../utils/session-start.php";
-
 require_once $config_path;
-require_once $session_start_path;
 
 $query = "SELECT * FROM default_pfps";
 $results = $mysqli->query($query);
