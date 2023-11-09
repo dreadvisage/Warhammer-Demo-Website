@@ -6,7 +6,7 @@
         <title>Adepta Sororitas</title>
         <link rel="stylesheet" href="../css/navbar.css">
         <link rel="stylesheet" href="../css/article-section.css">
-        <link rel="stylesheet" href="../css/article-contents.css">
+        <link rel="stylesheet" href="../css/factions.css">
     </head>
     <body>
         <div id="background-image"></div>
@@ -28,7 +28,7 @@
                     for their unwavering devotion to the God-Emperor of Mankind and their militant and religious zeal. Here's a 
                     summary of the Adepta Sororitas:</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                         Warrior Nuns of the Emperor: The Adepta Sororitas is an all-female faction within the Imperium of Man. They are 
                         a religious order, combining faith and martial prowess in service of the God-Emperor.

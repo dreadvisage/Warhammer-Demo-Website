@@ -4,5 +4,10 @@
 }
 
 .unit-type-list {
+    list-style-type: square;
     color: black;
+}
+
+.unit-type-list li {
+    margin: 10px 0;
 }

@@ -29,7 +29,6 @@ use HtmlUnitEchoBuilder as Builder;
     <title>Adeptus Titanicus</title>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
-    <link rel="stylesheet" href="../css/article-contents.css">
     <link rel="stylesheet" href="../css/points.css">
 </head>
 

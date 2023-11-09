@@ -1,0 +1,7 @@
+.faction-list {
+    list-style-type: square;
+}
+
+.faction-list li {
+    margin: 10px 0;
+}
