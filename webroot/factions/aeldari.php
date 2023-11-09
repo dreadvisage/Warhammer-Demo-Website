@@ -1,3 +1,7 @@
+<?php
+require '../../utils/navbar.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +17,6 @@
         <div id="background-image"></div>
 
         <?php 
-            require '../../utils/navbar.php'; 
             echoNavbar(1);
         ?>
         
