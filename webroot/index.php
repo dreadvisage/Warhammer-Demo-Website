@@ -1,5 +1,10 @@
 <!-- https://stackoverflow.com/questions/18902887/how-to-configuring-a-xampp-web-server-for-different-root-directory -->
 <!-- https://stackoverflow.com/questions/812571/how-to-create-friendly-url-in-php -->
+<?php
+session_start();
+require '../utils/navbar.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +19,6 @@
     <div id="background-image"></div>
     
     <?php 
-        require '../utils/navbar.php'; 
         echoNavbar(0); 
     ?>
 
