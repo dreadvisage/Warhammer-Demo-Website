@@ -1,6 +1,8 @@
 <?php
+session_start();
 require '../../utils/navbar.php'; 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
