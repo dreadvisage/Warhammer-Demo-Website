@@ -105,7 +105,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         </div>
 
-        
         <div class="main-content">
             <a class="btn-option" href="clear-unit-table.php">Clear Unit Table</a>
             <?php 

@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+
 /* The 'DOCUMENT_ROOT' for XAMPP is .../XAMPP/htdocs . But we need to follow the symlink we created. 
 So we add on /project . Then wherever the 'project' folder is, we go up one directory. And then we are
 able to access the required folder from our project root. We do this because not every file that 

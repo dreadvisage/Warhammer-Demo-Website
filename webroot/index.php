@@ -20,7 +20,7 @@ require '../utils/navbar.php';
     <?php 
         echoNavbar(0); 
     ?>
-
+    
     <div class="display">
         <div class="pad"></div>
         <div id="article"> 
@@ -28,5 +28,7 @@ require '../utils/navbar.php';
         </div>
         <div class="pad"></div>
     </div>    
+    
+
 </body>
 </html>

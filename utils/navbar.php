@@ -1,8 +1,8 @@
 <?php
 $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
-
 require_once $is_logged_in_path;
+
 require_once 'get-user-pfp.php';
 
 function getDirsUp($num_dirs_up) {
@@ -14,6 +14,7 @@ function getDirsUp($num_dirs_up) {
 }
 
 function echoNavbar($num_dirs_up) {
+    echo '<script type = "text/javascript" src="' . getDirsUp($num_dirs_up) . 'calc_navbar_layout.js"></script>';
     echo '<div id="navbar">
     <div id="inner1">
         <a href="' . getDirsUp($num_dirs_up) . 'index.php"><img id="warhammer-logo" src="' . getDirsUp($num_dirs_up) . 'images/warhammer-logo-black.png" alt="Warhammer Logo"></a>
@@ -24,22 +25,9 @@ function echoNavbar($num_dirs_up) {
             <li>
                 <div class="dropdown">
                     <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'factions.php">Factions</a>
-                    <div class="dropdown-content">
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/space-marine.php">Space Marines</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/necrons.php">Necrons</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/adepta-sororitas.php">Adepta Sororitas</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/adeptus-custodes.php">Adeptus Custodes</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/adeptus-mechanicus.php">Adeptus Mechanicus</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/adeptus-titanicus.php">Adeptus Titanicus</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/aeldari.php">Aeldari</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/agents-of-imperium.php">Agents of the Imperium</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/astra-militarum.php">Astra Militarum</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/black-templars.php">Black Templars</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/blood-angels.php">Blood Angels</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/chaos-daemons.php">Chaos Daemons</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/chaos-knights.php">Chaos Knights</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/chaos-marines.php">Chaos Space Marines</a>
-                        <a href="' . getDirsUp($num_dirs_up) . 'factions/dark-angels.php">Dark Angels</a>
+                    <div id="factions-dropdown" class="dropdown-content">
+                        <!--Calculate the initial layout of the dropdown when the navbar is loaded-->
+                        <script>window.addEventListener("resize", resizeDropdownMonitor("factions-dropdown", ' . $num_dirs_up . ')); calculateDropdownLayout("factions-dropdown", ' . $num_dirs_up . ');</script>
                     </div>
                 </div>
             </li>
@@ -49,21 +37,8 @@ function echoNavbar($num_dirs_up) {
                 '<li>
                     <div class="dropdown">
                     <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>
-                        <div class="dropdown-content">
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/votann-points.php">Leagues of Votann</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/sororitas-points.php">Adepta Sororitas</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/custodes-points.php">Adeptus Custodes</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/mechanicus-points.php">Adeptus Mechanicus</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/titanicus-points.php">Adeptus Titanicus</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/aeldari-points.php">Aeldari</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/agents-points.php">Agents of the Imperium</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/militarum-points.php">Astra Militarum</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/templars-points.php">Black Templars</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/blood-angels-points.php">Blood Angels</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/daemons-points.php">Chaos Daemons</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/chaos-knights-points.php">Chaos Knights</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/chaos-marines-points.php">Chaos Space Marines</a>
-                            <a href="' . getDirsUp($num_dirs_up) . 'points/dark-angels-points.php">Dark Angels</a>
+                        <div id="points-dropdown" class="dropdown-content">
+                            <script>window.addEventListener("resize", resizeDropdownMonitor("points-dropdown", ' . $num_dirs_up . ')); calculateDropdownLayout("points-dropdown", ' . $num_dirs_up . ');</script>
                         </div>
                     </div>
                 </li>';

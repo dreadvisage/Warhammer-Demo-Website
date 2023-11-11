@@ -87,9 +87,9 @@ body {
 /* Sets max padding width for the list items. This min-width is tied with css style property
 'li a' and its '@media min-width' within this css. */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 100em) {
+@media (min-width: 90em) {
     #inner2 li {
-        width: 10em;
+        width: 9em;
     }
 }
 
@@ -120,9 +120,9 @@ body {
 
 /* Sets max font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 90em) {
+@media (min-width: 80em) {
     #inner2 li a {
-      font-size: 1em;
+      font-size: 0.9em;
     }
 }
 
@@ -132,6 +132,7 @@ body {
     /*  */
     cursor: pointer;
 }
+
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
@@ -220,7 +221,7 @@ unless we specify this directly from #inner2. */
     /* border: 0.05em solid black;  */
 }
 
-/* Account Icon has a fixed size */
+/* Account Icon has a fixed size. This is to ensure that the navbar always has a fixed height. */
 #account-icon {
     width: 3em;
 

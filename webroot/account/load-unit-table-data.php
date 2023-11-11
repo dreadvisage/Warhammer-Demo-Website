@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $config_path = $_SERVER['DOCUMENT_ROOT'];
 $config_path .= "/project/../utils/config.php";
 
