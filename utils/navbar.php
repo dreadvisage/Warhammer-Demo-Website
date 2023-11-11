@@ -27,7 +27,7 @@ function echoNavbar($num_dirs_up) {
                     <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'factions.php">Factions</a>
                     <div id="factions-dropdown" class="dropdown-content">
                         <!--Calculate the initial layout of the dropdown when the navbar is loaded-->
-                        <script>window.addEventListener("resize", resizeDropdownMonitor("factions-dropdown", ' . $num_dirs_up . ')); calculateDropdownLayout("factions-dropdown", ' . $num_dirs_up . ');</script>
+                        <script>window.addEventListener("resize", function(){resizeDropdownMonitor("factions-dropdown", ' . $num_dirs_up . ')}); calculateDropdownLayout("factions-dropdown", ' . $num_dirs_up . ');</script>
                     </div>
                 </div>
             </li>

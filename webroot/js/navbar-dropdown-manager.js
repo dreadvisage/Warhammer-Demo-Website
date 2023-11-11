@@ -39,8 +39,6 @@ const ID = {
 }
 
 
-
-
 /* Adding an event listener for window resizing can be tricky. Because by itself, when resizing a window, the resize event fires every
 pixel change in width or height. Meaning the event can fire hundreds of times by the time the user is done resizing. However, in this 
 scenario, we only want to fire a resize event when the user is finished resizing their window. The easiest way to do this is to set
@@ -53,7 +51,6 @@ var resizeTimeout;
 function resizeDropdownMonitor(id, numDirsUp) {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(function() {
-        
         calculateDropdownLayout(id, numDirsUp);
     }, 200)
 }
@@ -68,7 +65,7 @@ function calculateDropdownLayout(id, numDirsUp) {
             page = POINTS_PAGES;
             break;
         default:
-            throw new Error("asdf");
+            throw new Error("No valid page found");
     }
     if (window.innerHeight < 360) {
         calcResizeDropdown(5, id, numDirsUp, page);
@@ -130,13 +127,11 @@ function calcResizeDropdown(num_cols, id, numDirsUp, page) {
                 row.appendChild(col);
     
                 const a = document.createElement("a");
-                a.href = getDirsUp(numDirsUp) + page[counter][0];
+                a.href = getDirsUp(numDirsUp) + page[j * num_per_row + counter];
                 col.appendChild(a);
     
-                const text = document.createTextNode(page[counter][1]);
-                a.appendChild(text);
-    
-                ++counter;
+                const text = document.createTextNode(page[j * num_per_row + counter][1]);
+                a.appendChild(text)
             }
         } else {
             for (var j = 0; j < num_cols-1; ++j) {
@@ -144,29 +139,33 @@ function calcResizeDropdown(num_cols, id, numDirsUp, page) {
                 row.appendChild(col);
     
                 const a = document.createElement("a");
-                a.href = getDirsUp(numDirsUp) + page[counter][0];
+                a.href = getDirsUp(numDirsUp) + page[j * num_per_row + counter];
                 col.appendChild(a);
     
-                const text = document.createTextNode(page[counter][1]);
+                const text = document.createTextNode(page[j * num_per_row + counter][1]);
                 a.appendChild(text);
-    
-                ++counter;
             }
         }
+
+        
+        ++counter;
 
         if (final_col == 0) {
             continue;
         }
 
         if (extraCounter <= final_col) {
+            // console.log(page.length - num_per_row + extraCounter);
             const col = document.createElement("td");
             row.appendChild(col);
 
             const a = document.createElement("a");
-            a.href = getDirsUp(numDirsUp) + page[page.length - extraCounter][0];
+            // a.href = getDirsUp(numDirsUp) + page[page.length - extraCounter][0];
+            a.href = getDirsUp(numDirsUp) + page[page.length - num_per_row + extraCounter][0];
             col.appendChild(a);
 
-            const text = document.createTextNode(page[page.length - extraCounter][1]);
+            // const text = document.createTextNode(page[page.length - extraCounter][1]);
+            const text = document.createTextNode(page[page.length - num_per_row + extraCounter][1]);
             a.appendChild(text);
 
             ++extraCounter;
