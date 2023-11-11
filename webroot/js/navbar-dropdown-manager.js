@@ -139,7 +139,7 @@ function createDropdown(numCols, id, numDirsUp, page) {
             const a = document.createElement("a");
             // For `page[j * numPerRow + counter]`, we skip a certain amount of links
             // because when building a table, we fill out the rows first.
-            a.href = getDirsUp(numDirsUp) + page[j * numPerRow + counter];
+            a.href = getDirsUp(numDirsUp) + page[j * numPerRow + counter][0];
             col.appendChild(a);
 
             // For `page[j * numPerRow + counter]`, we skip a certain amount of links
