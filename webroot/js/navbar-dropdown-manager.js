@@ -33,6 +33,7 @@ const POINTS_PAGES = [
     ["points/dark-angels-points.php", "Dark Angels"],
 ];
 
+// This contains all the html ids for the dropdowns in the navbar
 const ID = {
     FACTIONS: "factions-dropdown",
     POINTS: "points-dropdown",
@@ -48,7 +49,7 @@ determine that the user is done resizing. Then we execute our code. This can dra
 done when resizing the window, especially when we only care when the user is done resizing their window.
 https://stackoverflow.com/questions/5489946/how-to-wait-for-the-end-of-resize-event-and-only-then-perform-an-action */
 var resizeTimeout;
-function resizeDropdownMonitor(id, numDirsUp) {
+function windowResizeMonitor(id, numDirsUp) {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(function() {
         calculateDropdownLayout(id, numDirsUp);
@@ -65,111 +66,77 @@ function calculateDropdownLayout(id, numDirsUp) {
             page = POINTS_PAGES;
             break;
         default:
-            throw new Error("No valid page found");
+            throw new Error("No valid dropdown page found.");
     }
     if (window.innerHeight < 360) {
-        calcResizeDropdown(5, id, numDirsUp, page);
+        createDropdown(5, id, numDirsUp, page);
     } else if (window.innerHeight < 480) {
-        calcResizeDropdown(5, id, numDirsUp, page);
+        createDropdown(5, id, numDirsUp, page);
     } else if (window.innerHeight < 768) {
-        calcResizeDropdown(4, id, numDirsUp, page);
+        createDropdown(4, id, numDirsUp, page);
     } else if (window.innerHeight < 864) {
-        calcResizeDropdown(4, id, numDirsUp, page);
+        createDropdown(4, id, numDirsUp, page);
     } else if (window.innerHeight < 1080) {
-        calcResizeDropdown(3, id, numDirsUp, page);
+        createDropdown(3, id, numDirsUp, page);
     } else if (window.innerHeight < 1440) {
-        calcResizeDropdown(2, id, numDirsUp, page);
+        createDropdown(2, id, numDirsUp, page);
     } else if (window.innerHeight < 2160) { // 4k
-        calcResizeDropdown(1, id, numDirsUp, page);
+        createDropdown(1, id, numDirsUp, page);
     } else { // if greater than 4k
-        calcResizeDropdown(1, id, numDirsUp, page);
+        createDropdown(1, id, numDirsUp, page);
     }
 }
 
-function calcResizeDropdown(num_cols, id, numDirsUp, page) {
-
-    if (page == null || id == null) {
-        throw new Error("page wasn't set");
-    }
-
-    if (num_cols == 0) {
+// Organizes the links in the order they appear in their respective arrays from top to bottom, left to right. 
+function createDropdown(numCols, id, numDirsUp, page) {
+    if (numCols == 0) {
         throw new Error("Cannot have zero columns");
     }
 
-    if (num_cols > Math.floor(page.length / 2)) {
-        throw new Error("Cannot have number of columns greater than half the size of page");
+    // idk the exact value, but at some point, too many columns is disadvantageous, and this code starts giving incorrect results
+    // for too high number of columns. idk if this arbitrary value will even hold up in the future
+    if (numCols >= Math.floor(page.length / 2) - 1) {
+        throw new Error("Cannot have number of columns greater than half the size of page minus one");
     }
 
     // Remove all elements from the faction dropdown. i.e. Clear it so we can add new dropdown content back to it
     const dropdown = document.getElementById(id);
     dropdown.innerHTML = '';
 
-    // Num per row for num_cols-1 cols
-    let num_per_row = Math.ceil(page.length / num_cols);
+    // Number of links per row 
+    let numPerRow = Math.ceil(page.length / numCols);
 
-    let final_col = 0;
-    if (page.length % num_cols != 0) {
-        // idk if this is accurate for all scenarios
-        final_col = num_per_row - 1;
-    }
-
-    let extraCounter = 1;
     let counter = 0;
     const table = document.createElement("table");
-    for (var i = 0; i < num_per_row; ++i) { 
+    for (var i = 0; i < numPerRow; ++i) { 
         const row = document.createElement("tr");
         table.appendChild(row);
 
-        if (page.length % num_cols == 0) {
-            for (var j = 0; j < num_cols; ++j) {
-                const col = document.createElement("td");
-                row.appendChild(col);
-    
-                const a = document.createElement("a");
-                a.href = getDirsUp(numDirsUp) + page[j * num_per_row + counter];
-                col.appendChild(a);
-    
-                const text = document.createTextNode(page[j * num_per_row + counter][1]);
-                a.appendChild(text)
+        for (var j = 0; j < numCols; ++j) {
+            // Tests if `page[j * numPerRow + counter]` exists. If it doesn't exist, then we skip it. 
+            // This should only happen if the final column isn't completely fill out.
+            if (typeof page[j * numPerRow + counter] === 'undefined') {
+                continue;
             }
-        } else {
-            for (var j = 0; j < num_cols-1; ++j) {
-                const col = document.createElement("td");
-                row.appendChild(col);
-    
-                const a = document.createElement("a");
-                a.href = getDirsUp(numDirsUp) + page[j * num_per_row + counter];
-                col.appendChild(a);
-    
-                const text = document.createTextNode(page[j * num_per_row + counter][1]);
-                a.appendChild(text);
-            }
-        }
 
-        
-        ++counter;
-
-        if (final_col == 0) {
-            continue;
-        }
-
-        if (extraCounter <= final_col) {
-            // console.log(page.length - num_per_row + extraCounter);
             const col = document.createElement("td");
             row.appendChild(col);
 
             const a = document.createElement("a");
-            // a.href = getDirsUp(numDirsUp) + page[page.length - extraCounter][0];
-            a.href = getDirsUp(numDirsUp) + page[page.length - num_per_row + extraCounter][0];
+            // For `page[j * numPerRow + counter]`, we skip a certain amount of links
+            // because when building a table, we fill out the rows first.
+            a.href = getDirsUp(numDirsUp) + page[j * numPerRow + counter];
             col.appendChild(a);
 
-            // const text = document.createTextNode(page[page.length - extraCounter][1]);
-            const text = document.createTextNode(page[page.length - num_per_row + extraCounter][1]);
-            a.appendChild(text);
-
-            ++extraCounter;
+            // For `page[j * numPerRow + counter]`, we skip a certain amount of links
+            // because when building a table, we fill out the rows first.
+            const text = document.createTextNode(page[j * numPerRow + counter][1]);
+            a.appendChild(text)
         }
-        
+        // `j * numPerRow` always results in the same values (for as many that appear). 
+        // The counter will add one to each new pass of the inner-loop, resulting in new
+        // array values
+        ++counter;
     }
     
     dropdown.appendChild(table);
