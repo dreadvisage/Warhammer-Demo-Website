@@ -113,8 +113,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echoNavbar(1);
     ?>
 
-    
-
     <div class="form-wrapper">
         <div class="form-group">
             <div class="form-group">

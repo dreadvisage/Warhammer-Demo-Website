@@ -14,7 +14,7 @@ function getDirsUp($num_dirs_up) {
 }
 
 function echoNavbar($num_dirs_up) {
-    echo '<script type = "text/javascript" src="' . getDirsUp($num_dirs_up) . 'calc_navbar_layout.js"></script>';
+    echo '<script type = "text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-dropdown-manager.js"></script>';
     echo '<div id="navbar">
     <div id="inner1">
         <a href="' . getDirsUp($num_dirs_up) . 'index.php"><img id="warhammer-logo" src="' . getDirsUp($num_dirs_up) . 'images/warhammer-logo-black.png" alt="Warhammer Logo"></a>

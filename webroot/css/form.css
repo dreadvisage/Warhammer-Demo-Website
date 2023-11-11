@@ -12,8 +12,8 @@
     align-items: center;
     justify-content: center;
 
-    margin-top: 4em;
-    height: 60vh;
+    /* 4em because of navbar height, 10vh as a generic distance from the navbar */
+    margin-top: calc(4em + 10vh);
 
     /* border: 3px solid red; */
 }
