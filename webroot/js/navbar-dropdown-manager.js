@@ -17,7 +17,6 @@ const FACTIONS_PAGES = [
 ];
 
 const POINTS_PAGES = [
-    ["points/votann-points.php", "Leagues of Votann"],
     ["points/sororitas-points.php", "Adepta Sororitas"],
     ["points/custodes-points.php", "Adeptus Custodes"],
     ["points/mechanicus-points.php", "Adeptus Mechanicus"],
@@ -31,6 +30,7 @@ const POINTS_PAGES = [
     ["points/chaos-knights-points.php", "Chaos Knights"],
     ["points/chaos-marines-points.php", "Chaos Space Marines"],
     ["points/dark-angels-points.php", "Dark Angels"],
+    ["points/votann-points.php", "Leagues of Votann"],
 ];
 
 // This contains all the html ids for the dropdowns in the navbar
@@ -48,12 +48,26 @@ the timeout. What this means is that, in our case, 200 milliseconds needs to pas
 determine that the user is done resizing. Then we execute our code. This can drastically reduce the amount of calculations being 
 done when resizing the window, especially when we only care when the user is done resizing their window.
 https://stackoverflow.com/questions/5489946/how-to-wait-for-the-end-of-resize-event-and-only-then-perform-an-action */
-var resizeTimeout;
+var factionsResizeTimeout;
+var pointsResizeTimeout;
 function windowResizeMonitor(id, numDirsUp) {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(function() {
-        calculateDropdownLayout(id, numDirsUp);
-    }, 200)
+    switch(id) {
+        case ID.FACTIONS:
+            clearTimeout(factionsResizeTimeout);
+            factionsResizeTimeout = setTimeout(function() {
+                calculateDropdownLayout(id, numDirsUp);
+            }, 200);
+            break;
+        case ID.POINTS:
+            clearTimeout(pointsResizeTimeout);
+            pointsResizeTimeout = setTimeout(function() {
+                calculateDropdownLayout(id, numDirsUp);
+            }, 200);
+            break;
+        default:
+            throw new Error("No valid dropdown id found.");
+    }
+    
 }
 
 function calculateDropdownLayout(id, numDirsUp) {

@@ -27,7 +27,7 @@ function echoNavbar($num_dirs_up) {
                     <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'factions.php">Factions</a>
                     <div id="factions-dropdown" class="dropdown-content">
                         <!--Add resize listener to window and calculate the initial layout-->
-                        <script>window.addEventListener("resize", function(){windowResizeMonitor("factions-dropdown", ' . $num_dirs_up . ')}); calculateDropdownLayout("factions-dropdown", ' . $num_dirs_up . ');</script>
+                        <script>window.addEventListener("resize", function(){windowResizeMonitor("factions-dropdown", ' . $num_dirs_up . ');}); calculateDropdownLayout("factions-dropdown", ' . $num_dirs_up . ');</script>
                     </div>
                 </div>
             </li>
@@ -39,7 +39,7 @@ function echoNavbar($num_dirs_up) {
                     <a id="nav-link" href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>
                         <div id="points-dropdown" class="dropdown-content">
                             <!--Add resize listener to window and calculate the initial layout-->
-                            <script>window.addEventListener("resize", windowResizeMonitor("points-dropdown", ' . $num_dirs_up . ')); calculateDropdownLayout("points-dropdown", ' . $num_dirs_up . ');</script>
+                            <script>window.addEventListener("resize", function(){windowResizeMonitor("points-dropdown", ' . $num_dirs_up . ');}); calculateDropdownLayout("points-dropdown", ' . $num_dirs_up . ');</script>
                         </div>
                     </div>
                 </li>';
