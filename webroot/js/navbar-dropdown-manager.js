@@ -86,7 +86,6 @@ function calculateDropdownLayout(id, numDirsUp) {
     }
 }
 
-// TODO. This currently has no ordering link in mind
 function calcResizeDropdown(num_cols, id, numDirsUp, page) {
 
     if (page == null || id == null) {
