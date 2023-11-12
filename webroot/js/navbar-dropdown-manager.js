@@ -70,6 +70,8 @@ function windowResizeMonitor(id, numDirsUp) {
     
 }
 
+// Determines what layout to use for the dropdown; specifically how many 
+// columns are going to be used.
 function calculateDropdownLayout(id, numDirsUp) {
     var page;
     switch(id) {
@@ -101,6 +103,7 @@ function calculateDropdownLayout(id, numDirsUp) {
     }
 }
 
+// Creates the dropdown table html and adds it to the element with an id matching `id`.
 // Organizes the links in the order they appear in their respective arrays from top to bottom, left to right. 
 function createDropdown(numCols, id, numDirsUp, page) {
     if (numCols == 0) {
