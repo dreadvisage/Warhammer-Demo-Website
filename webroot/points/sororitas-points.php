@@ -113,16 +113,39 @@ use HtmlUnitEchoBuilder as Builder;
 
           Builder::echoUnit("Palatine", 1, 14, 50);
 
-          Builder::echoUnit("Paragon Warsuits", 3, 14, 200);
+          Builder::echoUnit("Paragon Warsuits", 3, 12, 200);
 
           Builder::new("Penitent Engines")
             ->model(1, 14, 60)
             ->model(2, 12, 120)
             ->echo();
 
-          Builder::echoUnit("Paragon Warsuits", 1, 14, 40);
+          Builder::echoUnit("Preacher", 1, 14, 40);
 
-          Builder::echoUnit("Repentia Squad", 5, 12, 115);
+          Builder::new("Repentia Squad")
+            ->model(5, 14, 65)
+            ->model(10, 10, 130)
+            ->echo();
+
+          Builder::echoUnit("Retributor Squad", 5, 12, 115);
+
+          Builder::echoUnit("Saint Celestine", 3, 12, 135);
+
+          Builder::new("Seraphim Squad")
+            ->model(5, 14, 70)
+            ->model(10, 10, 140)
+            ->echo();
+
+          Builder::echoUnit("Sisters Novitiate Squad", 10, 12, 85);
+
+          Builder::echoUnit("Sororitas Rhino", 3, 14, 75);
+
+          Builder::echoUnit("Truimph of Saint Katherine", 1, 12, 125);
+
+          Builder::new("Zephyrim Squad")
+            ->model(5, 14, 70)
+            ->model(10, 10, 140)
+            ->echo();
           ?>
 
         </ul>

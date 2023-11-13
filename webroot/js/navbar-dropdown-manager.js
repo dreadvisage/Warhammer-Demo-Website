@@ -12,6 +12,11 @@ const FACTIONS_PAGES = [
     ["factions/chaos-knights.php", "Chaos Knights"],
     ["factions/chaos-marines.php", "Chaos Space Marines"],
     ["factions/dark-angels.php", "Dark Angels"],
+    ["factions/death-guard.php", "Death Guard"],
+    ["factions/deathwatch.php", "Deathwatch"],
+    ["factions/drukhari.php", "Drukhari"],
+    ["factions/genestealer-cults.php", "Genestealer Cults"],
+    ["factions/grey-knights.php", "Grey Knights"],
     ["factions/necrons.php", "Necrons"],
     ["factions/space-marine.php", "Space Marines"],
 ];
@@ -30,6 +35,11 @@ const POINTS_PAGES = [
     ["points/chaos-knights-points.php", "Chaos Knights"],
     ["points/chaos-marines-points.php", "Chaos Space Marines"],
     ["points/dark-angels-points.php", "Dark Angels"],
+    ["points/death-guard-points.php", "Death Guard"],
+    ["points/deathwatch-points.php", "Deathwatch"],
+    ["points/drukhari-points.php", "Drukhari"],
+    ["points/genestealers-points.php", "Genestealer Cults"],
+    ["points/grey-knights-points.php", "Grey Knights"],
     ["points/votann-points.php", "Leagues of Votann"],
 ];
 

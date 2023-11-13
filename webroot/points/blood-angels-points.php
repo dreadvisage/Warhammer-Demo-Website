@@ -60,7 +60,7 @@ use HtmlUnitEchoBuilder as Builder;
 
                     Builder::echoUnit("Eversor Assassin", 1, 14, 75);
 
-                    Builder::echoUnit("Extaction Squad", 10, 4, 110);
+                    Builder::echoUnit("Exaction Squad", 10, 10, 110);
 
                     Builder::echoUnit("Imperial Navy Breachers", 10, 10, 105);
 
@@ -78,9 +78,9 @@ use HtmlUnitEchoBuilder as Builder;
 
                     Builder::echoUnit("Rogue Trader Entourage", 4, 12, 105);
 
-                    Builder::echoUnit("Subductor Squad", 10, 4, 110);
+                    Builder::echoUnit("Subductor Squad", 10, 10, 110);
 
-                    Builder::echoUnit("Vigiliant Squad", 10, 4, 105);
+                    Builder::echoUnit("Vigiliant Squad", 10, 10, 105);
 
                     Builder::echoUnit("Vindicare Assassin", 1, 14, 80);
 
