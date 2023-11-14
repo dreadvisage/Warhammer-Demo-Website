@@ -32,7 +32,7 @@ require '../../utils/navbar.php';
                 <p>The Adeptus Titanicus, often known as the Titan Legions, is a formidable faction in the Warhammer 40,000 universe. 
                     They are masters of colossal war machines, the god-like Titans, which they use to wage titanic battles on a galactic scale.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Titan Legions: The Adeptus Titanicus is comprised of various Titan Legions, each with its own identity and history. These legions 
                     are renowned for their immense war machines called Titans, such as the Warlord and Reaver Titans. The Titans are massive bipedal 

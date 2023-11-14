@@ -18,18 +18,32 @@
     border-right: 1px solid black;
 }
 
+@media (max-width: 1200px) {
+    .left-panel {
+        width: 240px;
+    }
+}
+
+
+@media (min-width: 1500px) {
+    .left-panel {
+        width: 300px;
+    }
+}
+
+
 .profile-picture-content {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.profile-picture-frame {
 
+
+.profile-picture-frame {
     display: grid;
     margin-top: 20px;
-    width: 200px;
-    height: 200px;
+    width: 60%;
     border: 1px solid gray;
     border-radius: 50%;
 }
@@ -44,6 +58,10 @@
     /* Makes image a circle */
     border-radius: 50%;
 }
+
+
+
+
 
 .profile-picture-frame:hover {
     cursor: pointer;

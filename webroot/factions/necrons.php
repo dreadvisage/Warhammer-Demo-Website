@@ -29,7 +29,7 @@ require '../../utils/navbar.php';
                 <p>The Necrons are a faction in the Warhammer 40,000 universe, known for their ancient and advanced technology. 
                     Here is a summary of the Necron faction:</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                         Ancient and Enigmatic Race: The Necrons are an ancient alien race that predates even the rise of humanity 
                         in the Warhammer 40,000 universe. They were once a humanoid species but transferred their consciousness 

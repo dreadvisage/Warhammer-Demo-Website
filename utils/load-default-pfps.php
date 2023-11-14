@@ -33,12 +33,6 @@ while ($row_default_pfps = mysqli_fetch_array($results)) {
 
     echo '<td><input type="image" src="../' . $p . '" alt="' . $p . '" onclick="' . $js . '"></td>';
     
-    if ($i == 7) {
-        // TODO, currently have this as a do-nothing input
-        echo '<td><img src="../images/file-upload-icon2.png" alt="file-upload-icon2.png"></td>';
-        break;
-    }
-
     $i++;
 }
 echo '</table>';

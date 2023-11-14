@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     towering war machines, once noble protectors of humanity, have fallen to the corruption of Chaos and now serve the dark powers 
                     of the Warp.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Corrupted Nobility: Chaos Knights were once part of the Knightly Houses, noble traditions dedicated to protecting humanity. 
                     However, many have turned to Chaos, becoming Renegade Knights, driven by dark desires and the lure of power from the Warp. This 

@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     unshakable faith in the Emperor and their tireless crusade against heretics and aliens, making them one of the most relentless 
                     and righteous Chapters of the Adeptus Astartes.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Crusading Zeal: The Black Templars have an unquenchable zeal for battle, viewing themselves as the Emperor's sword against the enemies 
                     of humanity. They maintain a never-ending crusade against heretics and xenos across the galaxy. Their fervor is unyielding, and they 

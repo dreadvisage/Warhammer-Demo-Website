@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     40,000 universe. They are the keepers of knowledge and technology within the Imperium and are driven by a religious 
                     devotion to the Machine God, pursuing technological advancement at any cost.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Origin and Beliefs: The Adeptus Mechanicus originated from the remnants of the Dark Age of Technology and are fervent 
                     believers in the Omnissiah, whom they equate to the Machine God. They consider technology to be sacred and believe that 

@@ -32,7 +32,7 @@ require '../../utils/navbar.php';
                 <p>Chaos Daemons are malevolent and otherworldly entities that hail from the Warp, a realm of pure chaos and psychic energy, in the Warhammer 
                     40,000 universe. These entities serve the dark deities of Chaos and are embodiments of the most primal and destructive emotions.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Four Ruinous Powers: Chaos Daemons are aligned with one of the four major Chaos Gods: Khorne, the Blood God of violence; Tzeentch, the 
                     Changer of Ways and master of sorcery; Nurgle, the Lord of Decay and disease; and Slaanesh, the Prince of Pleasure and excess. Each Chaos 

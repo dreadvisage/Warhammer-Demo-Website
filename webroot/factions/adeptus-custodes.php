@@ -32,7 +32,7 @@ require '../../utils/navbar.php';
                 <p>The Adeptus Custodes, or Custodian Guard, are the Emperor of Mankind's elite protectors in the Warhammer 40,000 universe. 
                     Their sole purpose is to safeguard the Imperial Palace on Terra and defend the Emperor.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Origin and Purpose: The Adeptus Custodes were founded during the early days of the Imperium, following the Emperor's 
                     unification of Terra. They were created to be the Emperor's most trusted guardians and were selected from the finest 

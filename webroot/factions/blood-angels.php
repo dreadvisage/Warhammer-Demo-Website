@@ -32,7 +32,7 @@ require '../../utils/navbar.php';
                 <p>The Blood Angels are a noble and tragic Space Marine Chapter in the Warhammer 40,000 universe. Renowned for their warrior's grace and 
                     ferocity in battle, they carry the dual burden of a dark curse that threatens their very existence.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Blood Angels Gene-Seed: The Blood Angels, like all Space Marine Chapters, inherit their gene-seed from their Primarch, Sanguinius. 
                     This gene-seed endows them with remarkable abilities, including heightened strength and a potent black rage. However, the Blood Angels 

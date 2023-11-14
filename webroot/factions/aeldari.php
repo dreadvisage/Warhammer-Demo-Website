@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     They are a highly advanced, elf-like race with exceptional psychic abilities and a complex society that once rivaled 
                     the might of the Imperium.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Eldar Species: The Aeldari consist of several distinct groups, including the craftworld Eldar, the enigmatic Harlequins, 
                     and the dark and hedonistic Drukhari. Each has its own unique culture and motives. The craftworld Eldar are known for 

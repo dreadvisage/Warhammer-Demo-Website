@@ -29,7 +29,7 @@ require '../../utils/navbar.php';
                 <p>The Space Marines are a fictional faction in the Warhammer 40,000 universe, a tabletop wargame and science 
                     fiction setting created by Games Workshop. Here is a brief summary of the Space Marine faction:</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                         Superhuman Soldiers: Space Marines are genetically enhanced and cybernetically modified superhuman soldiers. 
                         They are larger, stronger, and tougher than regular humans, and they are known for their unwavering loyalty 

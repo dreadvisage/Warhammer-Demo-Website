@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     universe. Comprised of countless regiments from diverse planets, it forms the backbone of the Imperium's military might, defending 
                     it against a myriad of threats.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Planetary Regiments: The Astra Militarum is vast, consisting of regiments raised from countless Imperial worlds. Each regiment brings 
                     its unique traditions, culture, and fighting style to the battlefield. These regiments are typically equipped with a wide range of 

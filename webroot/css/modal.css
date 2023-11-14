@@ -17,9 +17,7 @@
 /* Modal Content */
 .modal-content {
   display: flex;
-    justify-content: center;
-    /* border: 2px solid salmon; */
-  /* width: 80%; */ 
+  justify-content: center;
 }
   
 
@@ -27,7 +25,7 @@
 .close {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 8px;
   color: #aaaaaa;
   font-size: 28px;
   font-weight: bold;
@@ -40,11 +38,8 @@
   cursor: pointer;
 }
 
-.image-table {  
-    background-color: #fefefe;
-    
-    /* border: 1px solid red; */
-    margin: auto;
+.image-table {
+    background-color: rgb(109, 15, 15);
 }
 
 /* My code */
@@ -57,21 +52,22 @@
   padding: 40px;
   background-color: rgb(109, 15, 15);
   display: block;
-  /* border: 1px solid green; */
+
+  border: 3px solid black;
 }
 
 .image-table tr td {
-    /* We set viewport width because all the pfps are the same width+height.
-    By setting just width, default behavior is to maintain aspect ratio. 
-    TODO. Have this either be width/height depending on whichever is less. */
-    width: 10vw;
-    
-    /* border: 1px solid blue; */
+  /* Ensure the image is actually centered within the td. Otherwise, even with perfect square 
+  images, there is a slight padding difference on the bottom of the td cell*/
+  display: inline-flex;
+  justify-content: center;
+  /* This removes the ever-so-slight spacing in between the tr and td so that the images are right next to each other */
+  margin: -2px -1px;
+  width: 10vw;
 }
 
 .image-table tr td input[type=image],
 .image-table tr td img {
-  height: 100%;
   width: 100%;
 }
 
@@ -79,5 +75,5 @@
 .image-table tr td img:hover {
   cursor: pointer;
   transform: scale(0.9);
-  opacity: 0.9;
+  opacity: 0.7;
 }

@@ -32,7 +32,7 @@ require '../../utils/navbar.php';
                 <p>The Dark Angels are a mysterious and secretive Space Marine Chapter in the Warhammer 40,000 universe. They are renowned for 
                     their unshakable loyalty to the Emperor and their dark, hidden past, often shrouded in enigmatic traditions and secrets.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Obsessive Quest for Redemption: The Dark Angels are driven by an obsessive desire to atone for their Chapter's ancient betrayal during 
                     the Horus Heresy. They view this betrayal as their ultimate shame and are determined to seek redemption through acts of heroic valor. 

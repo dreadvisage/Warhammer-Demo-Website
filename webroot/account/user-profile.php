@@ -57,8 +57,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>User Profile</title>
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="user-profile.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="../css/user-profile.css">
+    <link rel="stylesheet" href="../css/modal.css">
 </head>
 <body>
     
@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </form>
                     </div>
 
-                    <script src="modal.js"></script>
+                    <script src="../js/modal.js"></script>
                 </div>
             </div>
 

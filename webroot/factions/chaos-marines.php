@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     universe. They are former Space Marines who have turned against the Imperium and pledged their loyalty to the dark gods of Chaos, 
                     becoming relentless agents of destruction.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Betrayal of the Imperium: Chaos Space Marines were once loyal Adeptus Astartes, warriors of the Emperor's own design. However, 
                     they turned against the Imperium, embracing the corrupting influence of Chaos. Their rebellion was sparked during the Horus Heresy, 

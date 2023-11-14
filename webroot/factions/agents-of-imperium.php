@@ -33,7 +33,7 @@ require '../../utils/navbar.php';
                     individuals and organizations are devoted to the service of the Imperium and are tasked with a range of critical 
                     duties to ensure its survival in the grim and perilous galaxy.</p>
 
-                <ul>
+                <ul class="faction-list">
                     <li>
                     Infiltration and Espionage: Numerous secretive organizations operate under the auspices of the Imperium, including the Inquisition, 
                     Adeptus Arbites, and Officio Assassinorum. They specialize in espionage, intelligence gathering, and subterfuge. Inquisitors, in 
