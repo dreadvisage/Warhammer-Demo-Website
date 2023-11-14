@@ -27,22 +27,59 @@ body {
     /* Centers items vertically */
     align-items: center;
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
-    /* border: 0.05em solid red; */
 }
 
-#inner1 {  
+/* TESTING START */
+
+#alt-navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
+}
+@media (min-width: 1000px) {
+    #navbar {
+        display: flex;
+    }
+    .inner3 {
+        display: block;
+    }
+    #alt-navbar {
+        display: none;
+    }
+}
+@media (max-width: 1000px) {
+    #navbar {
+        display: none;
+    }
+    .inner3 {
+        display: none;
+    }
+    #alt-navbar {
+        display: inline-flex;
+    }
+}
+
+/* TESTING END */
+
+
+.inner1 {  
     /* border: 0.05em solid black; */
     padding: 0 0 0 0.5em;
 }
 
-#warhammer-logo {
+.warhammer-logo {
     width: 4vw;
 }
 
 /* Sets minimum warhammer-logo size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (max-width: 80em) {
-    #warhammer-logo {
+    .warhammer-logo {
         width: 3.2em;
     }
 }
@@ -50,24 +87,24 @@ body {
 /* Sets max warhammer-logo size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (min-width: 100em) {
-    #warhammer-logo {
+    .warhammer-logo {
         width: 4em;
     }
 }
 
-#inner2 {
+.inner2 {
     width: 100%;
     
     /* border: 0.05em solid blue; */
 }
 
-#inner2 ul {
+.inner2 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
   
-#inner2 li {
+.inner2 li {
     /* Stacks the list horizontally */
     float: left;
     width: 10vw;
@@ -79,7 +116,7 @@ body {
 'li a' and its '@media max-width' within this css. */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (max-width: 70em) {
-    #inner2 li {
+    .inner2 li {
         width: 7em;
     }
 }
@@ -88,18 +125,18 @@ body {
 'li a' and its '@media min-width' within this css. */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (min-width: 90em) {
-    #inner2 li {
+    .inner2 li {
         width: 9em;
     }
 }
 
-#inner2 li:last-child {
+.inner2 li:last-child {
     border-right: none;
 }
 
 
 /* https://css-tricks.com/fun-viewport-units/ */
-#inner2 li a {
+.inner2 li a {
     display: block;
     color: white;
     padding: 14px 16px;
@@ -113,7 +150,7 @@ body {
 /* Sets minimum font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (max-width: 70em) {
-    #inner2 li a {
+    .inner2 li a {
       font-size: 0.8em;
     }
 }
@@ -121,13 +158,13 @@ body {
 /* Sets max font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (min-width: 80em) {
-    #inner2 li a {
+    .inner2 li a {
       font-size: 0.9em;
     }
 }
 
 /* Used to stylize the vertical dropdown <a> tags */
-#inner2 li a {
+.inner2 li a {
     /* https://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin-0-auto#:~:text=8-,margin%3A0%20auto%3B,then%20margin%3Aauto%20works%20perfectly. */
     /*  */
     cursor: pointer;
@@ -148,7 +185,7 @@ body {
     background-color: #8f2f2f;
 }
 
-#nav-link {
+.nav-link {
     text-align: center;
 }
 
@@ -158,25 +195,23 @@ body {
 }
 /* The '#inner2 li a' properties will take precedence over the styling of these elements
 unless we specify this directly from #inner2. */
-#inner2 li div a {
+.inner2 li div a {
     float: none;
 }
   
 
 /* I use px here because em seems to scale weirdly */
-#inner3 input[type=text] {
+.inner3 input[type=text] {
     padding: 5px 0 5px 0;
     border: none;
     font-size: calc(0.1em + 1vw);
     width: 230px;
-
-    /* border: 0.05em solid salmon; */
 }
 
 /* Sets minimum font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (max-width: 70em) {
-    #inner3 input[type=text] {
+    .inner3 input[type=text] {
       font-size: 0.8em;
     }
 }
@@ -184,25 +219,23 @@ unless we specify this directly from #inner2. */
 /* Sets max font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (min-width: 90em) {
-    #inner3 input[type=text] {
+    .inner3 input[type=text] {
       font-size: 1em;
     }
 }
 
-#inner4 {
+.inner4 {
     padding-right: 0.5em;
-
-    /* border: 0.05em solid darkcyan; */
 }
 
-#search-icon {
+.search-icon {
     width: 2vw;
 }
 
 /* Sets minimum search-icon size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (max-width: 90em) {
-    #search-icon {
+    .search-icon {
         width: 1.7em;
     }
 }
@@ -210,21 +243,22 @@ unless we specify this directly from #inner2. */
 /* Sets max search-icon size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
 @media (min-width: 100em) {
-    #search-icon {
+    .search-icon {
         width: 2em;
     }
 }
 
-#inner5 {  
+.inner5 {  
     border-left: 3px solid black;
     padding: 0 0.5em 0 0.5em;
     /* border: 0.05em solid black;  */
 }
 
 /* Account Icon has a fixed size. This is to ensure that the navbar always has a fixed height. */
-#account-icon {
+.account-icon {
     width: 3em;
 
     /* Makes image a circle */
     border-radius: 50%;
 }
+

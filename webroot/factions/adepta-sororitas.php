@@ -18,6 +18,7 @@ require '../../utils/navbar.php';
 
         <?php 
             echoNavbar(1);
+            echoAltNavbar(1);
         ?>
         
         <div class="display">
