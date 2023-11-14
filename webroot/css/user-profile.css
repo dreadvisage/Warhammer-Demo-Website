@@ -50,7 +50,7 @@
 .profile-picture-frame {
     display: grid;
     margin-top: 20px;
-    width: 60%;
+    width: 55%;
     border: 1px solid gray;
     border-radius: 50%;
 }
@@ -117,13 +117,14 @@
 
 .account-control {
     display: block;
+    margin-bottom: 15px;
 }
 
 hr {
     margin: 10px 0 10px 0;
 }
 
-.section_header {
+.section-header {
     margin: 0;
     font-size: 1.6vw;
     text-align: center;
@@ -131,14 +132,25 @@ hr {
 
 
 @media (max-width: 1000px) {
-    .section_header {
+    .section-header {
         font-size: 16px;
     }
 }
 
 @media (min-width: 1150px) {
-    .section_header {
+    .section-header {
         font-size: 18px;
+    }
+}
+
+/* Removes the "account control" label and it's <hr>  
+when the screen height gets too small */
+@media (max-height: 400px) {
+    .section-header {
+        display: none;
+    }
+    .section-header-rule {
+        display: none;
     }
 }
 
@@ -172,6 +184,7 @@ a.btn-option {
 @media (min-width: 1350px) {
     a.btn-option {
         font-size: 14px;
+        width: 110px;
     }
 }
 

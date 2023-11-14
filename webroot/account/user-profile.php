@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class="main-wrapper">
         <div class="left-panel">
-            <div>
+            <div> <!-- Outer div needed for flexbox spacing -->
                 <div class="profile-picture-content">
                     <div id="pfp-frame-id" class="profile-picture-frame">
                         <img class="profile-picture" src="<?php echo get_pfp(); ?>">
@@ -80,8 +80,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <hr>
             </div>
             <div class="account-control">
-                <p class="section_header">Account Control</p>
-                <hr>
+                <p class="section-header">Account Control</p>
+                <hr class="section-header-rule">
                 <div class="account-control-btns">
                     <a class="btn-option btn-pad" href="reset-password.php">Reset Password</a>
                     <a class="btn-option" href="logout.php">Logout</a> <!--Put a popup to confirm logout-->

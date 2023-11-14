@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 08, 2023 at 03:21 AM
+-- Host: localhost
+-- Generation Time: Nov 14, 2023 at 06:40 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,7 +44,8 @@ INSERT INTO `default_pfps` (`id`, `pfp_path`) VALUES
 (5, 'images/pfp/pfp5.jpg'),
 (6, 'images/pfp/pfp6.jpg'),
 (7, 'images/pfp/pfp7.jpg'),
-(8, 'images/pfp/pfp8.jpg');
+(8, 'images/pfp/pfp8.jpg'),
+(9, 'images/pfp/pfp9.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,13 +86,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `default_pfps`
 --
 ALTER TABLE `default_pfps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
