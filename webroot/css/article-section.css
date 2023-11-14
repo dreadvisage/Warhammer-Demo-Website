@@ -49,3 +49,14 @@ body {
 
     /* border: 1px solid blue; */
 }
+
+/* "Removes" the background image and stretches the article to 100vw when the 
+screen size gets too small */
+@media (max-width: 950px) {
+    .pad {
+        display: none;
+    }
+    #article {
+        width: 100vw;
+    }
+}
