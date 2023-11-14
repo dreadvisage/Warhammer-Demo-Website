@@ -69,15 +69,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class="main-wrapper">
         <div class="left-panel">
-            <div class="profile-picture-content">
-                <div id="pfp-frame-id" class="profile-picture-frame">
-                    <img class="profile-picture" src="<?php echo get_pfp(); ?>">
-                    <img class="file-upload-icon" src="../images/file-upload.png">
+            <div>
+                <div class="profile-picture-content">
+                    <div id="pfp-frame-id" class="profile-picture-frame">
+                        <img class="profile-picture" src="<?php echo get_pfp(); ?>">
+                        <img class="file-upload-icon" src="../images/file-upload.png">
+                    </div>
                 </div>
+                <p class="profile-name"><?php echo htmlspecialchars($_SESSION["username"]); ?></p>
+                <hr>
             </div>
-            <p class="profile-name"><?php echo htmlspecialchars($_SESSION["username"]); ?></p>
-            <hr>
-            <div class="left-panel-padding"></div>
             <div class="account-control">
                 <p class="section_header">Account Control</p>
                 <hr>
@@ -106,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="main-content">
-            <a class="btn-option" href="clear-unit-table.php">Clear Unit Table</a>
+            <a class="btn-option" href="clear-unit-table.php">Clear Table</a>
             <?php 
                 require_once "load-unit-table-data.php"; 
                 echo_unit_table_data();
