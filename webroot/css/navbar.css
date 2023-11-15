@@ -29,7 +29,7 @@ body {
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
 }
 
-/* TESTING START */
+/* ALT NAVBAR START */
 
 #alt-navbar {
     display: none;
@@ -38,6 +38,7 @@ body {
     width: 100%;
     height: 4em;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
 }
@@ -63,8 +64,76 @@ body {
         display: inline-flex;
     }
 }
+.alt-inner1 {
+    padding: 0 0 0 0.5em;
+}
+#three-line-menu-btn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.three-line-icon {
+    width: 35px;
+}
+#three-line-dropdown {
+    position: fixed;
+    left: 0;
+    flex-direction: column;
+    
+}
+.alt-inner2 {
+    /* This adds the padding of alt-inner4 and the alt-account-icon width 
+    in order to truly center the alt-warhammer-logo icon. Basically it centers
+    the icon as if the search icon didn't exist. */
+    margin-left: calc(0.5em + 3em);
+}
+.alt-warhammer-logo {
+    width: 60px;
+}
+.alt-inner-3-4-wrapper {
+    display: flex;
+    align-items: center;
+}
+.alt-inner3 {
+    padding: 0 0.5em 0 0;
+}
+.alt-search-icon {
+    width: 40px;
+}
+.alt-inner4 {
+    border-left: 3px solid black;
+    padding: 0 0.5em 0 0.5em;
+}
+.alt-account-icon {
+    width: 3em;
 
-/* TESTING END */
+    /* Makes image a circle */
+    border-radius: 50%;
+}
+.alt-dropdown-content {
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.alt-dropdown-content a {
+    color: white;
+    padding: 24px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: WHFont;
+    cursor: pointer;
+}
+
+.alt-dropdown-content a:hover {
+    background-color: #8f2f2f;
+}
+
+/* ALT NAVBAR END */
 
 
 .inner1 {  
@@ -143,7 +212,7 @@ body {
     text-decoration: none;
     font-size: calc(0.1em + 1vw); /* similar calc(8px + 1vw) */
     font-family: WHFont;
-    
+    cursor: pointer;
     /* border: 0.05em solid purple; */
 }
 
@@ -161,13 +230,6 @@ body {
     .inner2 li a {
       font-size: 0.9em;
     }
-}
-
-/* Used to stylize the vertical dropdown <a> tags */
-.inner2 li a {
-    /* https://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin-0-auto#:~:text=8-,margin%3A0%20auto%3B,then%20margin%3Aauto%20works%20perfectly. */
-    /*  */
-    cursor: pointer;
 }
 
 /* Dropdown content (hidden by default) */

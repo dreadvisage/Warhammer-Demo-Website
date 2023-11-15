@@ -145,7 +145,7 @@ hr {
 
 /* Removes the "account control" label and it's <hr>  
 when the screen height gets too small */
-@media (max-height: 400px) {
+@media (max-height: 500px) {
     .section-header {
         display: none;
     }
