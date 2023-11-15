@@ -142,24 +142,27 @@ body {
 }
 
 .warhammer-logo {
-    width: 4vw;
+    width: 60px;
 }
+
 
 /* Sets minimum warhammer-logo size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (max-width: 80em) {
+/*@media (max-width: 80em) {
     .warhammer-logo {
         width: 3.2em;
     }
 }
+*/
 
 /* Sets max warhammer-logo size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 100em) {
+/*@media (min-width: 100em) {
     .warhammer-logo {
         width: 4em;
     }
 }
+*/
 
 .inner2 {
     width: 100%;
@@ -176,7 +179,7 @@ body {
 .inner2 li {
     /* Stacks the list horizontally */
     float: left;
-    width: 10vw;
+    width: 130px;
     border-right: 3px solid black;
     
 }
@@ -184,20 +187,20 @@ body {
 /* Sets min padding width for the list items. This max-width is tied with css style property
 'li a' and its '@media max-width' within this css. */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (max-width: 70em) {
+/*@media (max-width: 70em) {
     .inner2 li {
         width: 7em;
     }
-}
+}*/
 
 /* Sets max padding width for the list items. This min-width is tied with css style property
 'li a' and its '@media min-width' within this css. */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 90em) {
+/*@media (min-width: 90em) {
     .inner2 li {
         width: 9em;
     }
-}
+}*/
 
 .inner2 li:last-child {
     border-right: none;
@@ -210,7 +213,7 @@ body {
     color: white;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: calc(0.1em + 1vw); /* similar calc(8px + 1vw) */
+    font-size: 14px; /* similar calc(8px + 1vw) */
     font-family: WHFont;
     cursor: pointer;
     /* border: 0.05em solid purple; */
@@ -218,19 +221,19 @@ body {
 
 /* Sets minimum font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (max-width: 70em) {
+/*@media (max-width: 70em) {
     .inner2 li a {
       font-size: 0.8em;
     }
-}
+}*/
 
 /* Sets max font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 80em) {
+/*@media (min-width: 80em) {
     .inner2 li a {
       font-size: 0.9em;
     }
-}
+}*/
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
@@ -266,49 +269,49 @@ unless we specify this directly from #inner2. */
 .inner3 input[type=text] {
     padding: 5px 0 5px 0;
     border: none;
-    font-size: calc(0.1em + 1vw);
+    font-size: 14px;
     width: 230px;
 }
 
 /* Sets minimum font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (max-width: 70em) {
+/*@media (max-width: 70em) {
     .inner3 input[type=text] {
       font-size: 0.8em;
     }
-}
+}*/
 
 /* Sets max font size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 90em) {
+/*@media (min-width: 90em) {
     .inner3 input[type=text] {
       font-size: 1em;
     }
-}
+}*/
 
 .inner4 {
     padding-right: 0.5em;
 }
 
 .search-icon {
-    width: 2vw;
+    width: 30px;
 }
 
 /* Sets minimum search-icon size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (max-width: 90em) {
+/*@media (max-width: 90em) {
     .search-icon {
         width: 1.7em;
     }
-}
+}*/
 
 /* Sets max search-icon size */
 /* IDK how to calculate the best value for smoothest scaling caps. These values are eye-balled. */
-@media (min-width: 100em) {
+/*@media (min-width: 100em) {
     .search-icon {
         width: 2em;
     }
-}
+}*/
 
 .inner5 {  
     border-left: 3px solid black;
