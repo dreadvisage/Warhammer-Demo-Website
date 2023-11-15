@@ -21,12 +21,17 @@ function registerThreeLineMenuListeners() {
     document.querySelectorAll("*").forEach(item => {
         if (item.className == "three-line-icon" || item.id == "three-line-menu-btn") {
             item.addEventListener("click", event => {
+                /* Because in the else statement, we add the command to close the three
+                line menu, we need to stop the events from propagating downward. 
+                In short, when a click occurs, that click is applied to all parent elements
+                which in turn, run their onclick events. By stopping propagation here, 
+                we ensure that if and only if these exceptions are clicked, they won't 
+                propagate downward and accidentally close the three line menu. */
                 event.stopPropagation();
                 toggleThreeLineMenu();
             });
         } else {
             item.addEventListener("click", event => {
-                event.stopPropagation();
                 closeThreeLineMenu();
             });
         }

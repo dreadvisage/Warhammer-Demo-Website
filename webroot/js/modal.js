@@ -9,18 +9,18 @@ var modal_content = document.getElementById("modal-content-id");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-container.onclick = function() {
+container.addEventListener("click", function() {
+    console.log("opening model");
     modal.style.display = "block";
-}
+});
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.addEventListener("click", function() {
     modal.style.display = "none";
-}
+});
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.addEventListener("click", event => {
     if (event.target == modal || event.target == modal_content) {
         modal.style.display = "none";
     }
-}
+});

@@ -87,23 +87,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <a class="btn-option" href="logout.php">Logout</a> <!--Put a popup to confirm logout-->
                 </div>
             </div>
+        </div>
 
-            
-
-            
-            <div id="myModal" class="modal">
-                <div id="modal-content-id" class="modal-content">
-                    <div class="wrapper-table">
-                        <span class="close">&times;</span>
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                            <?php require_once "../../utils/load-default-pfps.php"; ?>
-                        </form>
-                    </div>
-
-                    <script src="../js/modal.js"></script>
+        <div id="myModal" class="modal">
+            <div id="modal-content-id" class="modal-content">
+                <div class="wrapper-table">
+                    <span class="close">&times;</span>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <?php require_once "../../utils/load-default-pfps.php"; ?>
+                    </form>
                 </div>
-            </div>
 
+                <script src="../js/modal.js"></script>
+            </div>
         </div>
 
         <div class="main-content">
