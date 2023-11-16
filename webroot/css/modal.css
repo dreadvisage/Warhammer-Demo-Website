@@ -2,9 +2,12 @@
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
+
+  justify-content: center;
+  align-items: center;
+
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -18,6 +21,8 @@
 .modal-content {
   display: flex;
   justify-content: center;
+  align-items: center;
+  
 }
   
 
@@ -63,7 +68,13 @@
   justify-content: center;
   /* This removes the ever-so-slight spacing in between the tr and td so that the images are right next to each other */
   margin: -2px -1px;
-  width: 10vw;
+  width: 170px;
+}
+
+@media (max-width: 900px) {
+  .image-table tr td {
+    width: 120px;
+  }
 }
 
 .image-table tr td input[type=image],

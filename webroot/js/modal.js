@@ -10,8 +10,7 @@ var modal_content = document.getElementById("modal-content-id");
 var span = document.getElementsByClassName("close")[0];
 
 container.addEventListener("click", function() {
-    console.log("opening model");
-    modal.style.display = "block";
+    modal.style.display = "flex";
 });
 
 span.addEventListener("click", function() {
