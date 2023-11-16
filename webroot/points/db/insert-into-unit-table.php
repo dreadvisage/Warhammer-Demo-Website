@@ -19,9 +19,9 @@ $num_models = 0;
 $unit_points = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $models = $_POST["models"];
-    $points = $_POST["points"];
+    $name = $_REQUEST["name"];
+    $models = $_REQUEST["models"];
+    $points = $_REQUEST["points"];
 
     /* For each user, create a table for them so that we can insert their units into it */
     $query = 'INSERT INTO unit_table (UserID, name, models, points) VALUES (?,?,?,?)';
@@ -33,8 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $param_models = $models;
         $param_points = $points;
         if ($stmt->execute()) {
-            header("location: " . $_SERVER['HTTP_REFERER']);
-            exit;
         } else {
             echo "Oops! Something went wrong. Please try again later.";
         }

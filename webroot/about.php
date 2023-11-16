@@ -11,7 +11,6 @@ require '../utils/navbar.php';
     <title>About</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/article-section.css">
-    <link rel="stylesheet" href="css/article-contents.css">
 </head>
 <body>
     <div id="background-image"></div>
@@ -24,6 +23,17 @@ require '../utils/navbar.php';
         <div class="pad"></div>
         <div id="article"> 
             <p>This is the about page!</p>
+            <script src="js/create-unit-helper.js"></script>
+            <script>
+                setTarget("article");
+
+                UnitBuilder.new("Corsair Voidreavers")
+                .model(5, 14, 70)
+                .add();
+
+
+
+            </script>
         </div>
         <div class="pad"></div>
     </div>    
