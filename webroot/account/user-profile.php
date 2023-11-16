@@ -15,40 +15,6 @@ if(isNotLoggedIn()){
     exit;
 }
 
-function get_pfp() {
-    return "../" . getUserPfp(); 
-}
-
-/* The 'DOCUMENT_ROOT' for XAMPP is .../XAMPP/htdocs . But we need to follow the symlink we created. 
-So we add on /project . Then wherever the 'project' folder is, we go up one directory. And then we are
-able to access the required folder from our project root. We do this because not every file that 
-includes/requires this php file, has the same amount of directories to navigate. So instead, we just 
-use PHP's built-in tools to navigate from the 'DOCUMENT_ROOT' instead which is always a uniform distance.*/
-$config_path = $_SERVER['DOCUMENT_ROOT'];
-$config_path .= "/project/../utils/config.php";
-
-require_once $config_path;
-
-/* Updates and stores the pfp in the database */
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $query = "UPDATE users SET pfp_path = ? WHERE username = ?";
-
-    if ($stmt = $mysqli->prepare($query)) {
-        $stmt->bind_param("ss", $param_pfp_path, $param_username);
-
-        $param_username = $_SESSION["username"];
-        $param_pfp_path = $_POST["pfpChoice"];
-
-        if($stmt->execute()) {
-            header("location: user-profile.php");
-        } else{
-            echo "Oops! Something went wrong. Please try again later.";
-        }
-
-        $stmt->close();
-    }
-}
-
 ?>
  
 <!DOCTYPE html>
@@ -59,6 +25,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/user-profile.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <script src="../js/pfp-table-values.js"></script>
+    <script src="../js/modal.js"></script>
 </head>
 <body>
     
@@ -72,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div> <!-- Outer div needed for flexbox spacing -->
                 <div class="profile-picture-content">
                     <div id="pfp-frame-id" class="profile-picture-frame">
-                        <img class="profile-picture" src="<?php echo get_pfp(); ?>">
+                        <img class="profile-picture" src="../<?php echo getUserPfp(); ?>">
                         <img class="file-upload-icon" src="../images/file-upload.png">
                     </div>
                 </div>
@@ -93,12 +61,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div id="modal-content-id" class="modal-content">
                 <div class="wrapper-table">
                     <span class="close">&times;</span>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <?php require_once "../../utils/load-default-pfps.php"; ?>
-                    </form>
+                    <table class="image-table">
+                        <script>loadPfpTableValues(3, 1);</script>
+                    </table>
                 </div>
-
-                <script src="../js/modal.js"></script>
+                <script>registerModelListeners();</script>
             </div>
         </div>
 
@@ -111,9 +78,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
     </div>
-
-
-    
-
 </body>
 </html>

@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 04:49 AM
+-- Host: localhost
+-- Generation Time: Nov 16, 2023 at 10:00 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,31 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `cs268database`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `default_pfps`
---
-
-CREATE TABLE `default_pfps` (
-  `pfp_path` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `default_pfps`
---
-
-INSERT INTO `default_pfps` (`pfp_path`) VALUES
-('images/pfp/pfp1.jpg'),
-('images/pfp/pfp2.jpg'),
-('images/pfp/pfp3.jpg'),
-('images/pfp/pfp4.jpg'),
-('images/pfp/pfp5.jpg'),
-('images/pfp/pfp6.jpg'),
-('images/pfp/pfp7.jpg'),
-('images/pfp/pfp8.jpg'),
-('images/pfp/pfp9.jpg');
 
 -- --------------------------------------------------------
 
@@ -98,7 +73,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
