@@ -26,7 +26,9 @@ require '../../utils/navbar.php';
                 <h2>Deathwatch</h2>
                 <hr>
 
+                <div class ="image">
                 <img src = "../images/deathwatch-image.jpeg" alt = "Deathwatch" height = "300" width = "500">
+                </div>
 
                 <p>The Deathwatch is a highly specialized and secretive faction within the Warhammer 40,000 universe. Composed of 
                     elite Space Marines from various Chapters, the Deathwatch serves as the Imperium's foremost xenos-hunting force, 

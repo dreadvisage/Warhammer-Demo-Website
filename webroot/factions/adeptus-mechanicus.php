@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Adeptus Mechanicus</h2>
                 <hr>
 
+                <div class ="image">
                 <img src = "../images/mechanicus-images.webp" alt = "Tech-Priests" height = "300" width = "500">
+                </div>
 
                 <p>The Adeptus Mechanicus, often referred to as the Tech-Priests, is a technologically-obsessed faction in the Warhammer 
                     40,000 universe. They are the keepers of knowledge and technology within the Imperium and are driven by a religious 

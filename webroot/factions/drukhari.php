@@ -26,7 +26,9 @@ require '../../utils/navbar.php';
                 <h2>Drukhari</h2>
                 <hr>
 
+                <div class ="image">
                 <img src = "../images/drukhari-image.jpeg" alt = "The Dark Eldar" height = "300" width = "500">
+                </div>
 
                 <p>The Drukhari, formerly known as the Dark Eldar, are a sinister and sadistic faction within the Warhammer 40,000 universe. 
                     Hailing from the dark city of Commorragh in the Webway, the Drukhari revel in cruelty, piracy, and the pursuit of hedonistic 

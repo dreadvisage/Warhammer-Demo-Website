@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Aeldari</h2>
                 <hr>
 
+                <div class ="image">
                 <img src = "../images/aeldari-image.jpeg" alt = "The Eldar" height = "300" width = "500">
+                </div>
 
                 <p>The Aeldari, often referred to as the Eldar, are an ancient and enigmatic faction in the Warhammer 40,000 universe. 
                     They are a highly advanced, elf-like race with exceptional psychic abilities and a complex society that once rivaled 

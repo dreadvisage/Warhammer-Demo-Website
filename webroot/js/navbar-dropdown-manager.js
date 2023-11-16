@@ -17,7 +17,10 @@ const FACTIONS_PAGES = [
     ["factions/drukhari.php", "Drukhari"],
     ["factions/genestealer-cults.php", "Genestealer Cults"],
     ["factions/grey-knights.php", "Grey Knights"],
+    ["factions/imperial-knights.php", "Imperial Knights"],
+    ["factions/leagues-of-votann.php", "Leagues of Votann"],
     ["factions/necrons.php", "Necrons"],
+    ["factions/orks.php", "Orks"],
     ["factions/space-marine.php", "Space Marines"],
 ];
 
@@ -40,7 +43,10 @@ const POINTS_PAGES = [
     ["points/drukhari-points.php", "Drukhari"],
     ["points/genestealers-points.php", "Genestealer Cults"],
     ["points/grey-knights-points.php", "Grey Knights"],
+    ["points/imperial-knights-points.php", "Imperial Knights"],
     ["points/votann-points.php", "Leagues of Votann"],
+    ["points/necrons-points.php", "Necrons"],
+    ["points/orks-points.php", "Orks"],
 ];
 
 // This contains all the html ids for the dropdowns in the navbar

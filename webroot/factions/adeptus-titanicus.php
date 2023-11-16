@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Adeptus Titanicus</h2>
                 <hr>
 
+                <div class ="image">
                 <img src = "../images/titanicus-image.jpeg" alt = "Titan Legions" height = "300" width = "500">
+                </div>
 
                 <p>The Adeptus Titanicus, often known as the Titan Legions, is a formidable faction in the Warhammer 40,000 universe. 
                     They are masters of colossal war machines, the god-like Titans, which they use to wage titanic battles on a galactic scale.</p>
