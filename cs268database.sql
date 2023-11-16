@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 14, 2023 at 06:40 PM
+-- Host: 127.0.0.1
+-- Generation Time: Nov 16, 2023 at 04:49 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `default_pfps` (
-  `id` int(11) NOT NULL,
   `pfp_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -36,16 +35,29 @@ CREATE TABLE `default_pfps` (
 -- Dumping data for table `default_pfps`
 --
 
-INSERT INTO `default_pfps` (`id`, `pfp_path`) VALUES
-(1, 'images/pfp/pfp1.jpg'),
-(2, 'images/pfp/pfp2.jpg'),
-(3, 'images/pfp/pfp3.jpg'),
-(4, 'images/pfp/pfp4.jpg'),
-(5, 'images/pfp/pfp5.jpg'),
-(6, 'images/pfp/pfp6.jpg'),
-(7, 'images/pfp/pfp7.jpg'),
-(8, 'images/pfp/pfp8.jpg'),
-(9, 'images/pfp/pfp9.jpg');
+INSERT INTO `default_pfps` (`pfp_path`) VALUES
+('images/pfp/pfp1.jpg'),
+('images/pfp/pfp2.jpg'),
+('images/pfp/pfp3.jpg'),
+('images/pfp/pfp4.jpg'),
+('images/pfp/pfp5.jpg'),
+('images/pfp/pfp6.jpg'),
+('images/pfp/pfp7.jpg'),
+('images/pfp/pfp8.jpg'),
+('images/pfp/pfp9.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unit_table`
+--
+
+CREATE TABLE `unit_table` (
+  `UserID` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `models` varchar(255) NOT NULL,
+  `points` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -54,7 +66,7 @@ INSERT INTO `default_pfps` (`id`, `pfp_path`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
@@ -66,16 +78,16 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexes for table `default_pfps`
+-- Indexes for table `unit_table`
 --
-ALTER TABLE `default_pfps`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `unit_table`
+  ADD KEY `UserID` (`UserID`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`UserID`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
@@ -83,16 +95,20 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `default_pfps`
---
-ALTER TABLE `default_pfps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `unit_table`
+--
+ALTER TABLE `unit_table`
+  ADD CONSTRAINT `unit_table_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `users` (`UserID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

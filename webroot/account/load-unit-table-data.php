@@ -20,7 +20,7 @@ if (isNotLoggedIn()) {
 function echo_unit_table_data() {
     global $mysqli;
 
-    $query = "SELECT * FROM " . $_SESSION['username'] . '_unit_table';
+    $query = 'SELECT * FROM unit_table WHERE UserID="'. $_SESSION["UserID"] .'"';
     $results = $mysqli->query($query);
     while($unit_table_row = mysqli_fetch_array($results)) {
         $name = $unit_table_row['name'];

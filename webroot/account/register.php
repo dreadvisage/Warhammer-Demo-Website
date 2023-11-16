@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         /* Create an SQL statement that needs to have 'prepare' called
         on it yet (notice the question mark). */
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT UserID FROM users WHERE username = ?";
         
         /* Initialize variable $stmt with the result of $mysqli->prepare($sql) and 
         check to see if it failed. If it did, we skip storing the username. 
@@ -129,30 +129,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             /* Attempt to execute the prepared statement. If success, then the new username/password
             is now in the database and the user can log in with their credentials. */
             if($stmt->execute()){
-
-                /* Create a table specific to each user that will contain each of their unit lists */
-                $create_user_unit_table = 'CREATE TABLE `' . $username . '_unit_table` (
-                    `id` INT(11) NOT NULL AUTO_INCREMENT,
-                    `name` varchar(255) NOT NULL,
-                    `models` varchar(255) NOT NULL,
-                    `points` varchar(255) NOT NULL,
-                    PRIMARY KEY(`id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci';
-                if ($stmt_unit_table = $mysqli->prepare($create_user_unit_table)) {
-                    /*$stmt_unit_table->bind_param("s", $param_table_name);
-                    $param_table_name = $username;*/
-                    if ($stmt_unit_table->execute()) {
-                        $stmt_unit_table->close();
-                        // Redirect to login page
-                        header("location: login.php");
-                        exit;
-                    } else {
-                        echo "Oops! Something went wrong. Please try again later.";
-                    }
-                    $stmt_unit_table->close();
-                } else {
-                    echo "Failed to create user's table.";
-                }
+                $stmt->close();
+                header("location: login.php");
+                exit;
 
             } else{
                 echo "Oops! Something went wrong. Please try again later.";

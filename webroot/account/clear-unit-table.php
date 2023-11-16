@@ -15,7 +15,7 @@ if (isNotLoggedIn()) {
     exit;
 }
 
-$query = "DELETE FROM " . $_SESSION['username'] . "_unit_table";
+$query = 'DELETE FROM unit_table WHERE UserID="' . $_SESSION["UserID"] . '"';
 if ($stmt = $mysqli->prepare($query)) {
     if ($stmt->execute()) {
         $stmt->close();

@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials. If any errors are set, do nothing.
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT UserID, username, password FROM users WHERE username = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables.
                     /* On a successful store_result, we declare three variables that we want to store row data inside. We 
                     want to "bind" the data in the row to these three variables. */
-                    $stmt->bind_result($id, $username, $hashed_password);
+                    $stmt->bind_result($user_id, $username, $hashed_password);
                     /* After bind_result has been created the variables to store data in, we fetch the row data and store them in each variable. 
                     Basically, we get the row that matched the username, and we store the values of the row into these three variables.  */
                     if($stmt->fetch()) {
@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
+                            $_SESSION["UserID"] = $user_id;
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to user profile page
