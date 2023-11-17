@@ -27,8 +27,8 @@ require '../../utils/navbar.php';
                 <h2>Adeptus Mechanicus</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/mechanicus-images.webp" alt = "Tech-Priests" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/mechanicus-images.webp" alt = "Tech-Priests">
                 </div>
 
                 <p>The Adeptus Mechanicus, often referred to as the Tech-Priests, is a technologically-obsessed faction in the Warhammer 

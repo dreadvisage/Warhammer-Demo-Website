@@ -22,6 +22,11 @@ const FACTIONS_PAGES = [
     ["factions/necrons.php", "Necrons"],
     ["factions/orks.php", "Orks"],
     ["factions/space-marine.php", "Space Marines"],
+    ["factions/space-wolves.php", "Space Wolves"],
+    ["factions/t'au-empire.php", "T'au Empire"],
+    ["factions/thousand-sons.php", "Thousand Sons"],
+    ["factions/tyranids.php", "Tyranids"],
+    ["factions/world-eaters.php", "World Eaters"],
 ];
 
 const POINTS_PAGES = [
@@ -47,6 +52,12 @@ const POINTS_PAGES = [
     ["points/votann-points.php", "Leagues of Votann"],
     ["points/necrons-points.php", "Necrons"],
     ["points/orks-points.php", "Orks"],
+    ["points/space-marines-points.php", "Space Marines"],
+    ["points/space-wolves-points.php", "Space Wolves"],
+    ["points/t'au-points.php", "T'au Empire"],
+    ["points/thousand-sons-points.php", "Thousand Sons"],
+    ["points/tyranids-points.php", "Tyranids"],
+    ["points/world-eaters-points.php", "World Eaters"],
 ];
 
 // This contains all the html ids for the dropdowns in the navbar

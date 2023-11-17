@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Grey Knights</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/grey-knights-image.jpeg" alt = "Grey Knights" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/grey-knights-image.jpeg" alt = "Grey Knights">
                 </div>
 
                 <p>The Grey Knights are a unique and secretive Space Marine Chapter within the Warhammer 40,000 universe. Formed to combat the insidious 

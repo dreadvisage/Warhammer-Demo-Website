@@ -27,8 +27,8 @@ require '../../utils/navbar.php';
                 <h2>Agents of the Imperium</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/agents-image.jpeg" alt = "Agents of the the Imperium" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/agents-image.jpeg" alt = "Agents of the the Imperium">
                 </div>
 
                 <p>The Agents of the Imperium represent a diverse and extensive faction within the Warhammer 40,000 universe. These 

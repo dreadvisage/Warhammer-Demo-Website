@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Orks</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/orks-image.jpeg" alt = "Greenskins" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/orks-image.jpeg" alt = "Greenskins">
                 </div>
 
                 <p>The Orks, also known as Greenskins, are a brutal and warlike xenos race in the Warhammer 40,000 universe. Unbeknownst to them, their latent psychic 

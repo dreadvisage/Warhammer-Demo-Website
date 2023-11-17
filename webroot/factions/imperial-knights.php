@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Imperial Knights</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/imperial-knights-image.png" alt = "Imperial Knights" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/imperial-knights-image.png" alt = "Imperial Knights">
                 </div>
 
                 <p>The Imperial Knights, towering war machines of the Adeptus Mechanicus, are a stalwart force within the Warhammer 40,000 universe. These 

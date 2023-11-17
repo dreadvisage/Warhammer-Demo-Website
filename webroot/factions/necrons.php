@@ -27,8 +27,8 @@ require '../../utils/navbar.php';
                 <h2>Necrons</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/necrons-image.jpeg" alt = "Necrons" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/necrons-image.jpeg" alt = "Necrons">
                 </div>
 
                 <p>The Necrons are a faction in the Warhammer 40,000 universe, known for their ancient and advanced technology. 

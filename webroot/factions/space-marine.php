@@ -26,6 +26,10 @@ require '../../utils/navbar.php';
             <div id="article"> 
                 <h2>Space Marines</h2>
                 <hr>
+
+                <div id ="image">
+                <img src = "../images/space-marines-image.jpeg" alt = "Space Marines">
+                </div>
                 <p>The Space Marines are a fictional faction in the Warhammer 40,000 universe, a tabletop wargame and science 
                     fiction setting created by Games Workshop. Here is a brief summary of the Space Marine faction:</p>
 

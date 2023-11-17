@@ -89,7 +89,7 @@ use HtmlUnitEchoBuilder as Builder;
 
                     Builder::echoUnit("Subductor Squad", "10-11", 4, 110);
 
-                    Builder::echoUnit("Vigiliant Squad", 10, 4, 105);
+                    Builder::echoUnit("Vigiliant Squad", 10, 10, 105);
 
                     Builder::echoUnit("Vindicare Assassin", 1, 14, 80);
 

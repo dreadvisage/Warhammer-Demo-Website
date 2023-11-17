@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Genestealer Cults</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/genestealers-image.jpeg" alt = "Genestealer Cults" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/genestealers-image.jpeg" alt = "Genestealer Cults">
                 </div>
 
                 <p>Genestealer Cults are insidious and subversive factions within the Warhammer 40,000 universe. Originating from the hidden 

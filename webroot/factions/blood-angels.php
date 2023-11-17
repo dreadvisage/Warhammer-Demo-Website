@@ -27,8 +27,8 @@ require '../../utils/navbar.php';
                 <h2>Blood Angels</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/angels-image.webp" alt = "Blood Angels" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/angels-image.webp" alt = "Blood Angels">
                 </div>
 
                 <p>The Blood Angels are a noble and tragic Space Marine Chapter in the Warhammer 40,000 universe. Renowned for their warrior's grace and 

@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Leagues of Votann</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/votann-image.webp" alt = "Leagues of Votann" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/votann-image.webp" alt = "Leagues of Votann">
                 </div>
 
                 <p>The Imperial Knights, towering war machines of the Adeptus Mechanicus, are a stalwart force within the Warhammer 40,000 universe. These 

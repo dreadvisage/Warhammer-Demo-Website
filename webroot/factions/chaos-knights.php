@@ -27,8 +27,8 @@ require '../../utils/navbar.php';
                 <h2>Chaos Knights</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/chaos-knights-image.jpeg" alt = "Renegade Knights" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/chaos-knights-image.jpeg" alt = "Renegade Knights">
                 </div>
 
                 <p>Chaos Knights, also known as Renegade Knights, are a malevolent and twisted faction within the Warhammer 40,000 universe. These 

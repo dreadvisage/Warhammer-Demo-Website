@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Adepta Sororitas</h2>
                 <hr>
             
-            <div class ="image">
-            <img src = "../images/sororitas-images.webp" alt = "Sisters of Battle" height = "300" width = "500">
+            <div id ="image">
+            <img src = "../images/sororitas-images.webp" alt = "Sisters of Battle">
             </div>
         
                 <p>The Adepta Sororitas, also known as the Sisters of Battle, is a faction in the Warhammer 40,000 universe known 

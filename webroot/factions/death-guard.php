@@ -26,8 +26,8 @@ require '../../utils/navbar.php';
                 <h2>Death Guard</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/death-guard-image.jpeg" alt = "Death Guard" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/death-guard-image.jpeg" alt = "Death Guard">
                 </div>
 
                 <p>The Death Guard is a malevolent Chaos Space Marine Legion in the Warhammer 40,000 universe. Once noble warriors of the 

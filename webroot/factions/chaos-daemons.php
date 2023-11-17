@@ -27,8 +27,8 @@ require '../../utils/navbar.php';
                 <h2>Chaos Daemons</h2>
                 <hr>
 
-                <div class ="image">
-                <img src = "../images/daemons-image.jpeg" alt = "Chaos Daemons" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/daemons-image.jpeg" alt = "Chaos Daemons">
                 </div>
 
                 <p>Chaos Daemons are malevolent and otherworldly entities that hail from the Warp, a realm of pure chaos and psychic energy, in the Warhammer 
