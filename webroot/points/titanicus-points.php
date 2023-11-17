@@ -7,17 +7,10 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-$create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
-$create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
-require_once $create_unit_helper_path;
-
-
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
     exit;
 }
-
-use HtmlUnitEchoBuilder as Builder;
 
 ?>
 
@@ -31,6 +24,7 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
+    <script src="../js/create-unit-helper.js"></script>
 </head>
 
 <body>
@@ -48,26 +42,24 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Adeptus Titanicus</h2>
             <hr>
 
-            <form action="db/insert-into-unit-table.php" method="post">
-                <input id="name" type="hidden" name="name" value="">
-                <input id="models" type="hidden" name="models" value="">
-                <input id="points" type="hidden" name="points" value="">
-                <ul class="points-list">
+            <ul id="points-list">
 
-                    <h2>Forge World Units</h2>
+                    <script>
+                    const Builder = UnitBuilder;
+                    Builder.setParentId("points-list");
+                    
+                    insertRawHtml("points-list", "<h2>Forge World Units</h2>");
 
-                    <?php
-                    Builder::echoUnit("Reaver Titan", 1, 12, 2200);
+                    Builder.addUnit("Reaver Titan", 1, 12, 2200);
 
-                    Builder::echoUnit("Warbringer Nemesis Titan", 1, 12, 2600);
+                    Builder.addUnit("Warbringer Nemesis Titan", 1, 12, 2600);
 
-                    Builder::echoUnit("Warhound Titan", 1, 12, 1100);
+                    Builder.addUnit("Warhound Titan", 1, 12, 1100);
 
-                    Builder::echoUnit("Warlord Titan", 1, 12, 3500);
-                    ?>
+                    Builder.addUnit("Warlord Titan", 1, 12, 3500);
+                    </script>
 
                 </ul>
-            </form>
 
         </div>
         <div class="pad"></div>

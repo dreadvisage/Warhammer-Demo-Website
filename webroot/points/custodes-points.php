@@ -7,17 +7,10 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-$create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
-$create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
-require_once $create_unit_helper_path;
-
-
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
     exit;
 }
-
-use HtmlUnitEchoBuilder as Builder;
 
 ?>
 
@@ -31,6 +24,7 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
+    <script src="../js/create-unit-helper.js"></script>
 </head>
 
 <body>
@@ -48,116 +42,116 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Adeptus Custodes</h2>
             <hr>
 
-            <form action="db/insert-into-unit-table.php" method="post">
-                <input id="name" type="hidden" name="name" value="">
-                <input id="models" type="hidden" name="models" value="">
-                <input id="points" type="hidden" name="points" value="">
-                <ul class="points-list">
-                    <?php
-                    Builder::echoUnit("Aleya", 1, 14, 80);
+            <ul id="points-list">
+                    <script>
+                    const Builder = UnitBuilder;
+                    Builder.setParentId("points-list");
 
-                    Builder::new("Allarus Custodians")
-                        ->model(2, 12, 140)
-                        ->model(3, 12, 210)
-                        ->model(5, 12, 350)
-                        ->model(6, 12, 420)
-                        ->echo();
+                    Builder.addUnit("Aleya", 1, 14, 80);
 
-                    Builder::echoUnit("Anathema Psykana Rhino", 1, 14, 75);
+                    Builder.new("Allarus Custodians")
+                        .model(2, 12, 140)
+                        .model(3, 12, 210)
+                        .model(5, 12, 350)
+                        .model(6, 12, 420)
+                        .add();
 
-                    Builder::echoUnit("Blade Champion", 1, 12, 120);
+                    Builder.addUnit("Anathema Psykana Rhino", 1, 14, 75);
 
-                    Builder::new("Custodian Guard")
-                        ->model(4, 12, 200)
-                        ->model(5, 12, 250)
-                        ->echo();
+                    Builder.addUnit("Blade Champion", 1, 12, 120);
 
-                    Builder::new("Custodian Wardens")
-                        ->model(4, 12, 220)
-                        ->model(5, 12, 275)
-                        ->echo();
+                    Builder.new("Custodian Guard")
+                        .model(4, 12, 200)
+                        .model(5, 12, 250)
+                        .add();
 
-                    Builder::echoUnit("Knight-Centura", 1, 14, 75);
+                    Builder.new("Custodian Wardens")
+                        .model(4, 12, 220)
+                        .model(5, 12, 275)
+                        .add();
 
-                    Builder::new("Prosecutors")
-                        ->model(4, 14, 40)
-                        ->model(5, 14, 50)
-                        ->model(9, 14, 90)
-                        ->model(10, 10, 100)
-                        ->echo();
+                    Builder.addUnit("Knight-Centura", 1, 14, 75);
 
-                    Builder::echoUnit("Shield-Captain", 4, 12, 220);
+                    Builder.new("Prosecutors")
+                        .model(4, 14, 40)
+                        .model(5, 14, 50)
+                        .model(9, 14, 90)
+                        .model(10, 10, 100)
+                        .add();
 
-                    Builder::echoUnit("Shield-Captain in Allarus Terminator Armour", 1, 12, 140);
+                    Builder.addUnit("Shield-Captain", 4, 12, 220);
 
-                    Builder::echoUnit("Shield-Captain on Dawneagle Jetbike", 1, 12, 180);
+                    Builder.addUnit("Shield-Captain in Allarus Terminator Armour", 1, 12, 140);
 
-                    Builder::echoUnit("Trajann Valoris", 1, 12, 160);
+                    Builder.addUnit("Shield-Captain on Dawneagle Jetbike", 1, 12, 180);
 
-                    Builder::echoUnit("Valerian", 1, 12, 115);
+                    Builder.addUnit("Trajann Valoris", 1, 12, 160);
 
-                    Builder::echoUnit("Venerable Contemptor Dreadnought", 1, 12, 185);
+                    Builder.addUnit("Valerian", 1, 12, 115);
 
-                    Builder::echoUnit("Venerable Land Raider", 1, 12, 240);
+                    Builder.addUnit("Venerable Contemptor Dreadnought", 1, 12, 185);
 
-                    Builder::new("Vertus Praetors")
-                        ->model(2, 12, 160)
-                        ->model(3, 13, 240)
-                        ->echo();
+                    Builder.addUnit("Venerable Land Raider", 1, 12, 240);
 
-                    Builder::new("Vigilators")
-                        ->model(4, 14, 50)
-                        ->model(5, 15, 65)
-                        ->model(9, 13, 115)
-                        ->model(10, 11, 130)
-                        ->echo();
+                    Builder.new("Vertus Praetors")
+                        .model(2, 12, 160)
+                        .model(3, 13, 240)
+                        .add();
 
-                    Builder::new("Witchseekers")
-                        ->model(4, 14, 50)
-                        ->model(5, 15, 65)
-                        ->model(9, 13, 115)
-                        ->model(10, 11, 130)
-                        ->echo();
-                    ?>
-                    <h2>Forge World Units</h2>
-                    <?php
-                    Builder::new("Agamatus Custodians")
-                        ->model(3, 12, 240)
-                        ->model(6, 12, 480)
-                        ->echo();
+                    Builder.new("Vigilators")
+                        .model(4, 14, 50)
+                        .model(5, 15, 65)
+                        .model(9, 13, 115)
+                        .model(10, 11, 130)
+                        .add();
 
-                    Builder::new("Aquilon Custodians")
-                        ->model(3, 12, 210)
-                        ->model(6, 12, 420)
-                        ->echo();
+                    Builder.new("Witchseekers")
+                        .model(4, 14, 50)
+                        .model(5, 15, 65)
+                        .model(9, 13, 115)
+                        .model(10, 11, 130)
+                        .add();
 
-                    Builder::echoUnit("Ares Gunship", 1, 12, 240);
+                    // insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                    // Builder.insertH2Header("Forge World Units");
+                    insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
 
-                    Builder::echoUnit("Caladius Grav-tank", 1, 12, 215);
+                    Builder.new("Agamatus Custodians")
+                        .model(3, 12, 240)
+                        .model(6, 12, 480)
+                        .add();
 
-                    Builder::echoUnit("Contemptor-Achillus Dreadnought", 1, 12, 165);
+                    Builder.new("Aquilon Custodians")
+                        .model(3, 12, 210)
+                        .model(6, 12, 420)
+                        .add();
 
-                    Builder::echoUnit("Contemptor-Galatus Dreadnought", 1, 12, 175);
+                    Builder.addUnit("Ares Gunship", 1, 12, 240);
 
-                    Builder::echoUnit("Coronus Grav-carrier", 1, 12, 200);
+                    Builder.addUnit("Caladius Grav-tank", 1, 12, 215);
 
-                    Builder::echoUnit("Custodian Guard with Adrasite and Pyrithite Spears", 5, 12, 300);
+                    Builder.addUnit("Contemptor-Achillus Dreadnought", 1, 12, 165);
 
-                    Builder::echoUnit("Orion Assualt Dropship", 1, 12, 690);
+                    Builder.addUnit("Contemptor-Galatus Dreadnought", 1, 12, 175);
 
-                    Builder::echoUnit("Pallas Grav-attack", 1, 12, 120);
+                    Builder.addUnit("Coronus Grav-carrier", 1, 12, 200);
 
-                    Builder::echoUnit("Sagittarum Custodians", 5, 12, 225);
+                    Builder.addUnit("Custodian Guard with Adrasite and Pyrithite Spears", 5, 12, 300);
 
-                    Builder::echoUnit("Telemon Heavy Dreadnought", 1, 12, 235);
+                    Builder.addUnit("Orion Assualt Dropship", 1, 12, 690);
 
-                    Builder::new("Venatari Custodians")
-                        ->model(3, 12, 200)
-                        ->model(6, 12, 400)
-                        ->echo();
-                    ?>
+                    Builder.addUnit("Pallas Grav-attack", 1, 12, 120);
+
+                    Builder.addUnit("Sagittarum Custodians", 5, 12, 225);
+
+                    Builder.addUnit("Telemon Heavy Dreadnought", 1, 12, 235);
+
+                    Builder.new("Venatari Custodians")
+                        .model(3, 12, 200)
+                        .model(6, 12, 400)
+                        .add();
+                    </script>
                 </ul>
-            </form>
 
         </div>
         <div class="pad"></div>

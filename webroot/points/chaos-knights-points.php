@@ -7,17 +7,10 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-$create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
-$create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
-require_once $create_unit_helper_path;
-
-
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
     exit;
 }
-
-use HtmlUnitEchoBuilder as Builder;
 
 ?>
 
@@ -31,6 +24,7 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
+    <script src="../js/create-unit-helper.js"></script>
 </head>
 
 <body>
@@ -48,54 +42,50 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Chaos Knights</h2>
             <hr>
 
-            <form action="db/insert-into-unit-table.php" method="post">
-                <input id="name" type="hidden" name="name" value="">
-                <input id="models" type="hidden" name="models" value="">
-                <input id="points" type="hidden" name="points" value="">
-                <ul class="points-list">
-                    <?php
-                    Builder::echoUnit("Knight Abominant", 1, 12, 455);
+            <ul id="points-list">
+                    <script>
+                    const Builder = UnitBuilder;
+                    Builder.setParentId("points-list");
+                    
+                    Builder.addUnit("Knight Abominant", 1, 12, 455);
 
-                    Builder::echoUnit("Knight Desecrator", 1, 12, 450);
+                    Builder.addUnit("Knight Desecrator", 1, 12, 450);
 
-                    Builder::echoUnit("Knight Despoiler", 1, 12, 470);
+                    Builder.addUnit("Knight Despoiler", 1, 12, 470);
 
-                    Builder::echoUnit("Knight Rampager", 1, 12, 380);
+                    Builder.addUnit("Knight Rampager", 1, 12, 380);
 
-                    Builder::echoUnit("Knight Tyrant", 1, 12, 555);
+                    Builder.addUnit("Knight Tyrant", 1, 12, 555);
 
-                    Builder::echoUnit("War Dog Executioner", 1, 12, 150);
+                    Builder.addUnit("War Dog Executioner", 1, 12, 150);
 
-                    Builder::echoUnit("War Dog Huntsman", 1, 12, 150);
+                    Builder.addUnit("War Dog Huntsman", 1, 12, 150);
 
-                    Builder::echoUnit("War Dog Karnivore", 1, 12, 140);
+                    Builder.addUnit("War Dog Karnivore", 1, 12, 140);
 
-                    Builder::echoUnit("War Dog Stalker", 1, 12, 150);
-                    ?>
+                    Builder.addUnit("War Dog Stalker", 1, 12, 150);
 
-                    <h2>Forge World Units</h2>
+                    insertRawHtml("points-list", "<br><h2>Forge World Units<h2>");
 
-                    <?php
-                    Builder::echoUnit("Chaos Acastus Knight Asterius", 1, 12, 840);
+                    Builder.addUnit("Chaos Acastus Knight Asterius", 1, 12, 840);
 
-                    Builder::echoUnit("Chaos Acastus Knight Porphyrion", 1, 12, 740);
+                    Builder.addUnit("Chaos Acastus Knight Porphyrion", 1, 12, 740);
 
-                    Builder::echoUnit("Chaos Cerastus Knight Acheron", 1, 12, 465);
+                    Builder.addUnit("Chaos Cerastus Knight Acheron", 1, 12, 465);
 
-                    Builder::echoUnit("Chaos Cerastus Knight Atrapos", 1, 12, 465);
+                    Builder.addUnit("Chaos Cerastus Knight Atrapos", 1, 12, 465);
 
-                    Builder::echoUnit("Chaos Cerastus Knight Castigator", 1, 12, 480);
+                    Builder.addUnit("Chaos Cerastus Knight Castigator", 1, 12, 480);
 
-                    Builder::echoUnit("Chaos Cerastus Knight Lancer", 1, 12, 465);
+                    Builder.addUnit("Chaos Cerastus Knight Lancer", 1, 12, 465);
 
-                    Builder::echoUnit("Chaos Questoris Knight Magaera", 1, 12, 465);
+                    Builder.addUnit("Chaos Questoris Knight Magaera", 1, 12, 465);
 
-                    Builder::echoUnit("Chaos Questoris Knight Styrix", 1, 12, 505);
+                    Builder.addUnit("Chaos Questoris Knight Styrix", 1, 12, 505);
 
-                    Builder::echoUnit("War Dog Moirax", 1, 12, 170);
-                    ?>
+                    Builder.addUnit("War Dog Moirax", 1, 12, 170);
+                    </script>
                 </ul>
-            </form>
             
         </div>
         <div class="pad"></div>

@@ -14,10 +14,6 @@ if (isNotLoggedIn()) {
     exit;
 }
 
-$unit_name = "";
-$num_models = 0;
-$unit_points = 0;
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_REQUEST["name"];
     $models = $_REQUEST["models"];
