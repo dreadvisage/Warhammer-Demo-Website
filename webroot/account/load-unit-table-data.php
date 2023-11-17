@@ -8,10 +8,6 @@ $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $config_path;
 require_once $is_logged_in_path;
 
-$debug_to_console = $_SERVER['DOCUMENT_ROOT'];
-$debug_to_console .= "/project/../utils/debug_to_console.php";
-require_once $debug_to_console;
-
 if (isNotLoggedIn()) {
     header("location: login.php");
     exit;

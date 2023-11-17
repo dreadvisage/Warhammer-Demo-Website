@@ -1,3 +1,8 @@
+/*
+ *******************************************************
+ * Unit Builder For Creating Units on the Points Pages *
+ *******************************************************
+*/
 
 class UnitBuilder {
     static id = "";
@@ -109,11 +114,18 @@ class UnitBuilder {
         let liButton = document.createElement("button");
         liButton.type = "submit";
         liButton.innerText = "➕";
+        let num = UnitBuilder.counter;
         liButton.addEventListener("click", () => {
             makeRequest(this.name, models, points);
+            notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
 
+        let liNotifyText = document.createElement("p");
+        liNotifyText.className = "notify-text";
+        liNotifyText.id = "notifytext" + UnitBuilder.counter;
+        ++UnitBuilder.counter;
+        liContent.append(liNotifyText);
 
         return this;
     }
@@ -125,39 +137,9 @@ class UnitBuilder {
     }
 }
 
-var notifyTextTimeout;
-var prevNotifyText;
-var currentNotifyText;
-var notifyCounter = 1;
-function notifyTextMonitor(id) {
-    if (currentNotifyText == null) {
-        currentNotifyText = document.getElementById(id);
-    } else {
-        prevNotifyText = currentNotifyText;
-        prevNotifyText.innerHTML = '';
-        currentNotifyText = document.getElementById(id);
-        ++notifyCounter;
-        if (prevNotifyText != currentNotifyText)
-            notifyCounter = 1;
-    }
-    currentNotifyText.innerText = "Added Unit x" + notifyCounter;
-
-    clearTimeout(notifyTextTimeout);
-    notifyTextTimeout = setTimeout(function() {
-        updateNotifyText(id)
-    }, 2000);
-}
-
-function updateNotifyText(id) {
-    if (prevNotifyText != null)
-        prevNotifyText.innerHTML = '';
-    prevNotifyText = null;
-    if (currentNotifyText != null)
-        currentNotifyText.innerHTML = '';
-    currentNotifyText = null;
-    notifyCounter = 1;
-}
-
+/* Insert raw html values when executing scripts. Because scripts are executed after
+ * the regular HTML is loaded, if you want to insert something in between other dynamically
+ * generated HTML elements, you need to do it through Javascript when executing a script. */
 function insertRawHtml(id, html) {
     /* We need to create a template here because certain HTML tags get stripped
     when appending to innerHTML with certain elements. By creating a template,
@@ -173,9 +155,70 @@ function insertRawHtml(id, html) {
 }
 
 
-/*************************************
- *         ALL BELOW IS AJAX         *
- *************************************/
+/*
+ ************************************************************
+ *               Points Click Counter Section               *
+ ************************************************************
+ This section controls the little popup when you 
+ click a button on the points page
+ */
+
+/* Stores a the timeout monitor that will execute
+ * a function if/when the timeout ends */
+var notifyTextTimeout;
+// Stores the previous notify text that was clicked
+var prevNotifyText;
+// Stores the current notify text that was clicked
+var currentNotifyText;
+// Always start the count of a button press at one
+var notifyCounter = 1;
+function notifyTextMonitor(id) {
+    if (currentNotifyText == null) {
+        currentNotifyText = document.getElementById(id);
+    } else {
+        // Set the prev text to the "last" current text
+        prevNotifyText = currentNotifyText;
+        // Set the current text to the notify text associated with the element that was triggered
+        currentNotifyText = document.getElementById(id);
+        // Successive clicks are incremented by one
+        ++notifyCounter;
+        /* If the prev button press was not the same as this button press,
+         * then clear the previous notify text and reset the counter */
+        if (prevNotifyText != currentNotifyText) {
+            prevNotifyText.innerHTML = '';
+            notifyCounter = 1;
+        }
+    }
+    // Set the current notify text to be the relevant values
+    currentNotifyText.innerText = "Added Unit x" + notifyCounter;
+
+    /* Regardless of the element that was clicked, cancel the function that was to be 
+     * executed after the timeout we had set before. Meaning that we cancel timeout, 
+     * and reset the timeout timer to do the same thing, but with a brand new timer of 
+     * 2 seconds. */
+    clearTimeout(notifyTextTimeout);
+    // Timer of 2000ms or 2 seconds
+    notifyTextTimeout = setTimeout(function() {
+        resetNotifyTexts(id)
+    }, 2000);
+}
+
+// Resets all relevant notify texts
+function resetNotifyTexts(id) {
+    if (prevNotifyText != null)
+        prevNotifyText.innerHTML = '';
+    prevNotifyText = null;
+    if (currentNotifyText != null)
+        currentNotifyText.innerHTML = '';
+    currentNotifyText = null;
+    notifyCounter = 1;
+}
+
+
+
+/**********************************************************
+ *   AJAX PHP Execution For A Points Page Button Press    *
+ **********************************************************/
 
 let httpRequest;
 function makeRequest(name, models, points) {

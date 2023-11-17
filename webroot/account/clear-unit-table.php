@@ -28,7 +28,4 @@ if ($stmt = $mysqli->prepare($query)) {
     $stmt->close();
 }
 
-
-
-
 ?>

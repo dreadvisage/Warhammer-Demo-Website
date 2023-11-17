@@ -8,6 +8,8 @@ $get_user_pfp_path .= "/project/../utils/get-user-pfp.php";
     
 require_once $is_logged_in_path;
 require_once $get_user_pfp_path;
+require '../../utils/navbar.php'; 
+require_once "load-unit-table-data.php"; 
  
 // Check if the user is logged in, if not then redirect him to login page
 if(isNotLoggedIn()){
@@ -31,7 +33,6 @@ if(isNotLoggedIn()){
 <body>
     
     <?php 
-        require '../../utils/navbar.php'; 
         echoNavbar(1);
     ?>
 
@@ -57,8 +58,8 @@ if(isNotLoggedIn()){
             </div>
         </div>
 
-        <div id="myModal" class="modal">
-            <div id="modal-content-id" class="modal-content">
+        <div id="model-pfp" class="modal">
+            <div id="modal-pfp-content" class="modal-content">
                 <div class="wrapper-table">
                     <span class="close">&times;</span>
                     <table class="image-table">
@@ -72,7 +73,6 @@ if(isNotLoggedIn()){
         <div class="main-content">
             <a class="btn-option" href="clear-unit-table.php">Clear Table</a>
             <?php 
-                require_once "load-unit-table-data.php"; 
                 echo_unit_table_data();
             ?>
         </div>
