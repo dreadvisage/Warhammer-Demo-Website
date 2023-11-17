@@ -11,3 +11,9 @@
 .unit-type-list li {
     margin: 10px 0;
 }
+
+.notify-text {
+    margin-left: 5px;
+    display: inline;
+    font-size: 12px;
+}

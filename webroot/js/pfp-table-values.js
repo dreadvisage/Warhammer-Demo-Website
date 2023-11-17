@@ -21,7 +21,7 @@ function loadPfpTableValues(numCols, numDirsUp) {
         table.appendChild(row);
 
         for (var j = 0; j < numCols; ++j) {
-            // Tests if `page[j * numPerRow + counter]` exists. If it doesn't exist, then we skip it. 
+            // Tests if `PFP_PATHS[counter]` exists. If it doesn't exist, then we skip it. 
             // This should only happen if the final column isn't completely fill out.
             if (typeof PFP_PATHS[counter] === 'undefined') {
                 continue;
@@ -73,7 +73,7 @@ function makeRequest(path) {
     // We use it specifically when the XMLHttpRequest is DONE
     httpRequest.onreadystatechange = reloadPage;
     // Always send by POST. 
-    httpRequest.open("POST", "update-pfp.php");
+    httpRequest.open("POST", "db/update-pfp.php");
     // Needed to send url parameters
     httpRequest.setRequestHeader(
         "Content-Type",

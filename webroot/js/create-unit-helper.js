@@ -1,11 +1,12 @@
 
 class UnitBuilder {
     static id = "";
+    static counter = 0;
 
     constructor(name) {
         this.name = name;
         this.li = document.createElement("li");
-        this.li.appendChild(document.createTextNode(this.name));
+        this.li.append(document.createTextNode(this.name));
         this.ul = document.createElement("ul");
         this.ul.className = "unit-type-list";
     }
@@ -14,31 +15,18 @@ class UnitBuilder {
         UnitBuilder.id = id;
     }
 
-    static addBreak() {
-        var target = document.getElementById(UnitBuilder.id);
-        target.appendChild(document.createElement("br"));
-    }
-
-    static addH2Header(text) {
-        var target = document.getElementById(UnitBuilder.id);
-        var h2 = document.createElement("h2");
-        var text = document.createTextNode(text);
-        h2.appendChild(text);
-        target.appendChild(h2);
-    }
-
     static new(name) {
         return new UnitBuilder(name);
     }
 
     static addUnit(name, models, padding, points) {
         let li = document.createElement("li");
-        li.appendChild(document.createTextNode(name));
+        li.append(document.createTextNode(name));
         let ul = document.createElement("ul");
         ul.className = "unit-type-list";
 
         let liContent = document.createElement("li");
-        ul.appendChild(liContent);
+        ul.append(liContent);
 
         const createPadding = function(padding) {
             let paddingStr = "";
@@ -48,24 +36,32 @@ class UnitBuilder {
             return paddingStr;
         };
         let liText = document.createTextNode(models + " models" + createPadding(padding) + points + " pts ");
-        liContent.appendChild(liText);
+        liContent.append(liText);
 
         let liButton = document.createElement("button");
         liButton.type = "submit";
         liButton.innerText = "➕";
+        let num = UnitBuilder.counter;
         liButton.addEventListener("click", () => {
             makeRequest(name, models, points);
+            notifyTextMonitor("notifytext" + num);
         });
-        liContent.appendChild(liButton);
+        liContent.append(liButton);
+
+        let liNotifyText = document.createElement("p");
+        liNotifyText.className = "notify-text";
+        liNotifyText.id = "notifytext" + UnitBuilder.counter;
+        ++UnitBuilder.counter;
+        liContent.append(liNotifyText);
 
         var target = document.getElementById(UnitBuilder.id);
-        target.appendChild(li);
-        target.appendChild(ul);
+        target.append(li);
+        target.append(ul);
     }
 
     model(models, padding, points) {
         let liContent = document.createElement("li");
-        this.ul.appendChild(liContent);
+        this.ul.append(liContent);
 
         const createPadding = function(padding) {
             let paddingStr = "";
@@ -75,22 +71,30 @@ class UnitBuilder {
             return paddingStr;
         };
         let liText = document.createTextNode(models + " models" + createPadding(padding) + points + " pts ");
-        liContent.appendChild(liText);
+        liContent.append(liText);
 
         let liButton = document.createElement("button");
         liButton.type = "submit";
         liButton.innerText = "➕";
+        let num = UnitBuilder.counter;
         liButton.addEventListener("click", () => {
             makeRequest(this.name, models, points);
+            notifyTextMonitor("notifytext" + num);
         });
-        liContent.appendChild(liButton);
+        liContent.append(liButton);
+
+        let liNotifyText = document.createElement("p");
+        liNotifyText.className = "notify-text";
+        liNotifyText.id = "notifytext" + UnitBuilder.counter;
+        ++UnitBuilder.counter;
+        liContent.append(liNotifyText);
 
         return this;
     }
 
     modelCustom(models, padding, points) {
         let liContent = document.createElement("li");
-        this.ul.appendChild(liContent);
+        this.ul.append(liContent);
 
         const createPadding = function(padding) {
             let paddingStr = "";
@@ -100,7 +104,7 @@ class UnitBuilder {
             return paddingStr;
         };
         let liText = document.createTextNode(models + createPadding(padding) + points + " pts ");
-        liContent.appendChild(liText);
+        liContent.append(liText);
 
         let liButton = document.createElement("button");
         liButton.type = "submit";
@@ -108,7 +112,7 @@ class UnitBuilder {
         liButton.addEventListener("click", () => {
             makeRequest(this.name, models, points);
         });
-        liContent.appendChild(liButton);
+        liContent.append(liButton);
 
 
         return this;
@@ -116,9 +120,42 @@ class UnitBuilder {
 
     add() {
         var target = document.getElementById(UnitBuilder.id);
-        target.appendChild(this.li);
-        target.appendChild(this.ul);
+        target.append(this.li);
+        target.append(this.ul);
     }
+}
+
+var notifyTextTimeout;
+var prevNotifyText;
+var currentNotifyText;
+var notifyCounter = 1;
+function notifyTextMonitor(id) {
+    if (currentNotifyText == null) {
+        currentNotifyText = document.getElementById(id);
+    } else {
+        prevNotifyText = currentNotifyText;
+        prevNotifyText.innerHTML = '';
+        currentNotifyText = document.getElementById(id);
+        ++notifyCounter;
+        if (prevNotifyText != currentNotifyText)
+            notifyCounter = 1;
+    }
+    currentNotifyText.innerText = "Added Unit x" + notifyCounter;
+
+    clearTimeout(notifyTextTimeout);
+    notifyTextTimeout = setTimeout(function() {
+        updateNotifyText(id)
+    }, 2000);
+}
+
+function updateNotifyText(id) {
+    if (prevNotifyText != null)
+        prevNotifyText.innerHTML = '';
+    prevNotifyText = null;
+    if (currentNotifyText != null)
+        currentNotifyText.innerHTML = '';
+    currentNotifyText = null;
+    notifyCounter = 1;
 }
 
 function insertRawHtml(id, html) {
