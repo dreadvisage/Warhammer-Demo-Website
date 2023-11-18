@@ -15,6 +15,7 @@ function getDirsUp($num_dirs_up) {
 
 function echoNavbar($num_dirs_up) {
     echo '<script type = "text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-dropdown-manager.js"></script>';
+    echo '<script type = "text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/live-search.js"></script>';
     echo '<div id="navbar">
     <div class="inner1">
         <a href="' . getDirsUp($num_dirs_up) . 'index.php"><img class="warhammer-logo" src="' . getDirsUp($num_dirs_up) . 'images/warhammer-logo-black.png" alt="Warhammer Logo"></a>
@@ -48,10 +49,15 @@ function echoNavbar($num_dirs_up) {
         echo '</ul>
     </div>
     <div class="inner3">
-        <input type="text" placeholder="Search...">
+        <div id="search-suggestions-dropdown">
+            <input id="search-bar" type="text" placeholder="Search...">
+                <div id="search-suggestions" class="search-dropdown-content">
+                </div>
+                <script>registerSearchBarListeners(\'search-suggestions-dropdown\', \'search-bar\', \'search-suggestions\', ' . $num_dirs_up . ')</script>
+        </div>
     </div>
     <div class="inner4">
-        <a href="' . getDirsUp($num_dirs_up) . 'search-sample.php"><img class="search-icon" src="' . getDirsUp($num_dirs_up) . 'images/search-bar-icon.png" alt="Search Icon"></a>
+        <img class="search-icon" src="' . getDirsUp($num_dirs_up) . 'images/search-bar-icon.png" alt="Search Icon">
     </div>
     <div class="inner5">';
         if (isLoggedIn()) {

@@ -22,7 +22,7 @@ require '../utils/navbar.php';
     <div class="display">
         <div class="pad"></div>
         <div id="article"> 
-            <p>You searched for nothing because the database isn't implemented yet!</p>
+            <p>This is the FAQ page!</p>
         </div>
         <div class="pad"></div>
     </div>    

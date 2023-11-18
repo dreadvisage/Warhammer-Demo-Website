@@ -4,6 +4,11 @@
     src: url("../fonts/kvc-warhammer-base.otf");
 }
 
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url("../fonts/Noto_Sans/NotoSans-Regular.ttf");
+}
+
 /* Removes the ever-so-slight padding on the body */
 body {
     margin: 0;
@@ -264,13 +269,54 @@ unless we specify this directly from #inner2. */
     float: none;
 }
   
+/* INNER 3 BELOW */
 
-/* I use px here because em seems to scale weirdly */
-.inner3 input[type=text] {
-    padding: 5px 0 5px 0;
-    border: none;
+#search-suggestions-dropdown {
+}
+
+#search-bar {
+    color: black;
+    font-family: NotoSans-Regular;
+    padding: 5px 0 5px 5px;
+    border: 2px solid black;
+    outline: none;
     font-size: 14px;
-    width: 230px;
+    width: 240px;
+}
+
+#search-bar:focus {
+    
+}
+
+#search-suggestions {
+}
+
+.search-dropdown-content {
+
+
+
+    font-family: NotoSans-Regular;
+    font-size: 14px;
+    display: none;
+    flex-direction: column;
+    justify-content: left;
+    background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
+    border-width: 0px 2px 2px 2px;
+    border-color: black;
+    border-style: solid;
+    position: absolute;
+    width: 245px;
+    z-index: 1;
+}
+
+.search-dropdown-content a {
+    padding: 15px 5px 15px 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.search-dropdown-content a:hover {
+    background-color: #8f2f2f;
 }
 
 /* Sets minimum font size */
@@ -292,6 +338,8 @@ unless we specify this directly from #inner2. */
 .inner4 {
     padding-right: 0.5em;
 }
+
+
 
 .search-icon {
     width: 30px;
