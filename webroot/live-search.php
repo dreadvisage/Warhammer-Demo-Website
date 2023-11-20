@@ -9,6 +9,8 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
+require_once "../utils/debug_to_console.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $search_str = $_REQUEST["q"];
     $search_str = strtolower($search_str);
@@ -19,9 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $i = 0;
     while($row = mysqli_fetch_array($results)) {
         // Limit to 10
-        if (count($search_results) >= 10) {
-            break;
-        }
+        // if (count($search_results) >= 10) {
+        //     break;
+        // }
 
         $suggestionID = $row['suggestionID'];
         $suggestionMatchOn = $row['suggestionMatchOn'];
@@ -37,25 +39,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $combineSearch = $suggestionMatchOn . $sectionTitle;
         }
          
-        if (str_contains(strtolower($combineSearch), $search_str)) {
-            if ($requireLogin && isNotLoggedIn()) {
-                continue;
-            } else {
-                /* Because a Set data structure does not exists within the base PHP,
-                this is a workaround that loops through every value in the array and 
-                tests if it already exists. */
-                $exists = 0;
-                for ($i = 0; $i < count($search_results); ++$i) {
-                    if ($suggestionLink == $search_results[$i][2]) {
-                        $exists = 1;
-                        break;
-                    }
-                }
+        // if (str_contains(strtolower($combineSearch), $search_str)) {
+        //     if ($requireLogin && isNotLoggedIn()) {
+        //         continue;
+        //     } else {
+        //         /* Because a Set data structure does not exists within the base PHP,
+        //         this is a workaround that loops through every value in the array and 
+        //         tests if it already exists. */
+        //         $exists = 0;
+        //         for ($i = 0; $i < count($search_results); ++$i) {
+        //             if ($suggestionLink == $search_results[$i][3]) {
+        //                 $exists = 1;
+        //                 break;
+        //             }
+        //         }
 
-                // Only insert if the data already exists
-                if(!$exists) {
-                    $search_results[$i++] = [$suggestionDisplay, $sectionTitle, $suggestionLink];
+        //         // Only insert if the data already exists
+        //         if(!$exists) {
+        //             $search_results[$i++] = [$suggestionMatchOn, $suggestionDisplay, $sectionTitle, $suggestionLink];
+        //         }
+        //     }
+        // }
+        if ($requireLogin && isNotLoggedIn()) {
+            continue;
+        } else {
+            $exists = 0;
+            for ($i = 0; $i < count($search_results); ++$i) {
+                if ($suggestionLink == $search_results[$i][3]) {
+                    $exists = 1;
+                    break;
                 }
+            }
+
+            if(!$exists) {
+                $search_results[$i++] = [$suggestionMatchOn, $suggestionDisplay, $sectionTitle, $suggestionLink];
             }
         }
     }
