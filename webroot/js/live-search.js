@@ -21,7 +21,7 @@ function getLiveSearchResults(searchSuggestionsId, numDirsUp, str) {
             
             searchResultsArray = processResultsByDamerauLevenshtein(searchResultsArray, str);
             // searchResultsArray = processResultsByContains(searchResultsArray, str);
-            
+
             // Limits the output to 8 of the most relevant results
             searchResultsArray.splice(8);
         
@@ -113,6 +113,9 @@ function processResultsByContains(searchResultsArray, str) {
     return structuredClone(containsArray);
 }
 
+// TODO. Remove the `set` data structure stuff from live-search.php. Instead, just return all results
+// from database. Then impl the set stuff in Javascript. e.g. typing `frequently asked questions` returns 
+// nothing because `FAQ` already exists.
 function processResultsByDamerauLevenshtein(searchResultsArray, str) {
     /* Calculate the length of the largest string in search results. This will be 
     used as the basis for normalizing the lengths of the inputs. */
