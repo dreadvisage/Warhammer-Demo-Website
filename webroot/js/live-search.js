@@ -77,6 +77,22 @@ function updateSuggestions(searchSuggestionsId, counter) {
     }
 }
 
+function registerAltSearchBarListeners(searchDropdownId, searchBarId, searchSuggestionsId, numDirsUp) {
+    
+    let searchBar = document.getElementById(searchBarId);
+    window.addEventListener("click", event => {
+        let dropdown = document.getElementById(searchDropdownId);
+        if (event.target !== dropdown && !dropdown.contains(event.target)) {
+            searchBar.style.display = "none";
+        }
+    });
+    window.addEventListener("resize", () => {
+        searchBar.style.display = "none";
+    });
+    
+    registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggestionsId, numDirsUp);
+}
+
 function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggestionsId, numDirsUp) {
     let searchBar = document.getElementById(searchBarId);
     // Input because we want to do action anytime the value changes
@@ -93,7 +109,9 @@ function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggest
             searchSuggestions.style.display = "none";
         }
     });
-    
+    window.addEventListener("resize", () => {
+        document.getElementById(searchSuggestionsId).style.display = "none";
+    });
 }
 
 function processResultsByContains(searchResultsArray, str) {

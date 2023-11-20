@@ -47,7 +47,7 @@ body {
     align-items: center;
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
 }
-@media (min-width: 900px) {
+@media (min-width: 950px) {
     #navbar {
         display: flex;
     }
@@ -58,7 +58,7 @@ body {
         display: none;
     }
 }
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     #navbar {
         display: none;
     }
@@ -104,6 +104,14 @@ body {
 .alt-inner3 {
     padding: 0 0.5em 0 0;
 }
+.alt-search-btn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
 .alt-search-icon {
     width: 40px;
 }
@@ -133,8 +141,49 @@ body {
     font-family: WHFont;
     cursor: pointer;
 }
-
 .alt-dropdown-content a:hover {
+    background-color: #8f2f2f;
+}
+.alt-search-suggestions {   
+}
+#alt-search-bar {
+    display: none;
+    color: black;
+    font-family: NotoSans-Regular;
+    padding: 5px 0 5px 5px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 14px;
+    width: 240px;
+    height: 30px;
+    position: absolute;
+    top: 4.6em;
+    left: calc(50% - (245px/2));
+    z-index: 1;
+}
+.alt-search-dropdown-content {
+    font-family: NotoSans-Regular;
+    font-size: 14px;
+    display: none;
+    flex-direction: column;
+    justify-content: left;
+    background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
+    border-width: 0px 2px 2px 2px;
+    border-color: black;
+    border-style: solid;
+    position: absolute;
+    top: 7.7em;
+    left: calc(50% - (245px/2));
+    width: 245px;
+    z-index: 1;
+}
+.alt-search-dropdown-content a {
+    padding: 15px 5px 15px 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.alt-search-dropdown-content a:hover {
     background-color: #8f2f2f;
 }
 
@@ -292,9 +341,6 @@ unless we specify this directly from #inner2. */
 }
 
 .search-dropdown-content {
-
-
-
     font-family: NotoSans-Regular;
     font-size: 14px;
     display: none;

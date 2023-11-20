@@ -51,8 +51,7 @@ function echoNavbar($num_dirs_up) {
     <div class="inner3">
         <div id="search-suggestions-dropdown">
             <input id="search-bar" type="text" placeholder="Search...">
-                <div id="search-suggestions" class="search-dropdown-content">
-                </div>
+                <div id="search-suggestions" class="search-dropdown-content"></div>
                 <script>registerSearchBarListeners(\'search-suggestions-dropdown\', \'search-bar\', \'search-suggestions\', ' . $num_dirs_up . ')</script>
         </div>
     </div>
@@ -98,7 +97,12 @@ function echoAltNavbar($num_dirs_up) {
     </div>
     <div class="alt-inner-3-4-wrapper">
         <div class="alt-inner3">
-            <a href="' . getDirsUp($num_dirs_up) . 'search-sample.php"><img class="alt-search-icon" src="' . getDirsUp($num_dirs_up) . 'images/search-bar-icon.png" alt="Search Icon"></a>
+            <div id="alt-search-suggestions-dropdown">
+                <button class="alt-search-btn" onclick="document.getElementById(\'alt-search-bar\').style.display=\'flex\'"><img class="alt-search-icon" src="' . getDirsUp($num_dirs_up) . 'images/search-bar-icon.png" alt="Search Icon"></button>
+                <input id="alt-search-bar" type="text" placeholder="Search...">
+                <script>registerAltSearchBarListeners(\'alt-search-suggestions-dropdown\', \'alt-search-bar\', \'alt-search-suggestions\', ' . $num_dirs_up . ')</script>
+                <div id="alt-search-suggestions" class="alt-search-dropdown-content"></div>
+            </div>
         </div>
         <div class="alt-inner4">';
             if (isLoggedIn()) {
