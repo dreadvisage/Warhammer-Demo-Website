@@ -11,7 +11,7 @@ require_once $config_path;
 require_once $is_logged_in_path;
 
 if (isNotLoggedIn()) {
-    header("location: login.php");
+    header("location: ../login.php");
     exit;
 }
 
@@ -20,7 +20,7 @@ if ($stmt = $mysqli->prepare($query)) {
     if ($stmt->execute()) {
         $stmt->close();
         // Redirect to login page
-        header("location: user-profile.php");
+        header("location: ../user-profile.php");
         exit;
     } else {
         echo "Oops! Something went wrong. Please try again later.";

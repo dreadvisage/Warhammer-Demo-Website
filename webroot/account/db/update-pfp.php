@@ -11,7 +11,7 @@ require_once $get_user_pfp_path;
  
 // Check if the user is logged in, if not then redirect him to login page
 if(isNotLoggedIn()){
-    header("location: login.php");
+    header("location: ../login.php");
     exit;
 }
 
