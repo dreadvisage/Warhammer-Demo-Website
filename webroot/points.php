@@ -26,24 +26,92 @@ require '../utils/navbar.php';
             <h1>Points</h1>
 
             <p>
-                Welcome to the Points main page! How can you build an army if you don't know what the rules of your army 
-                and units? Here on the Points page, you can find the links to the official online indexes for all of the 
-                playable Warhammer 40k factions. These indexes contain the datasheets for all of thier factions respective 
-                units, so be sure to familirize yourself with them, or at least have them on hand when creating your army 
-                list. Click on your desired faction to get started!
+                Welcome to the Points main page. Click on your desired faction to be taken to the respective point page.
             </p>
 
             <br>
-            <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/riFjIh9OeKg6AbLZ.pdf" target="_blank">Adepta Sororitas</a>
+            <a href="points/sororitas-points.php">Adepta Sororitas</a>
             
             <br><br>
-            <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/TE5lPwmnUDrITuGM.pdf" target="_blank">Adeptus Custodes</a>
+            <a href="points/custodes-points.php">Adeptus Custodes</a>
 
             <br><br>
-            <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/vkzQ2IBbrrCVNzz3.pdf" target="_blank">Adeptus Mechanicus</a>
+            <a href="points/mechanicus-points.php">Adeptus Mechanicus</a>
 
             <br><br>
-            <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/8BgBEXw7BlTSquqV.pdf" target="_blank">Adeptus Titanicus</a>
+            <a href="points/titanicus-points.php">Adeptus Titanicus</a>
+
+            <br><br>
+            <a href="points/aeldari-points.php">Aeldari</a>
+
+            <br><br>
+            <a href="points/agents-points.php">Agents of the Imperium</a>
+
+            <br><br>
+            <a href="points/militarum-points.php">Astra Militarum</a>
+
+            <br><br>
+            <a href="points/templars-points.php">Black Templars</a>
+
+            <br><br>
+            <a href="points/blood-angels-points.php">Blood Angels</a>
+
+            <br><br>
+            <a href="points/daemons-points.php">Chaos Daemons</a>
+
+            <br><br>
+            <a href="points/chaos-knights-points.php">Chaos Knights</a>
+
+            <br><br>
+            <a href="points/chaos-marines-points.php">Chaos Space Marines</a>
+
+            <br><br>
+            <a href="points/dark-angels-points.php">Dark Angels</a>
+
+            <br><br>
+            <a href="points/death-guard-points.php">Death Guard</a>
+
+            <br><br>
+            <a href="points/deathwatch-points.php">Deathwatch</a>
+
+            <br><br>
+            <a href="points/drukhari-points.php">Drukhari</a>
+
+            <br><br>
+            <a href="points/genestealers-points.php">Genestealer Cults</a>
+
+            <br><br>
+            <a href="points/grey-knights-points.php">Grey Knights</a>
+
+            <br><br>
+            <a href="points/imperial-knights-points.php">Imperial Knights</a>
+
+            <br><br>
+            <a href="points/votann-points.php">Leauges of Votann</a>
+
+            <br><br>
+            <a href="points/necrons-points.php">Necrons</a>
+
+            <br><br>
+            <a href="points/orks-points.php">Orks<a>
+
+            <br><br>
+            <a href="points/space-marines-points.php">Space Marines</a>
+
+            <br><br>
+            <a href="points/space-wolves-points.php">Space Wolves</a>
+
+            <br><br>
+            <a href="points/t'au-points.php">T'au Empire</a>
+
+            <br><br>
+            <a href="points/thousand-sons-points.php">Thousand Sons</a>
+
+            <br><br>
+            <a href="points/tyranids-points.php">Tyranids</a>
+
+            <br><br>
+            <a href="points/world-eaters-points.php">World Eaters</a>
         </div>
         <div class="pad"></div>
     </div>    

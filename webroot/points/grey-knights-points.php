@@ -27,7 +27,7 @@ use HtmlUnitEchoBuilder as Builder;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genestealer Cults</title>
+    <title>Grey Knights</title>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
@@ -45,7 +45,7 @@ use HtmlUnitEchoBuilder as Builder;
         <div class="pad"></div>
         <div id="article">
 
-            <h2>Genestealer Cults</h2>
+            <h2>Grey Knights</h2>
             <hr>
 
             <form action="db/insert-into-unit-table.php" method="post">

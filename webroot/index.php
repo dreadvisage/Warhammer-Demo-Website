@@ -44,9 +44,8 @@ require '../utils/navbar.php';
             <p>
                 The main attraction of our website is the one of a kind army list builder that emphasizes ease of use for all our users. Ditching the 
                 confusing formatting of units in order of class and function, we present all the factions and thier units in alphebateical order.
-                This allows 40k players, new and old, to easily find thier desired units without the endless scrolling and searching. If for some
-                reason you cannot find the unit you are looking for, consider using the search bar for even easier navigation of INSERT NAME HERE!
-                To begin your creating your army list, please create an account now!
+                This allows 40k players, new and old, to easily find thier desired units without the endless scrolling and searching. To begin your 
+                creating your army list, please create an account now!
             </p>
 
             <br>
