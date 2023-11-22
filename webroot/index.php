@@ -25,9 +25,7 @@ require '../utils/navbar.php';
         <div class="pad"></div>
         <div id="article"> 
 
-            <div id ="image">
-                <img src = "images/aquila-image.webp" alt = "Warhammer 40k Aquila">
-            </div>
+            <img src="images/aquila-image.webp" alt="Warhammer 40k Aquila">
 
             <h1 style = "text-align: center">WELCOME TO OUR WEBSITE RETARDS!!!</h1>
 

@@ -7,17 +7,10 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-$create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
-$create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
-require_once $create_unit_helper_path;
-
-
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
     exit;
 }
-
-use HtmlUnitEchoBuilder as Builder;
 
 ?>
 
@@ -31,6 +24,7 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
+    <script src="../js/create-unit-helper.js"></script>
 </head>
 
 <body>
@@ -48,95 +42,91 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Drukhari</h2>
             <hr>
 
-            <form action="db/insert-into-unit-table.php" method="post">
-                <input id="name" type="hidden" name="name" value="">
-                <input id="models" type="hidden" name="models" value="">
-                <input id="points" type="hidden" name="points" value="">
-                <ul class="points-list">
-                    <?php
-                    Builder::echoUnit("Archon", 1, 14, 75);
+            <ul id="points-list">
+                <script>
+                    const Builder = UnitBuilder;
+                    Builder.setParentId("points-list");
 
-                    Builder::echoUnit("Beastmaster", 7, 12, 105);
+                    Builder.addUnit("Archon", 1, 14, 75);
 
-                    Builder::echoUnit("Court of the Archon", 4, 14, 85);
+                    Builder.addUnit("Beastmaster", 7, 12, 105);
 
-                    Builder::new("Cronos")
-                        ->model(1, 14, 50)
-                        ->model(2, 12, 100)
-                        ->echo();
+                    Builder.addUnit("Court of the Archon", 4, 14, 85);
 
-                    Builder::echoUnit("Drazhar", 1, 14, 90);
+                    Builder.new("Cronos")
+                        .model(1, 14, 50)
+                        .model(2, 12, 100)
+                        .add();
 
-                    Builder::new("Grotesques")
-                        ->model(3, 12, 105)
-                        ->model(6, 12, 210)
-                        ->echo();
+                    Builder.addUnit("Drazhar", 1, 14, 90);
+
+                    Builder.new("Grotesques")
+                        .model(3, 12, 105)
+                        .model(6, 12, 210)
+                        .add();
                     
-                    Builder::echoUnit("Haemonculus", 1, 14, 60);
+                    Builder.addUnit("Haemonculus", 1, 14, 60);
 
-                    Builder::new("Hellions")
-                        ->model(5, 12, 100)
-                        ->model(10, 10, 200)
-                        ->echo();
+                    Builder.new("Hellions")
+                        .model(5, 12, 100)
+                        .model(10, 10, 200)
+                        .add();
 
-                    Builder::new("Incubi")
-                        ->model(5, 14, 80)
-                        ->model(10, 10, 160)
-                        ->echo();
+                    Builder.new("Incubi")
+                        .model(5, 14, 80)
+                        .model(10, 10, 160)
+                        .add();
 
-                    Builder::echoUnit("Kabalite Warriors", 10, 10, 110);
+                    Builder.addUnit("Kabalite Warriors", 10, 10, 110);
 
-                    Builder::echoUnit("Lelith Hesperax", 1, 14, 85);
+                    Builder.addUnit("Lelith Hesperax", 1, 14, 85);
 
-                    Builder::new("Mandrakes")
-                        ->model(5, 14, 65)
-                        ->model(10, 10, 130)
-                        ->echo();
+                    Builder.new("Mandrakes")
+                        .model(5, 14, 65)
+                        .model(10, 10, 130)
+                        .add();
 
-                    Builder::echoUnit("Raider", 1, 14, 90);
+                    Builder.addUnit("Raider", 1, 14, 90);
 
-                    Builder::echoUnit("Ravager", 1, 12, 115);
+                    Builder.addUnit("Ravager", 1, 12, 115);
 
-                    Builder::echoUnit("Razorwing Jetfighter", 1, 12, 170);
+                    Builder.addUnit("Razorwing Jetfighter", 1, 12, 170);
 
-                    Builder::new("Reavers")
-                        ->model(3, 14, 70)
-                        ->model(6, 12, 140)
-                        ->echo();
+                    Builder.new("Reavers")
+                        .model(3, 14, 70)
+                        .model(6, 12, 140)
+                        .add();
 
-                    Builder::new("Scourges")
-                        ->model(5, 12, 110)
-                        ->model(10, 10, 220)
-                        ->echo();
+                    Builder.new("Scourges")
+                        .model(5, 12, 110)
+                        .model(10, 10, 220)
+                        .add();
 
-                    Builder::echoUnit("Succubus", 1, 14, 55);
+                    Builder.addUnit("Succubus", 1, 14, 55);
 
-                    Builder::new("Talos")
-                        ->model(1, 14, 90)
-                        ->model(2, 12, 180)
-                        ->echo();
+                    Builder.new("Talos")
+                        .model(1, 14, 90)
+                        .model(2, 12, 180)
+                        .add();
 
-                    Builder::echoUnit("Urien Rakarth", 1, 14, 80);
+                    Builder.addUnit("Urien Rakarth", 1, 14, 80);
 
-                    Builder::echoUnit("Venom", 1, 14, 80);
+                    Builder.addUnit("Venom", 1, 14, 80);
 
-                    Builder::echoUnit("Voidraven Bomber", 1, 12, 195);
+                    Builder.addUnit("Voidraven Bomber", 1, 12, 195);
 
-                    Builder::new("Wracks")
-                        ->model(5, 14, 60)
-                        ->model(10, 10, 120)
-                        ->echo();
+                    Builder.new("Wracks")
+                        .model(5, 14, 60)
+                        .model(10, 10, 120)
+                        .add();
 
-                    Builder::echoUnit("Wyches", 10, 12, 90);
-                    ?>
+                    Builder.addUnit("Wyches", 10, 12, 90);
 
-                    <h2>Forge World Units</h2>
+                    insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
 
-                    <?php
-                    Builder::echoUnit("Tantalus", 1, 12, 230);
-                    ?>
+                    Builder.addUnit("Tantalus", 1, 12, 230);
+                    </script>
                 </ul>
-            </form>
 
         </div>
         <div class="pad"></div>

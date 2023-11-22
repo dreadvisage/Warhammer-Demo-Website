@@ -7,17 +7,10 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-$create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
-$create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
-require_once $create_unit_helper_path;
-
-
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
     exit;
 }
-
-use HtmlUnitEchoBuilder as Builder;
 
 ?>
 
@@ -31,6 +24,7 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
+    <script src="../js/create-unit-helper.js"></script>
 </head>
 
 <body>
@@ -48,118 +42,116 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Space Wolves</h2>
             <hr>
 
-            <form action="db/insert-into-unit-table.php" method="post">
-                <input id="name" type="hidden" name="name" value="">
-                <input id="models" type="hidden" name="models" value="">
-                <input id="points" type="hidden" name="points" value="">
-                <ul class="points-list">
-                    <?php
-                    Builder::echoUnit("Arjac Rockfist", 1, 14, 95);
-
-                    Builder::echoUnit("Bjorn the Fell-Handed", 1, 12, 180);
-
-                    Builder::new("Blood Claws")
-                        ->model(10, 10, 140)
-                        ->model(15, 10, 210)
-                        ->echo();
+            <ul id="points-list">
+                    <script>
+                    const Builder = UnitBuilder;
+                    Builder.setParentId("points-list");
                     
-                    Builder::echoUnit("Canis Wolfborn", 1, 14, 75);
+                    Builder.addUnit("Arjac Rockfist", 1, 14, 95);
 
-                    Builder::echoUnit("Cyberwolf", 1, 14, 20);
+                    Builder.addUnit("Bjorn the Fell-Handed", 1, 12, 180);
 
-                    Builder::new("Fenisian Wolves")
-                        ->model(5, 14, 30)
-                        ->model(10, 12, 60)
-                        ->echo();
+                    Builder.new("Blood Claws")
+                        .model(10, 10, 140)
+                        .model(15, 10, 210)
+                        .add();
+                    
+                    Builder.addUnit("Canis Wolfborn", 1, 14, 75);
 
-                    Builder::new("Grey Hunters")
-                        ->model(5, 14, 85)
-                        ->model(10, 10, 170)
-                        ->echo();
+                    Builder.addUnit("Cyberwolf", 1, 14, 20);
 
-                    Builder::echoUnit("Harald Deathwolf", 1, 14, 85);
+                    Builder.new("Fenisian Wolves")
+                        .model(5, 14, 30)
+                        .model(10, 12, 60)
+                        .add();
 
-                    Builder::new("Hounds of Morkai")
-                        ->model(5, 14, 90)
-                        ->model(10, 10, 180)
-                        ->echo();
+                    Builder.new("Grey Hunters")
+                        .model(5, 14, 85)
+                        .model(10, 10, 170)
+                        .add();
 
-                    Builder::echoUnit("Iron Priest", 1, 14, 60);
+                    Builder.addUnit("Harald Deathwolf", 1, 14, 85);
 
-                    Builder::echoUnit("Krom Dragongaze", 1, 14, 65);
+                    Builder.new("Hounds of Morkai")
+                        .model(5, 14, 90)
+                        .model(10, 10, 180)
+                        .add();
 
-                    Builder::echoUnit("Logan Grimnar", 1, 12, 100);
+                    Builder.addUnit("Iron Priest", 1, 14, 60);
 
-                    Builder::echoUnit("Logan Grimnar on Stormrider", 1, 12, 180);
+                    Builder.addUnit("Krom Dragongaze", 1, 14, 65);
 
-                    Builder::new("Long Fangs")
-                        ->model(5, 12, 150)
-                        ->model(6, 12, 180)
-                        ->echo();
+                    Builder.addUnit("Logan Grimnar", 1, 12, 100);
 
-                    Builder::echoUnit("Lukas the Trickster", 1, 14, 50);
+                    Builder.addUnit("Logan Grimnar on Stormrider", 1, 12, 180);
 
-                    Builder::echoUnit("Murderfang", 1, 12, 170);
+                    Builder.new("Long Fangs")
+                        .model(5, 12, 150)
+                        .model(6, 12, 180)
+                        .add();
 
-                    Builder::echoUnit("Njal Stormcaller", 1, 14, 85);
+                    Builder.addUnit("Lukas the Trickster", 1, 14, 50);
 
-                    Builder::echoUnit("Ragnar Blackmane", 1, 14, 90);
+                    Builder.addUnit("Murderfang", 1, 12, 170);
 
-                    Builder::new("Skyclaws")
-                        ->model(5, 14, 90)
-                        ->model(10, 10, 180)
-                        ->model(15, 10, 270)
-                        ->echo();
+                    Builder.addUnit("Njal Stormcaller", 1, 14, 85);
 
-                    Builder::echoUnit("Space Wolves Venerable Dreadnought", 1, 12, 155);
+                    Builder.addUnit("Ragnar Blackmane", 1, 14, 90);
 
-                    Builder::echoUnit("Stormfang Gunship", 1, 12, 300);
+                    Builder.new("Skyclaws")
+                        .model(5, 14, 90)
+                        .model(10, 10, 180)
+                        .model(15, 10, 270)
+                        .add();
 
-                    Builder::echoUnit("Stormwolf", 1, 12, 250);
+                    Builder.addUnit("Space Wolves Venerable Dreadnought", 1, 12, 155);
 
-                    Builder::new("Thunderwolf Cavalry")
-                        ->model(3, 14, 90)
-                        ->model(6, 12, 180)
-                        ->echo();
+                    Builder.addUnit("Stormfang Gunship", 1, 12, 300);
 
-                    Builder::echoUnit("Ulrik the Slayer", 1, 14, 70);
+                    Builder.addUnit("Stormwolf", 1, 12, 250);
 
-                    Builder::new("Wolf Guard")
-                        ->model(5, 14, 95)
-                        ->model(10, 10, 190)
-                        ->echo();
+                    Builder.new("Thunderwolf Cavalry")
+                        .model(3, 14, 90)
+                        .model(6, 12, 180)
+                        .add();
 
-                    Builder::echoUnit("Wolf Guard Battle Leader in Terminator Armour", 1, 14, 75);
+                    Builder.addUnit("Ulrik the Slayer", 1, 14, 70);
 
-                    Builder::echoUnit("Wolf Guard Battle Leader on Thunderwolf", 1, 14, 80);
+                    Builder.new("Wolf Guard")
+                        .model(5, 14, 95)
+                        .model(10, 10, 190)
+                        .add();
 
-                    Builder::echoUnit("Wolf Guard Pack Leader", 1, 14, 30);
+                    Builder.addUnit("Wolf Guard Battle Leader in Terminator Armour", 1, 14, 75);
 
-                    Builder::echoUnit("Wolf Guard Pack Leader in Terminator Armour", 1, 14, 40);
+                    Builder.addUnit("Wolf Guard Battle Leader on Thunderwolf", 1, 14, 80);
 
-                    Builder::echoUnit("Wolf Guard Pack Leader with Jump Pack", 1, 14, 35);
+                    Builder.addUnit("Wolf Guard Pack Leader", 1, 14, 30);
 
-                    Builder::new("Wolf Guard Terminators")
-                        ->model(5, 12, 195)
-                        ->model(10, 10, 390)
-                        ->echo();
+                    Builder.addUnit("Wolf Guard Pack Leader in Terminator Armour", 1, 14, 40);
 
-                    Builder::echoUnit("Wolf Lord on Thunderwolf", 1, 12, 100);
+                    Builder.addUnit("Wolf Guard Pack Leader with Jump Pack", 1, 14, 35);
 
-                    Builder::new("Wolf Scouts")
-                        ->model(5, 14, 85)
-                        ->model(10, 10, 170)
-                        ->echo();
+                    Builder.new("Wolf Guard Terminators")
+                        .model(5, 12, 195)
+                        .model(10, 10, 390)
+                        .add();
 
-                    Builder::new("Wulfen")
-                        ->model(5, 14, 80)
-                        ->model(10, 10, 160)
-                        ->echo();
+                    Builder.addUnit("Wolf Lord on Thunderwolf", 1, 12, 100);
 
-                    Builder::echoUnit("Wulfen Dreadnought", 1, 12, 130);
-                    ?>
+                    Builder.new("Wolf Scouts")
+                        .model(5, 14, 85)
+                        .model(10, 10, 170)
+                        .add();
+
+                    Builder.new("Wulfen")
+                        .model(5, 14, 80)
+                        .model(10, 10, 160)
+                        .add();
+
+                    Builder.addUnit("Wulfen Dreadnought", 1, 12, 130);
+                    </script>
                 </ul>
-            </form>
 
         </div>
         <div class="pad"></div>

@@ -7,17 +7,10 @@ $is_logged_in_path = $_SERVER['DOCUMENT_ROOT'];
 $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
-$create_unit_helper_path = $_SERVER['DOCUMENT_ROOT'];
-$create_unit_helper_path .= "/project/../utils/create-unit-helper.php";
-require_once $create_unit_helper_path;
-
-
 if (isNotLoggedIn()) {
     header("location: ../account/login.php");
     exit;
 }
-
-use HtmlUnitEchoBuilder as Builder;
 
 ?>
 
@@ -31,6 +24,7 @@ use HtmlUnitEchoBuilder as Builder;
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/article-section.css">
     <link rel="stylesheet" href="../css/points.css">
+    <script src="../js/create-unit-helper.js"></script>
 </head>
 
 <body>
@@ -48,202 +42,198 @@ use HtmlUnitEchoBuilder as Builder;
             <h2>Orks</h2>
             <hr>
 
-            <form action="db/insert-into-unit-table.php" method="post">
-                <input id="name" type="hidden" name="name" value="">
-                <input id="models" type="hidden" name="models" value="">
-                <input id="points" type="hidden" name="points" value="">
-                <ul class="points-list">
-                    <?php
-                    Builder::echoUnit("Battlewagon", 1, 12, 185);
+            <ul id="points-list">
+                    <script>
+                    const Builder = UnitBuilder;
+                    Builder.setParentId("points-list");
 
-                    Builder::new("Beast Snagga Boyz")
-                        ->model(10, 10, 105)
-                        ->model(20, 10, 210)
-                        ->echo();
+                    Builder.addUnit("Battlewagon", 1, 12, 185);
+
+                    Builder.new("Beast Snagga Boyz")
+                        .model(10, 10, 105)
+                        .model(20, 10, 210)
+                        .add();
                     
-                    Builder::echoUnit("Beastboss", 1, 12, 100);
+                    Builder.addUnit("Beastboss", 1, 12, 100);
 
-                    Builder::echoUnit("Beastboss on Squigosaur", 1, 12, 165);
+                    Builder.addUnit("Beastboss on Squigosaur", 1, 12, 165);
 
-                    Builder::echoUnit("Big Mek in Mega Armour", 1, 14, 85);
+                    Builder.addUnit("Big Mek in Mega Armour", 1, 14, 85);
 
-                    Builder::echoUnit("Big Mek in Kustom Force Field", 1, 14, 55);
+                    Builder.addUnit("Big Mek in Kustom Force Field", 1, 14, 55);
 
-                    Builder::echoUnit("Big Mek with Shokk Attack Gun", 1, 14, 75);
+                    Builder.addUnit("Big Mek with Shokk Attack Gun", 1, 14, 75);
 
-                    Builder::echoUnit("Big'ed Bossbunka", 1, 12, 135);
+                    Builder.addUnit("Big'ed Bossbunka", 1, 12, 135);
 
-                    Builder::echoUnit("Blitza-bommer", 1, 12, 115);
+                    Builder.addUnit("Blitza-bommer", 1, 12, 115);
 
-                    Builder::echoUnit("Boomdakka Snazzwagon", 1, 14, 90);
+                    Builder.addUnit("Boomdakka Snazzwagon", 1, 14, 90);
 
-                    Builder::echoUnit("Boss Snikrot", 1, 14, 85);
+                    Builder.addUnit("Boss Snikrot", 1, 14, 85);
 
-                    Builder::echoUnit("Boss Zagstruk", 1, 14, 90);
+                    Builder.addUnit("Boss Zagstruk", 1, 14, 90);
 
-                    Builder::new("Boyz")
-                        ->model(10, 12, 85)
-                        ->model(20, 10, 170)
-                        ->echo();
+                    Builder.new("Boyz")
+                        .model(10, 12, 85)
+                        .model(20, 10, 170)
+                        .add();
 
-                    Builder::new("Burna Boyz")
-                        ->modelCustom("1 Spanner and 4 Burna Boyz", 30, 60)
-                        ->modelCustom("2 Spanner and 8 Burna Boyz", 28, 120)
-                        ->modelCustom("3 Spanner and 12 Burna Boyz", 26, 180)
-                        ->echo();
+                    Builder.new("Burna Boyz")
+                        .modelCustom("1 Spanner and 4 Burna Boyz", 30, 60)
+                        .modelCustom("2 Spanner and 8 Burna Boyz", 28, 120)
+                        .modelCustom("3 Spanner and 12 Burna Boyz", 26, 180)
+                        .add();
 
-                    Builder::echoUnit("Burna-bommer", 1, 12, 125);
+                    Builder.addUnit("Burna-bommer", 1, 12, 125);
 
-                    Builder::echoUnit("Dakkajet", 1, 12, 135);
+                    Builder.addUnit("Dakkajet", 1, 12, 135);
 
-                    Builder::echoUnit("Deff Dread", 1, 12, 130);
+                    Builder.addUnit("Deff Dread", 1, 12, 130);
 
-                    Builder::echoUnit("Deffkilla Wartrike", 1, 14, 80);
+                    Builder.addUnit("Deffkilla Wartrike", 1, 14, 80);
 
-                    Builder::new("Deffkoptas")
-                        ->model(3, 12, 100)
-                        ->model(6, 12, 200)
-                        ->echo();
+                    Builder.new("Deffkoptas")
+                        .model(3, 12, 100)
+                        .model(6, 12, 200)
+                        .add();
 
-                    Builder::new("Flash Gitz")
-                        ->model(5, 14, 95)
-                        ->model(10, 10, 190)
-                        ->echo();
+                    Builder.new("Flash Gitz")
+                        .model(5, 14, 95)
+                        .model(10, 10, 190)
+                        .add();
 
-                    Builder::echoUnit("Ghazghkull Thraka", 2, 12, 235);
+                    Builder.addUnit("Ghazghkull Thraka", 2, 12, 235);
 
-                    Builder::echoUnit("Gorkanaut", 1, 12, 280);
+                    Builder.addUnit("Gorkanaut", 1, 12, 280);
 
-                    Builder::new("Gretchin")
-                        ->model(11, 12, 40)
-                        ->model(22, 12, 80)
-                        ->echo();
+                    Builder.new("Gretchin")
+                        .model(11, 12, 40)
+                        .model(22, 12, 80)
+                        .add();
 
-                    Builder::echoUnit("Hunta Rig", 1, 12, 160);
+                    Builder.addUnit("Hunta Rig", 1, 12, 160);
 
-                    Builder::echoUnit("Kaptin Badrukk", 1, 14, 80);
+                    Builder.addUnit("Kaptin Badrukk", 1, 14, 80);
 
-                    Builder::echoUnit("Kill Rig", 1, 12, 200);
+                    Builder.addUnit("Kill Rig", 1, 12, 200);
 
-                    Builder::new("Killa Kans")
-                        ->model(3, 12, 150)
-                        ->model(6, 12, 300)
-                        ->echo();
+                    Builder.new("Killa Kans")
+                        .model(3, 12, 150)
+                        .model(6, 12, 300)
+                        .add();
 
-                    Builder::echoUnit("Kommandos", 10, 10, 135);
+                    Builder.addUnit("Kommandos", 10, 10, 135);
 
-                    Builder::echoUnit("Kustom Boosta-blasta", 1, 14, 85);
+                    Builder.addUnit("Kustom Boosta-blasta", 1, 14, 85);
 
-                    Builder::new("Lootas")
-                        ->modelCustom("1 Spanner and 4 Lootas", 30, 50)
-                        ->modelCustom("2 Spanner and 8 Lootas", 28, 100)
-                        ->modelCustom("3 Spanner and 12 Lootas", 26, 150)
-                        ->echo();
+                    Builder.new("Lootas")
+                        .modelCustom("1 Spanner and 4 Lootas", 30, 50)
+                        .modelCustom("2 Spanner and 8 Lootas", 28, 100)
+                        .modelCustom("3 Spanner and 12 Lootas", 26, 150)
+                        .add();
 
-                    Builder::echoUnit("Mad Dok Grotsnik", 1, 14, 65);
+                    Builder.addUnit("Mad Dok Grotsnik", 1, 14, 65);
 
-                    Builder::new("Meganobz")
-                        ->model(2, 14, 60)
-                        ->model(3, 14, 90)
-                        ->model(5, 12, 150)
-                        ->model(6, 12, 180)
-                        ->echo();
+                    Builder.new("Meganobz")
+                        .model(2, 14, 60)
+                        .model(3, 14, 90)
+                        .model(5, 12, 150)
+                        .model(6, 12, 180)
+                        .add();
 
-                    Builder::echoUnit("Megatrakk Scrapjet", 1, 14, 90);
+                    Builder.addUnit("Megatrakk Scrapjet", 1, 14, 90);
 
-                    Builder::echoUnit("Mek", 1, 14, 45);
+                    Builder.addUnit("Mek", 1, 14, 45);
 
-                    Builder::new("Mek Gunz")
-                        ->model(1, 14, 55)
-                        ->model(2, 12, 110)
-                        ->model(3, 12, 165)
-                        ->echo();
+                    Builder.new("Mek Gunz")
+                        .model(1, 14, 55)
+                        .model(2, 12, 110)
+                        .model(3, 12, 165)
+                        .add();
 
-                    Builder::echoUnit("Mekboy Workshop", 1, 14, 80);
+                    Builder.addUnit("Mekboy Workshop", 1, 14, 80);
 
-                    Builder::echoUnit("Morkanaut", 1, 12, 330);
+                    Builder.addUnit("Morkanaut", 1, 12, 330);
 
-                    Builder::echoUnit("Mozrog Skragbad", 1, 12, 195);
+                    Builder.addUnit("Mozrog Skragbad", 1, 12, 195);
 
-                    Builder::echoUnit("Nob on Smasha Squig", 1, 14, 60);
+                    Builder.addUnit("Nob on Smasha Squig", 1, 14, 60);
 
-                    Builder::echoUnit("Nob with Waaagh! Banner", 1, 14, 70);
+                    Builder.addUnit("Nob with Waaagh! Banner", 1, 14, 70);
 
-                    Builder::new("Nobz")
-                        ->model(5, 12, 105)
-                        ->model(10, 10, 210)
-                        ->echo();
+                    Builder.new("Nobz")
+                        .model(5, 12, 105)
+                        .model(10, 10, 210)
+                        .add();
 
-                    Builder::echoUnit("Painboss", 1, 14, 60);
+                    Builder.addUnit("Painboss", 1, 14, 60);
 
-                    Builder::echoUnit("Painboy", 1, 14, 70);
+                    Builder.addUnit("Painboy", 1, 14, 70);
 
-                    Builder::echoUnit("Rukkatrukk Squigbuggy", 1, 12, 110);
+                    Builder.addUnit("Rukkatrukk Squigbuggy", 1, 12, 110);
 
-                    Builder::echoUnit("Shokkjump Dragsta", 1, 14, 85);
+                    Builder.addUnit("Shokkjump Dragsta", 1, 14, 85);
 
-                    Builder::new("Squighog Boyz")
-                        ->model(3, 12, 110)
-                        ->model(6, 12, 220)
-                        ->echo();
+                    Builder.new("Squighog Boyz")
+                        .model(3, 12, 110)
+                        .model(6, 12, 220)
+                        .add();
 
-                    Builder::echoUnit("Stompa", 1, 12, 800);
+                    Builder.addUnit("Stompa", 1, 12, 800);
 
-                    Builder::new("Stormboyz")
-                        ->model(5, 14, 65)
-                        ->model(10, 10, 130)
-                        ->echo();
+                    Builder.new("Stormboyz")
+                        .model(5, 14, 65)
+                        .model(10, 10, 130)
+                        .add();
 
-                    Builder::echoUnit("Tankbustas", 5, 12, 110);
+                    Builder.addUnit("Tankbustas", 5, 12, 110);
 
-                    Builder::echoUnit("Trukk", 1, 14, 60);
+                    Builder.addUnit("Trukk", 1, 14, 60);
 
-                    Builder::new("Warbikers")
-                        ->model(3, 14, 70)
-                        ->model(6, 12, 140)
-                        ->echo();
+                    Builder.new("Warbikers")
+                        .model(3, 14, 70)
+                        .model(6, 12, 140)
+                        .add();
 
-                    Builder::echoUnit("Warboss", 1, 14, 65);
+                    Builder.addUnit("Warboss", 1, 14, 65);
 
-                    Builder::echoUnit("Warboss in Mega Armour", 1, 14, 80);
+                    Builder.addUnit("Warboss in Mega Armour", 1, 14, 80);
 
-                    Builder::echoUnit("Wazbom Blastajet", 1, 12, 175);
+                    Builder.addUnit("Wazbom Blastajet", 1, 12, 175);
 
-                    Builder::echoUnit("Weirdboy", 1, 14, 55);
+                    Builder.addUnit("Weirdboy", 1, 14, 55);
 
-                    Builder::echoUnit("Wurrboy", 1, 14, 60);
+                    Builder.addUnit("Wurrboy", 1, 14, 60);
 
-                    Builder::echoUnit("Zodgrod Wortsnagga", 1, 14, 80);
-                    ?>
+                    Builder.addUnit("Zodgrod Wortsnagga", 1, 14, 80);
 
-                    <h2>Forge World Units</h2>
+                    insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
 
-                    <?php
-                    Builder::echoUnit("Big Trakk", 1, 14, 90);
+                    Builder.addUnit("Big Trakk", 1, 14, 90);
 
-                    Builder::echoUnit("Grot Mega-tank", 1, 12, 110);
+                    Builder.addUnit("Grot Mega-tank", 1, 12, 110);
 
-                    Builder::new("Grot Tanks")
-                        ->model(4, 12, 155)
-                        ->model(8, 12, 310)
-                        ->echo();
+                    Builder.new("Grot Tanks")
+                        .model(4, 12, 155)
+                        .model(8, 12, 310)
+                        .add();
 
-                    Builder::echoUnit("Gargantuan Squiggoth", 1, 12, 440);
+                    Builder.addUnit("Gargantuan Squiggoth", 1, 12, 440);
 
-                    Builder::echoUnit("Kill Tank", 1, 12, 295);
+                    Builder.addUnit("Kill Tank", 1, 12, 295);
 
-                    Builder::echoUnit("Mega Dread", 1, 12, 225);
+                    Builder.addUnit("Mega Dread", 1, 12, 225);
 
-                    Builder::echoUnit("Meka-dread", 1, 12, 210);
+                    Builder.addUnit("Meka-dread", 1, 12, 210);
 
-                    Builder::echoUnit("Nobz on Warbikes", 3, 12, 125);
+                    Builder.addUnit("Nobz on Warbikes", 3, 12, 125);
 
-                    Builder::echoUnit("Squiggoth", 1, 12, 150);
+                    Builder.addUnit("Squiggoth", 1, 12, 150);
 
-                    Builder::echoUnit("Warboss on Warbike", 1, 14, 75);
-                    ?>
+                    Builder.addUnit("Warboss on Warbike", 1, 14, 75);
+                    </script>
                 </ul>
-            </form>
 
         </div>
         <div class="pad"></div>
