@@ -32,7 +32,8 @@ function echoNavbar($num_dirs_up) {
                     </div>
                 </div>
             </li>
-            <li><a class="nav-link" href="' . getDirsUp($num_dirs_up) . 'about.php">About</a></li>';
+            <li><a class="nav-link" href="' . getDirsUp($num_dirs_up) . 'about.php">About</a></li>
+            <li><a class="nav-link" href="' . getDirsUp($num_dirs_up) . 'indexes.php">Indexes</a></li>';
             if (isLoggedIn()) {
                 echo 
                 '<li>
@@ -89,6 +90,7 @@ function echoAltNavbar($num_dirs_up) {
                 <a href="' . getDirsUp($num_dirs_up) . 'factions.php">Factions</a>
                 <a href="' . getDirsUp($num_dirs_up) . 'about.php">About</a>
                 <a href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>
+                <a href="' . getDirsUp($num_dirs_up) . 'indexes.php">Indexes</a>
             </div>
         </div>
     </div>
