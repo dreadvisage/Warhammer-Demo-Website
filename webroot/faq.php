@@ -8,11 +8,7 @@ require '../utils/navbar.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>About</title>
-=======
     <title>FAQ</title>
->>>>>>> sethsBranch
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/article-section.css">
 </head>
@@ -26,9 +22,6 @@ require '../utils/navbar.php';
     <div class="display">
         <div class="pad"></div>
         <div id="article"> 
-<<<<<<< HEAD
-            <p>This is the FAQ page!</p>
-=======
             
             <h1>Frequently Asked Questions</h1>
 
@@ -119,7 +112,6 @@ require '../utils/navbar.php';
 
             <br><br>
             <a href="factions/world-eaters.php">World Eaters</a>
->>>>>>> sethsBranch
         </div>
         <div class="pad"></div>
     </div>    
