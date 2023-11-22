@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Adeptus Custodes</h2>
                 <hr>
 
-                <img src = "../images/custodes-image.webp" alt = "Custodian Guard" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/custodes-image.webp" alt = "Custodian Guard">
+                </div>
 
                 <p>The Adeptus Custodes, or Custodian Guard, are the Emperor of Mankind's elite protectors in the Warhammer 40,000 universe. 
                     Their sole purpose is to safeguard the Imperial Palace on Terra and defend the Emperor.</p>

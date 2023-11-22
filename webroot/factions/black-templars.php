@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Black Templars</h2>
                 <hr>
 
-                <img src = "../images/templars-image.jpeg" alt = "Black Templars" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/templars-image.jpeg" alt = "Black Templars">
+                </div>
 
                 <p>The Black Templars are a fervent and zealous Space Marine Chapter in the Warhammer 40,000 universe. They are known for their 
                     unshakable faith in the Emperor and their tireless crusade against heretics and aliens, making them one of the most relentless 

@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Dark Angels</h2>
                 <hr>
 
-                <img src = "../images/dark-angels-image.jpeg" alt = "Traitor Legions" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/dark-angels-image.jpeg" alt = "Traitor Legions">
+                </div>
 
                 <p>The Dark Angels are a mysterious and secretive Space Marine Chapter in the Warhammer 40,000 universe. They are renowned for 
                     their unshakable loyalty to the Emperor and their dark, hidden past, often shrouded in enigmatic traditions and secrets.</p>

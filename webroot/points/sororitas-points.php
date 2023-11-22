@@ -113,14 +113,40 @@ if (isNotLoggedIn()) {
             .model(2, 12, 120)
             .add();
 
-          Builder.addUnit("Paragon Warsuits", 1, 14, 40);
+          Builder.addUnit("Paragon Warsuits", 3, 12, 200);
 
           Builder.addUnit("Repentia Squad", 5, 12, 115);
+
+          Builder.addUnit("Preacher", 1, 14, 40);
+
+          Builder.new("Repentia Squad")
+            .model(5, 14, 65)
+            .model(10, 10, 130)
+            .add();
+
+          Builder.addUnit("Retributor Squad", 5, 12, 115);
+
+          Builder.addUnit("Saint Celestine", 3, 12, 135);
+
+          Builder.new("Seraphim Squad")
+            .model(5, 14, 70)
+            .model(10, 10, 140)
+            .add();
+
+          Builder.addUnit("Sisters Novitiate Squad", 10, 12, 85);
+
+          Builder.addUnit("Sororitas Rhino", 3, 14, 75);
+
+          Builder.addUnit("Truimph of Saint Katherine", 1, 12, 125);
+
+          Builder.new("Zephyrim Squad")
+            .model(5, 14, 70)
+            .model(10, 10, 140)
+            .add();
           </script>
 
       </ul>
 
-    
       </div>
     <div class="pad"></div>
   </div>

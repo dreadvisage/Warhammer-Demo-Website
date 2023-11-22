@@ -53,7 +53,7 @@ if (isNotLoggedIn()) {
 
                     Builder.addUnit("Eversor Assassin", 1, 14, 75);
 
-                    Builder.addUnit("Extaction Squad", 10, 4, 110);
+                    Builder.addUnit("Exaction Squad", 10, 10, 110);
 
                     Builder.addUnit("Imperial Navy Breachers", 10, 10, 105);
 
@@ -71,9 +71,9 @@ if (isNotLoggedIn()) {
 
                     Builder.addUnit("Rogue Trader Entourage", 4, 12, 105);
 
-                    Builder.addUnit("Subductor Squad", 10, 4, 110);
+                    Builder.addUnit("Subductor Squad", 10, 10, 110);
 
-                    Builder.addUnit("Vigiliant Squad", 10, 4, 105);
+                    Builder.addUnit("Vigiliant Squad", 10, 10, 105);
 
                     Builder.addUnit("Vindicare Assassin", 1, 14, 80);
 

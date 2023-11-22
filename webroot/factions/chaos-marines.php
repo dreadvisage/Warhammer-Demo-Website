@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Chaos Space Marines</h2>
                 <hr>
 
-                <img src = "../images/chaos-marines-image.jpeg" alt = "Traitor Legions" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/chaos-marines-image.jpeg" alt = "Traitor Legions">
+                </div>
 
                 <p>Chaos Space Marines, also known as the Traitor Legions, are a malevolent and corrupted faction within the Warhammer 40,000 
                     universe. They are former Space Marines who have turned against the Imperium and pledged their loyalty to the dark gods of Chaos, 

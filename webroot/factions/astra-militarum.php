@@ -27,7 +27,9 @@ require '../../utils/navbar.php';
                 <h2>Astra Militarum</h2>
                 <hr>
 
-                <img src = "../images/militarum-image.jpeg" alt = "Imperial Guard" height = "300" width = "500">
+                <div id ="image">
+                <img src = "../images/militarum-image.jpeg" alt = "Imperial Guard">
+                </div>
 
                 <p>The Astra Militarum, formerly known as the Imperial Guard, is the largest and most numerous military force within the Warhammer 40,000 
                     universe. Comprised of countless regiments from diverse planets, it forms the backbone of the Imperium's military might, defending 

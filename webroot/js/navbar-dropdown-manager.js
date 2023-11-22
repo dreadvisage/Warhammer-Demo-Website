@@ -12,8 +12,21 @@ const FACTIONS_PAGES = [
     ["factions/chaos-knights.php", "Chaos Knights"],
     ["factions/chaos-marines.php", "Chaos Space Marines"],
     ["factions/dark-angels.php", "Dark Angels"],
+    ["factions/death-guard.php", "Death Guard"],
+    ["factions/deathwatch.php", "Deathwatch"],
+    ["factions/drukhari.php", "Drukhari"],
+    ["factions/genestealer-cults.php", "Genestealer Cults"],
+    ["factions/grey-knights.php", "Grey Knights"],
+    ["factions/imperial-knights.php", "Imperial Knights"],
+    ["factions/leagues-of-votann.php", "Leagues of Votann"],
     ["factions/necrons.php", "Necrons"],
+    ["factions/orks.php", "Orks"],
     ["factions/space-marine.php", "Space Marines"],
+    ["factions/space-wolves.php", "Space Wolves"],
+    ["factions/t'au-empire.php", "T'au Empire"],
+    ["factions/thousand-sons.php", "Thousand Sons"],
+    ["factions/tyranids.php", "Tyranids"],
+    ["factions/world-eaters.php", "World Eaters"],
 ];
 
 const POINTS_PAGES = [
@@ -30,7 +43,21 @@ const POINTS_PAGES = [
     ["points/chaos-knights-points.php", "Chaos Knights"],
     ["points/chaos-marines-points.php", "Chaos Space Marines"],
     ["points/dark-angels-points.php", "Dark Angels"],
+    ["points/death-guard-points.php", "Death Guard"],
+    ["points/deathwatch-points.php", "Deathwatch"],
+    ["points/drukhari-points.php", "Drukhari"],
+    ["points/genestealers-points.php", "Genestealer Cults"],
+    ["points/grey-knights-points.php", "Grey Knights"],
+    ["points/imperial-knights-points.php", "Imperial Knights"],
     ["points/votann-points.php", "Leagues of Votann"],
+    ["points/necrons-points.php", "Necrons"],
+    ["points/orks-points.php", "Orks"],
+    ["points/space-marines-points.php", "Space Marines"],
+    ["points/space-wolves-points.php", "Space Wolves"],
+    ["points/t'au-points.php", "T'au Empire"],
+    ["points/thousand-sons-points.php", "Thousand Sons"],
+    ["points/tyranids-points.php", "Tyranids"],
+    ["points/world-eaters-points.php", "World Eaters"],
 ];
 
 // This contains all the html ids for the dropdowns in the navbar
