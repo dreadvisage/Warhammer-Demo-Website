@@ -77,22 +77,6 @@ function updateSuggestions(searchSuggestionsId, counter) {
     }
 }
 
-function registerAltSearchBarListeners(searchDropdownId, searchBarId, searchSuggestionsId, numDirsUp) {
-    
-    let searchBar = document.getElementById(searchBarId);
-    window.addEventListener("click", event => {
-        let dropdown = document.getElementById(searchDropdownId);
-        if (event.target !== dropdown && !dropdown.contains(event.target)) {
-            searchBar.style.display = "none";
-        }
-    });
-    window.addEventListener("resize", () => {
-        searchBar.style.display = "none";
-    });
-    
-    registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggestionsId, numDirsUp);
-}
-
 function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggestionsId, numDirsUp) {
     let searchBar = document.getElementById(searchBarId);
     // Input because we want to do action anytime the value changes
@@ -111,7 +95,40 @@ function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggest
     });
     window.addEventListener("resize", () => {
         document.getElementById(searchSuggestionsId).style.display = "none";
+        if (window.innerWidth <= 1060) {
+            document.getElementById(searchBarId).style.display = "none";
+        } else {
+            document.getElementById(searchBarId).style.display = "flex";
+        }
     });
+}
+
+function registerSearchListeners(searchBtnId) {
+    window.addEventListener("resize", () => {
+        if (window.innerWidth < 1060) {
+            document.getElementById(searchBtnId).onclick = toggleSearchBar;
+        } else {
+            document.getElementById(searchBtnId).onclick = null;
+        }
+    });
+    // window.addEventListener("click", event => {
+    //     let searchBar = document.getElementById("search-bar");
+    //     if (event.target !== searchBar && !searchBar.contains(event.target)) {
+    //         searchBar.style.display = "none";
+            
+    //     }
+    // });
+}
+
+function toggleSearchBar() {
+    let searchBar = document.getElementById("search-bar");
+    if (searchBar.style.display == '' || searchBar.style.display == "none") {
+        // if display is none
+        searchBar.style.display = "flex";
+    } else {
+        // if display is set
+        searchBar.style.display = "none";
+    }
 }
 
 function processResultsByContains(searchResultsArray, str) {
