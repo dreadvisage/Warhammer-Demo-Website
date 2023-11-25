@@ -16,7 +16,7 @@ function getDirsUp($num_dirs_up) {
 function echoNavbar($num_dirs_up) {
     echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-dropdown-manager.js"></script>';
     echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/live-search.js"></script>';
-    echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/alt-navbar-three-line-menu.js"></script>';
+    echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-init.js"></script>';
     echo '<div id="navbar">
     <div class="inner1">
         <a id="warhammer-logo-link" href="' . getDirsUp($num_dirs_up) . 'index.php"><img class="warhammer-logo" src="' . getDirsUp($num_dirs_up) . 'images/warhammer-logo-black.png" alt="Warhammer Logo"></a>
@@ -31,7 +31,6 @@ function echoNavbar($num_dirs_up) {
                     echo '<a href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>';
                 }
             echo '</div>
-            <script>registerThreeLineMenuListeners();</script>
         </div>
     </div>
     <div class="inner2">
@@ -68,13 +67,10 @@ function echoNavbar($num_dirs_up) {
         <div id="search-suggestions-dropdown">
             <input id="search-bar" type="text" placeholder="Search...">
                 <div id="search-suggestions" class="search-dropdown-content"></div>
-                <script>registerSearchBarListeners(\'search-suggestions-dropdown\', \'search-bar\', \'search-suggestions\', ' . $num_dirs_up . ')</script>
-                
         </div>
     </div>
     <div class="inner4">
-        <button id="alt-search-btn" onclick=""><img class="alt-search-icon" src="' . getDirsUp($num_dirs_up) . 'images/search-bar-icon.png" alt="Search Icon"></button>
-        <script>registerSearchListeners(\'alt-search-btn\')</script>
+        <button id="alt-search-btn"><img class="alt-search-icon" src="' . getDirsUp($num_dirs_up) . 'images/search-bar-icon.png" alt="Search Icon"></button>
     </div>
     <div class="inner5">';
         if (isLoggedIn()) {
@@ -87,6 +83,7 @@ function echoNavbar($num_dirs_up) {
         }
     echo '</div>
     </div>';
+    echo '<script>initNavbarTools('. $num_dirs_up .')</script>';
 
 }
 

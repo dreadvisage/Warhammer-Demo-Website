@@ -128,6 +128,12 @@ function calculateDropdownLayout(id, numDirsUp) {
     } else { // if greater than 4k
         createDropdown(1, id, numDirsUp, page);
     }
+
+    // console.log("changing offset");
+    // let dropdown = document.getElementById(id);
+    // dropdown.style.position = "absolute";
+    // dropdown.style.left = 0;
+    
 }
 
 // Creates the dropdown table html and adds it to the element with an id matching `id`.
