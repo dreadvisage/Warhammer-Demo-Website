@@ -95,7 +95,7 @@ function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggest
     });
     window.addEventListener("resize", () => {
         document.getElementById(searchSuggestionsId).style.display = "none";
-        if (window.innerWidth <= 1060) {
+        if (window.innerWidth <= width1) {
             document.getElementById(searchBarId).style.display = "none";
         } else {
             document.getElementById(searchBarId).style.display = "flex";
@@ -103,9 +103,84 @@ function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggest
     });
 }
 
+var width1;
+var width2;
+var width3;
+function applyStylesheet() {
+    var liList = document.getElementById("link-list").getElementsByTagName("li");
+    var largo = liList.length;
+    width1 = largo == 5 ? 1060 : 960;
+    width2 = largo == 5 ? 810 : 710;
+    width3 = largo == 5 ? 809 : 709;
+    if (window.innerWidth < width1) {
+        document.getElementById("search-bar").style.display = "none";
+    }
+    var css = `
+        @media (max-width: ${width1}px) {
+            #search-bar {
+                position: absolute;
+                top: 4.6em;
+                left: calc(50% - (245px/2));
+            }
+            .search-dropdown-content {
+                top: 6.9em;
+                left: calc(50% - (245px/2));
+            }
+            #alt-search-btn {
+                cursor: pointer;
+            }
+        }
+        
+        @media (max-width: ${width3}px) {
+            .alt-dropdown {
+                display: flex;
+            }
+            #warhammer-logo-link{
+                display: none;
+            }
+            #alt-warhammer-logo-link {
+                display: flex;
+            }
+            .inner2 {
+                justify-content: space-around;
+                /* Equal to the size of the alt warhammer logo for true center */
+                margin-left: 60px;
+            }
+            .inner2 ul {
+                display: none;
+            }
+        }
+        
+        @media (min-width: ${width2}px) {
+            .alt-dropdown {
+                display: none;
+            }
+            #warhammer-logo-link{
+                display: block;
+            }
+            #alt-warhammer-logo-link {
+                display: none;
+            }
+            .inner2 ul {
+                display: flex;
+            }
+        }
+        `;
+    
+    
+    document.getElementById("head-style").innerHTML = "";
+    document.getElementById("head-style").append(document.createTextNode(css));
+}
+
 function registerSearchListeners(searchBtnId) {
+    var head = document.head;
+    var style = document.createElement('style');
+    style.id = "head-style";
+    head.append(style);
+    applyStylesheet();
+
     window.addEventListener("resize", () => {
-        if (window.innerWidth < 1060) {
+        if (window.innerWidth < width1) {
             document.getElementById(searchBtnId).onclick = toggleSearchBar;
         } else {
             document.getElementById(searchBtnId).onclick = null;

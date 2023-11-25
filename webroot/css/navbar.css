@@ -34,56 +34,6 @@ body {
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
 }
 
-@media (max-width: 1060px) {
-    #search-bar {
-        position: absolute;
-        top: 4.6em;
-        left: calc(50% - (245px/2));
-    }
-    .search-dropdown-content {
-        top: 6.9em;
-        left: calc(50% - (245px/2));
-    }
-    #alt-search-btn {
-        cursor: pointer;
-    }
-}
-
-@media (max-width: 809px) {
-    .alt-dropdown {
-        display: flex;
-    }
-    #warhammer-logo-link{
-        display: none;
-    }
-    #alt-warhammer-logo-link {
-        display: flex;
-    }
-    .inner2 {
-        justify-content: space-around;
-        /* Equal to the size of the alt warhammer logo for true center */
-        margin-left: 60px;
-    }
-    .inner2 ul {
-        display: none;
-    }
-}
-
-@media (min-width: 810px) {
-    .alt-dropdown {
-        display: none;
-    }
-    #warhammer-logo-link{
-        display: block;
-    }
-    #alt-warhammer-logo-link {
-        display: none;
-    }
-    .inner2 ul {
-        display: flex;
-    }
-}
-
 #search-suggestions {
 }
 

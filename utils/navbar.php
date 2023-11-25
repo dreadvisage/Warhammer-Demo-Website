@@ -24,16 +24,19 @@ function echoNavbar($num_dirs_up) {
         <div class="alt-dropdown">
             <button id="three-line-menu-btn"><img class="three-line-icon" src="' . getDirsUp($num_dirs_up) . 'images/three-line-icon.png" alt="Menu Button"></button>
             <div id="three-line-dropdown" class="alt-dropdown-content">
+                <a href="' . getDirsUp($num_dirs_up) . 'index.php">Home</a>
                 <a href="' . getDirsUp($num_dirs_up) . 'factions.php">Factions</a>
                 <a href="' . getDirsUp($num_dirs_up) . 'about.php">About</a>
-                <a href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>
-                <a href="' . getDirsUp($num_dirs_up) . 'indexes.php">Indexes</a>
-            </div>
+                <a href="' . getDirsUp($num_dirs_up) . 'indexes.php">Indexes</a>';
+                if (isLoggedIn()) {
+                    echo '<a href="' . getDirsUp($num_dirs_up) . 'points.php">Points</a>';
+                }
+            echo '</div>
             <script>registerThreeLineMenuListeners();</script>
         </div>
     </div>
     <div class="inner2">
-        <ul>
+        <ul id="link-list">
             <li><a class="nav-link" href="' . getDirsUp($num_dirs_up) . 'index.php">Home</a></li>
             <li>
                 <div class="dropdown">
