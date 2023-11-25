@@ -93,6 +93,19 @@ function registerSearchBarListeners(searchDropdownId, searchBarId, searchSuggest
             searchSuggestions.style.display = "none";
         }
     });
+    window.addEventListener("click", event => {
+        let searchBar = document.getElementById("search-bar");
+        let searchSuggestions = document.getElementById("search-suggestions");
+        let searchBtn = document.getElementById("alt-search-btn");
+        if (event.target !== searchBar && !searchBar.contains(event.target) && 
+        event.target !== searchSuggestions && !searchSuggestions.contains(event.target) &&
+        event.target !== searchBtn && !searchBtn.contains(event.target)) {
+            let searchSuggestions = document.getElementById("search-suggestions");
+            let searchBar = document.getElementById("search-bar");
+            searchBar.style.display = "none";
+            searchSuggestions.style.display = "none";
+        }
+    });
     window.addEventListener("resize", () => {
         document.getElementById(searchSuggestionsId).style.display = "none";
         if (window.innerWidth <= width1) {
@@ -178,6 +191,10 @@ function registerSearchListeners(searchBtnId) {
     style.id = "head-style";
     head.append(style);
     applyStylesheet();
+
+    if (window.innerWidth < width1) {
+        document.getElementById(searchBtnId).onclick = toggleSearchBar;
+    }
 
     window.addEventListener("resize", () => {
         if (window.innerWidth < width1) {
