@@ -8,7 +8,7 @@ function initNavbarTools(numDirsUp) {
     style.id = "head-style";
     document.head.append(style);
     setWidthBreakpoints();
-    appendNavbarMediaRulesStylesheet();
+    appendNavbarAndArticleSectionMediaRulesStylesheet();
 
     // Sets the init behaviors without any resizing involved. Such as on page load.
     setInitWidthBreakpoint1Behaviors();
@@ -17,9 +17,6 @@ function initNavbarTools(numDirsUp) {
     // event listeners for all others (when width greater than widthBreakpoint2)
     registerThreeLineMenuListeners();
     registerSearchListeners("search-suggestions", numDirsUp);
-
-    // TESTING
-    testIsInViewportListeners();
 }
 
 /*******************************
@@ -125,7 +122,7 @@ function setWidthBreakpoints() {
     widthBreakpoint2 = liListLen == 5 ? 810 : 710;
 }
 
-function appendNavbarMediaRulesStylesheet() {
+function appendNavbarAndArticleSectionMediaRulesStylesheet() {
     // width3 needs to be less than widthBreakpoint2 because we can't apply different styles
     // to the same id/class and expect defined behavior
     let width3 = widthBreakpoint2 - 1;
@@ -163,6 +160,13 @@ function appendNavbarMediaRulesStylesheet() {
             .inner2 ul {
                 display: none;
             }
+            /* The article section width*/
+            .pad {
+                display: none;
+            }
+            #article {
+                width: 100vw;
+            }
         }
         
         @media (min-width: ${widthBreakpoint2}px) {
@@ -183,24 +187,4 @@ function appendNavbarMediaRulesStylesheet() {
     
     // Append a new @media rules
     document.getElementById("head-style").append(document.createTextNode(css));
-}
-
-// TESTING
-function testIsInViewportListeners() {
-    // console.log("loaded1");
-    // document.getElementsByClassName("nav-link")[4].addEventListener("mouseover", event => {
-    //     console.log("over");
-    //     console.log("viewportwidth: " + window.innerWidth);
-    //     console.log("pointsdropdownwidth: " + document.getElementById("points-dropdown").offsetWidth);
-    // });
-}
-
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
 }

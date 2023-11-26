@@ -26,7 +26,8 @@ body {
     height: 100vh;
 }
 #article {
-    width: 50vw;
+    /* Take up whatever space is left */
+    width: 100%;
     /* Ensures the height of the readable area is at least 100% of the viewport height. If you want
     to only have the height extend however much text is available, remove this line. */
     /* TODO. This needs to be updated to something that by default, doesn't show the scrollbar */
@@ -47,17 +48,9 @@ body {
 }
 
 .pad {
-    width: 25vw;
-}
-
-/* "Removes" the background image and stretches the article to 100vw when the 
-screen size gets too small */
-@media (max-width: 950px) {
-    .pad {
-        display: none;
-    }
-    #article {
-        width: 100vw;
-    }
+    /* As screen width gets bigger, the padding changes by an insignificant amount.
+    As the screen gets smaller, the padding becomes much smaller, which means more article content,
+    less padding as screen width gets smaller. */
+    width: calc(50vw - 200px);
 }
 

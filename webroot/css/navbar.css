@@ -186,17 +186,14 @@ body {
     border-right: none;
 }
 
-
-/* https://css-tricks.com/fun-viewport-units/ */
-.inner2 li a {
+.nav-link {
     display: block;
     color: white;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 14px; /* similar calc(8px + 1vw) */
+    font-size: 14px;
     font-family: WHFont;
     cursor: pointer;
-    /* border: 0.05em solid purple; */
 }
 
 /* Dropdown content (hidden by default) */
@@ -204,9 +201,24 @@ body {
     display: none;
     position: absolute;
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
-    
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.dropdown-content td {
+    width: 175px;
+    white-space: nowrap;
+}
+
+/* Styles the links in the main dropdowns */
+.dropdown-content td a {
+    display: block;
+    color: white;
+    padding: 14px 8px;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: WHFont;
+    cursor: pointer;
 }
 
 /* Add a grey background color to dropdown links on hover */

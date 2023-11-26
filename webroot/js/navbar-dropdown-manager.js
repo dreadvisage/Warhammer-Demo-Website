@@ -101,39 +101,70 @@ function windowResizeMonitor(id, numDirsUp) {
 // columns are going to be used.
 function calculateDropdownLayout(id, numDirsUp) {
     var page;
+    var dropdown;
     switch(id) {
         case ID.FACTIONS:
             page = FACTIONS_PAGES;
+            dropdown = document.getElementsByClassName("dropdown")[0];
             break;
         case ID.POINTS:
             page = POINTS_PAGES;
+            dropdown = document.getElementsByClassName("dropdown")[1];
             break;
         default:
             throw new Error("No valid dropdown page found.");
     }
+
+    var dropdownWidth;
+    // hardcoded copy from navbar.css
+    const itemWidth = 175;
     if (window.innerHeight < 360) {
         createDropdown(5, id, numDirsUp, page);
+        dropdownWidth = 5 * itemWidth;
     } else if (window.innerHeight < 480) {
         createDropdown(5, id, numDirsUp, page);
+        dropdownWidth = 5 * itemWidth;
     } else if (window.innerHeight < 768) {
         createDropdown(4, id, numDirsUp, page);
+        dropdownWidth = 4 * itemWidth;
     } else if (window.innerHeight < 864) {
         createDropdown(4, id, numDirsUp, page);
+        dropdownWidth = 4 * itemWidth;
     } else if (window.innerHeight < 1080) {
         createDropdown(3, id, numDirsUp, page);
+        dropdownWidth = 3 * itemWidth;
     } else if (window.innerHeight < 1440) {
         createDropdown(2, id, numDirsUp, page);
+        dropdownWidth = 2 * itemWidth;
     } else if (window.innerHeight < 2160) { // 4k
         createDropdown(1, id, numDirsUp, page);
+        dropdownWidth = 1 * itemWidth;
     } else { // if greater than 4k
         createDropdown(1, id, numDirsUp, page);
+        dropdownWidth = 1 * itemWidth;
     }
 
-    // console.log("changing offset");
-    // let dropdown = document.getElementById(id);
-    // dropdown.style.position = "absolute";
-    // dropdown.style.left = 0;
+    calcDropdownPosition(id, dropdown, dropdownWidth);
     
+}
+
+/* If the size of the dropdown will put it outside of the viewport of the window
+(in this scenario, too far right so the user can't see those options) move the 
+dropdown position left relative to the dropdown list it came from, in order to 
+make the dropdown items all fit on the screen. */
+function calcDropdownPosition(id, dropdown, dropdownWidth) {
+    let offsetLeft = dropdown.offsetLeft;
+    let total = offsetLeft + dropdownWidth;
+    // if width is getting smaller because of resizing, move left to compensate. Otherwise, leave be.
+    if (total > window.innerWidth) {
+        let moveLeftBy = total - window.innerWidth;
+        let moved = offsetLeft - moveLeftBy;
+        // we want to move it to the left to fit the dropdown if and only if it doesn't fit 
+        document.getElementById(id).style.left = moved + "px";
+    } else {
+        // we want whatever position it was going to have if we don't have to move it in the first place
+        document.getElementById(id).style.left = "unset";
+    }
 }
 
 // Creates the dropdown table html and adds it to the element with an id matching `id`.
