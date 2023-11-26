@@ -1,5 +1,8 @@
 var counter = 0;
 function getLiveSearchResults(searchSuggestionsId, numDirsUp, str) {
+    // Trim the user's input
+    str = str.trim();
+    
     if (str.length == 0) {
         counter = 0;
         updateSuggestions(searchSuggestionsId, counter);
@@ -19,8 +22,13 @@ function getLiveSearchResults(searchSuggestionsId, numDirsUp, str) {
             let searchResultsArray = JSON.parse(this.responseText);
 
             
+            
             searchResultsArray = processResultsByDamerauLevenshtein(searchResultsArray, str);
             // searchResultsArray = processResultsByContains(searchResultsArray, str);
+
+            /* Removes duplicate links after we know the order of the searchResultsArray based on 
+            processResultsByDamerauLevenshtein() */
+            searchResultsArray = removeDuplicateLinkEntries(searchResultsArray);
 
             // Limits the output to 8 of the most relevant results
             searchResultsArray.splice(8);
@@ -54,9 +62,57 @@ function getLiveSearchResults(searchSuggestionsId, numDirsUp, str) {
         "application/x-www-form-urlencoded",
     );
     httpRequest.send(`q=${encodeURIComponent(str)}`);
+}
 
+/* This acts like a set. When we call this function, we already processed our 
+results by using the Damerau-Levenshtein distance. We ordered the elements
+by how close the suggestionMatchOn string was close to the user string. So, if 
+the user searched "FAQ", then "FAQ" would be closer to the top, if they searched
+"Frequently asked questions" then the alternative "FAQ" would be closer to the top.
+Meaning that whatever duplicate links we come across (which were lower in the searchResults),
+we discard them because we already have a result that is closest to the user search string. */
+function removeDuplicateLinkEntries(searchResultsArray) {
+    const array = [];
+    for (let i = 0; i < searchResultsArray.length; ++i) {
+        let exists = 0;
+        for (let j = 0; j < array.length; ++j) {
+            if (array[j][3] == searchResultsArray[i][3]) {
+                exists = 1;
+            }
+        }
 
+        if (!exists) {
+            array.push(searchResultsArray[i]);
+        }
+    }
+    return array;
+}
 
+/* Removes any entries deemed irrelevant whose Damerau-Levenshtein 
+distance is not equal to the lowest distance in the searchResultsArray 
+array. Meaning the length of the results only contains the closest 
+values and no values that are further away than the closest. */
+// This may or may not be that useful.
+function cullIrrelevantEntries(searchResultsArray, maxLenStr) {
+    let leastLen = maxLenStr;
+    for (let i = 0; i < searchResultsArray.length; ++i) {
+        if (searchResultsArray[i][4] < leastLen) {
+            leastLen = searchResultsArray[i][4];
+        }
+    }
+
+    // let lenDist = maxLenStr - leastLen;
+    const array = [];
+    const allowDistances = [leastLen];
+    for (let j = 0; j < searchResultsArray.length; ++j) {
+        if (allowDistances.includes(searchResultsArray[j][4])) {
+            array.push(searchResultsArray[j]);
+        }
+    }
+
+    
+
+    return array;
 }
 
 
@@ -152,6 +208,8 @@ function processResultsByDamerauLevenshtein(searchResultsArray, str) {
     for (let i = 0; i < startWithArray.length; ++i) {
         searchResultsArray.unshift(startWithArray[i]);
     }
+
+    searchResultsArray = cullIrrelevantEntries(searchResultsArray, maxLenStr);
 
     return searchResultsArray;
 }
