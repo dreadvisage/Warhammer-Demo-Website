@@ -110,6 +110,7 @@ INSERT INTO `search_suggestions` (`suggestionID`, `suggestionMatchOn`, `suggesti
 
 CREATE TABLE `unit_table` (
   `UserID` int(11) NOT NULL,
+  `faction` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `models` varchar(255) NOT NULL,
   `points` varchar(255) NOT NULL
