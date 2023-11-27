@@ -47,6 +47,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Adeptus Titanicus");
                     
                     insertRawHtml("points-list", "<h2>Forge World Units</h2>");
 

@@ -45,6 +45,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Chaos Daemons");
                     
                     Builder.new("Beast of Nurgle")
                         .model(1, 14, 70)

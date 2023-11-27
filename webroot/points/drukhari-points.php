@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                 <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Drukhari");
 
                     Builder.addUnit("Archon", 1, 14, 75);
 

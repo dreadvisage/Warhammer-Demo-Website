@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("T'au Empire");
                     
                     Builder.addUnit("Aun'Shi", 1, 14, 95);
 

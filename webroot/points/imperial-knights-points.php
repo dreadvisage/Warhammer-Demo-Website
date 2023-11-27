@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Imperial Knights");
                     
                     Builder.addUnit("Armiger Helverin", 1, 12, 150);
 

@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Space Marines");
                     
                     Builder.addUnit("Adrax Agatone", 1, 14, 90);
 

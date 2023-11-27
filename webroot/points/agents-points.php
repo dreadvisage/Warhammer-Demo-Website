@@ -45,6 +45,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Agents of the Imperium");
 
                     Builder.addUnit("Callidus Assassin", 1, 14, 90);
 

@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Tyranids");
                     
                     Builder.new("Barbgaunts")
                         .model(5, 14, 60)

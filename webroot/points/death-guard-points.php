@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                 <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Death Guard");
 
                     Builder.addUnit("Biologus Putrifier", 1, 14, 50);
 

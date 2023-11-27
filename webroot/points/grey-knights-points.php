@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Grey Knights");
                     
                     Builder.addUnit("Brother-Captain", 1, 14, 90);
 

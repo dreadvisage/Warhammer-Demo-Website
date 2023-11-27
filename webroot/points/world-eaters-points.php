@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("World Eaters");
 
                     Builder.addUnit("Angron", 1, 12, 415);
                     

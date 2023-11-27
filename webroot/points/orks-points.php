@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Orks");
 
                     Builder.addUnit("Battlewagon", 1, 12, 185);
 

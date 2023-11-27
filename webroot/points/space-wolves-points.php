@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Space Wolves");
                     
                     Builder.addUnit("Arjac Rockfist", 1, 14, 95);
 

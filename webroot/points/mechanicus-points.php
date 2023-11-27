@@ -45,6 +45,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Adeptus Mechanicus");
                     
                     Builder.addUnit("Archaeopter Fusilave", 1, 12, 155);
 

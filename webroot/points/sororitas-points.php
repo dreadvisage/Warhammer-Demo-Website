@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
           <script>
           const Builder = UnitBuilder;
           Builder.setParentId("points-list");
+          Builder.setFaction("Adepta Sororitas");
           
           Builder.addUnit("Aestred Thruga and Agathae Dolan", 2, 14, 55);
 

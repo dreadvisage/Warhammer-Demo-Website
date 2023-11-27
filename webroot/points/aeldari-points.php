@@ -45,6 +45,7 @@ if (isNotLoggedIn()) {
                 <script>
                 const Builder = UnitBuilder;
                 Builder.setParentId("points-list");
+                Builder.setFaction("Aeldari");
 
                 Builder.addUnit("Asurmen", 1, 12, 135);
 

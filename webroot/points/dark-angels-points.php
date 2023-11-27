@@ -45,6 +45,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Dark Angels");
                     
                     Builder.addUnit("Asmodai", 1, 14, 70);
 

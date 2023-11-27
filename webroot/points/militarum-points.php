@@ -45,6 +45,9 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Astra Militarum");
+
+
                     Builder.addUnit("Aegis Defence Line", 1, 12, 145);
 
                     Builder.new("Armoured Sentinels")

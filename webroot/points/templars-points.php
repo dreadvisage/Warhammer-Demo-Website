@@ -47,6 +47,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Black Templars");
                     
                     Builder.addUnit("Black Templars Gladiator Lancer", 1, 12, 165);
 

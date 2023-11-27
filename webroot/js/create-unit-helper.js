@@ -6,12 +6,13 @@
 
 class UnitBuilder {
     static id = "";
+    static faction = "";
     static counter = 0;
 
-    constructor(name) {
-        this.name = name;
+    constructor(unitName) {
+        this.unitName = unitName;
         this.li = document.createElement("li");
-        this.li.append(document.createTextNode(this.name));
+        this.li.append(document.createTextNode(this.unitName));
         this.ul = document.createElement("ul");
         this.ul.className = "unit-type-list";
     }
@@ -20,13 +21,17 @@ class UnitBuilder {
         UnitBuilder.id = id;
     }
 
+    static setFaction(faction) {
+        UnitBuilder.faction = faction;
+    }
+
     static new(name) {
         return new UnitBuilder(name);
     }
 
-    static addUnit(name, models, padding, points) {
+    static addUnit(unitName, models, padding, points) {
         let li = document.createElement("li");
-        li.append(document.createTextNode(name));
+        li.append(document.createTextNode(unitName));
         let ul = document.createElement("ul");
         ul.className = "unit-type-list";
 
@@ -47,8 +52,9 @@ class UnitBuilder {
         liButton.type = "submit";
         liButton.innerText = "➕";
         let num = UnitBuilder.counter;
+        let faction = UnitBuilder.faction;
         liButton.addEventListener("click", () => {
-            makeRequest(name, models, points);
+            makeRequest(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -82,8 +88,10 @@ class UnitBuilder {
         liButton.type = "submit";
         liButton.innerText = "➕";
         let num = UnitBuilder.counter;
+        let faction = UnitBuilder.faction;
+        let unitName = this.unitName;
         liButton.addEventListener("click", () => {
-            makeRequest(this.name, models, points);
+            makeRequest(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -115,8 +123,10 @@ class UnitBuilder {
         liButton.type = "submit";
         liButton.innerText = "➕";
         let num = UnitBuilder.counter;
+        let faction = UnitBuilder.faction;
+        let unitName = this.unitName;
         liButton.addEventListener("click", () => {
-            makeRequest(this.name, models, points);
+            makeRequest(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -221,7 +231,7 @@ function resetNotifyTexts(id) {
  **********************************************************/
 
 let httpRequest;
-function makeRequest(name, models, points) {
+function makeRequest(faction, name, models, points) {
     httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
@@ -242,7 +252,7 @@ function makeRequest(name, models, points) {
     // Backticks mean it will attempt to execute the contents as a shell command.
     // Use of the backtick operator is identical to shell_exec().
     // You can separate multiple data values by inserting an ampersand (&) in between each value
-    httpRequest.send(`name=${encodeURIComponent(name)}&models=${encodeURIComponent(models)}&points=${encodeURIComponent(points)}`);
+    httpRequest.send(`faction=${encodeURIComponent(faction)}&name=${encodeURIComponent(name)}&models=${encodeURIComponent(models)}&points=${encodeURIComponent(points)}`);
 }
 
 function promptAlert() {

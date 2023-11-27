@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                 <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Genestealer Cults");
                     
                     Builder.new("Aberrants")
                         .model(5, 12, 185)

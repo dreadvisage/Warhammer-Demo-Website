@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Adeptus Custodes");
 
                     Builder.addUnit("Aleya", 1, 14, 80);
 

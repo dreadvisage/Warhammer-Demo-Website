@@ -44,6 +44,7 @@ if (isNotLoggedIn()) {
           <script>
           const Builder = UnitBuilder;
           Builder.setParentId("points-list");
+          Builder.setFaction("Leagues of Votann");
           
           Builder.addUnit("Brôkhy Iron-master", 5, 14, 65);
 

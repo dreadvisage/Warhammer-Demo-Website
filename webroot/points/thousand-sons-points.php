@@ -39,13 +39,14 @@ if (isNotLoggedIn()) {
         <div class="pad"></div>
         <div id="article">
 
-            <h2>Thousands Sons</h2>
+            <h2>Thousand Sons</h2>
             <hr>
 
             <ul id="points-list">
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Thousand Sons");
                     
                     Builder.addUnit("Ahriman", 1, 12, 130);
 

@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Necrons");
                     
                     Builder.addUnit("Annihilation Barge", 1, 12, 115);
                     

@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                     <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Chaos Knights");
                     
                     Builder.addUnit("Knight Abominant", 1, 12, 455);
 

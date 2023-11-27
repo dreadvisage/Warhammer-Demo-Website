@@ -47,6 +47,7 @@ if (isNotLoggedIn()) {
                 <script>
                 const Builder = UnitBuilder;
                 Builder.setParentId("points-list");
+                Builder.setFaction("Chaos Space Marines");
                 
                 Builder.addUnit("Abaddon the Despoiler", 1, 12, 310);
 

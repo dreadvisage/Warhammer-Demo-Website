@@ -15,16 +15,18 @@ if (isNotLoggedIn()) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $faction = $_REQUEST["faction"];
     $name = $_REQUEST["name"];
     $models = $_REQUEST["models"];
     $points = $_REQUEST["points"];
 
     /* For each user, create a table for them so that we can insert their units into it */
-    $query = 'INSERT INTO unit_table (UserID, name, models, points) VALUES (?,?,?,?)';
+    $query = 'INSERT INTO unit_table (UserID, faction, name, models, points) VALUES (?,?,?,?,?)';
     if ($stmt = $mysqli->prepare($query)) {
-        $stmt->bind_param("isss", $param_user_id, $param_name, $param_models, $param_points);
+        $stmt->bind_param("issss", $param_user_id, $param_faction, $param_name, $param_models, $param_points);
         
         $param_user_id = $_SESSION["UserID"];
+        $param_faction = $faction;
         $param_name = $name;
         $param_models = $models;
         $param_points = $points;

@@ -46,6 +46,7 @@ if (isNotLoggedIn()) {
                 <script>
                     const Builder = UnitBuilder;
                     Builder.setParentId("points-list");
+                    Builder.setFaction("Deathwatch");
 
                     Builder.addUnit("Corvus Blackstar", 1, 12, 180);
 
