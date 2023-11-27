@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_REQUEST["name"];
     $models = $_REQUEST["models"];
     $points = $_REQUEST["points"];
+    $optional_units = json_decode($_REQUEST["optionalunits"]);
 
     /* For each user, create a table for them so that we can insert their units into it */
     $query = 'INSERT INTO unit_table (UserID, faction, name, models, points) VALUES (?,?,?,?,?)';

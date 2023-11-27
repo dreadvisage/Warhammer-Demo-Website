@@ -9,6 +9,9 @@ class UnitBuilder {
     static faction = "";
     static counter = 0;
 
+    // idk if there is a better way to do this.
+    static optionalUnitsPending = [];
+
     constructor(unitName) {
         this.unitName = unitName;
         this.li = document.createElement("li");
@@ -105,7 +108,7 @@ class UnitBuilder {
         return this;
     }
 
-    modelCustom(models, padding, points) {
+    modelCustom(models, padding, points, isOptionalUnit) {
         let liContent = document.createElement("li");
         this.ul.append(liContent);
 
@@ -125,10 +128,19 @@ class UnitBuilder {
         let num = UnitBuilder.counter;
         let faction = UnitBuilder.faction;
         let unitName = this.unitName;
-        liButton.addEventListener("click", () => {
-            makeRequest(faction, unitName, models, points);
-            notifyTextMonitor("notifytext" + num);
-        });
+        if (isOptionalUnit) {
+            liButton.addEventListener("click", () => {
+                UnitBuilder.optionalUnitsPending.push([faction, unitName, models, points]);
+
+                console.table(UnitBuilder.optionalUnitsPending);
+            });
+        } else {
+            liButton.addEventListener("click", () => {
+                makeRequest(faction, unitName, models, points);
+                notifyTextMonitor("notifytext" + num);
+            });
+        }
+        
         liContent.append(liButton);
 
         let liNotifyText = document.createElement("p");
@@ -249,10 +261,21 @@ function makeRequest(faction, name, models, points) {
         "Content-Type",
         "application/x-www-form-urlencoded",
     );
+
     // Backticks mean it will attempt to execute the contents as a shell command.
     // Use of the backtick operator is identical to shell_exec().
     // You can separate multiple data values by inserting an ampersand (&) in between each value
-    httpRequest.send(`faction=${encodeURIComponent(faction)}&name=${encodeURIComponent(name)}&models=${encodeURIComponent(models)}&points=${encodeURIComponent(points)}`);
+    httpRequest.send(`\
+    faction=${encodeURIComponent(faction)}&\
+    name=${encodeURIComponent(name)}&\
+    models=${encodeURIComponent(models)}&\
+    points=${encodeURIComponent(points)}&\
+    optionalunits=$${encodeURIComponent(JSON.stringify(UnitBuilder.optionalUnitsPending))}\
+    `);
+
+    UnitBuilder.optionalUnitsPending = [];
+
+    
 }
 
 function promptAlert() {

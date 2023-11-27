@@ -246,7 +246,7 @@ if (isNotLoggedIn()) {
                 Builder.new("Shadow Specters")
                     .model(5, 14, 95)
                     .model(10, 10, 190)
-                    .modelCustom("Exarch", 16, "+30")
+                    .modelCustom("Exarch", 16, "+30", true)
                     .add();
 
                 Builder.addUnit("Phantom Titan", 1, 10, 2100);

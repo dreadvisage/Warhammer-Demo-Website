@@ -72,8 +72,8 @@ if (isNotLoggedIn()) {
                         .modelCustom("4 Acolytes, 1 Servitor, 1 Mystic", 17, 40)
                         .modelCustom("10 Acolytes", 9, "100")
                         .modelCustom("10 Acolytes, 2 Servitors, 2 Mystics", 13, 140)
-                        .modelCustom("Jokaero", 16, "+10")
-                        .modelCustom("Daemonhost", 6, "+10")
+                        .modelCustom("Jokaero", 16, "+10", true)
+                        .modelCustom("Daemonhost", 6, "+10", true)
                         .add();
 
                     Builder.addUnit("Lord Inquisitor Kyria Draxus", 1, 14, 75);
