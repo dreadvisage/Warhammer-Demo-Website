@@ -24,15 +24,20 @@ function echo_unit_table_data() {
     echo '<td>Num Models:</td>';
     echo '<td>Unit Points:</td></tr>';
 
+    $total_points = 0;
     while($unit_table_row = mysqli_fetch_array($results)) {
         $faction = $unit_table_row['faction'];
         $name = $unit_table_row['name'];
         $models = $unit_table_row['models'];
         $points = $unit_table_row['points'];
+    
+        $total_points += $points;
 
         echo "<tr><td>$faction</td><td>$name</td><td>$models</td><td>$points</td></tr>";
     }
     echo '</table>';
+
+    echo "total points: $total_points";
 }
 
 ?>
