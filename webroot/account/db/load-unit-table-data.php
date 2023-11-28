@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $config_path = $_SERVER['DOCUMENT_ROOT'];
 $config_path .= "/project/../utils/config.php";
 
@@ -9,22 +11,18 @@ require_once $config_path;
 require_once $is_logged_in_path;
 
 if (isNotLoggedIn()) {
-    header("location: ../login.php");
+    header("location: ../../account/login.php");
     exit;
 }
 
-function echo_unit_table_data() {
-    global $mysqli;
-
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = 'SELECT * FROM unit_table WHERE UserID="'. $_SESSION["UserID"] .'"';
     $results = $mysqli->query($query);
-    echo '<table class="unit-table">';
-    echo '<tr><td>Faction:</td>';
-    echo '<td>Unit Name:</td>';
-    echo '<td>Num Models:</td>';
-    echo '<td>Unit Points:</td></tr>';
-
+    
+    $data = array();
+    
     $total_points = 0;
+    $i = 0;
     while($unit_table_row = mysqli_fetch_array($results)) {
         $faction = $unit_table_row['faction'];
         $name = $unit_table_row['name'];
@@ -32,12 +30,11 @@ function echo_unit_table_data() {
         $points = $unit_table_row['points'];
     
         $total_points += $points;
-
-        echo "<tr><td>$faction</td><td>$name</td><td>$models</td><td>$points</td></tr>";
+    
+        $data[$i++] = [$faction, $name, $models, $points];
     }
-    echo '</table>';
-
-    echo "total points: $total_points";
+    echo json_encode([$data, $total_points]);
 }
+
 
 ?>

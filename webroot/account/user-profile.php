@@ -9,7 +9,6 @@ $get_user_pfp_path .= "/project/../utils/get-user-pfp.php";
 require_once $is_logged_in_path;
 require_once $get_user_pfp_path;
 require '../../utils/navbar.php'; 
-require_once "db/load-unit-table-data.php"; 
  
 // Check if the user is logged in, if not then redirect him to login page
 if(isNotLoggedIn()){
@@ -29,6 +28,7 @@ if(isNotLoggedIn()){
     <link rel="stylesheet" href="../css/modal.css">
     <script src="../js/pfp-table-values.js"></script>
     <script src="../js/modal.js"></script>
+    <script src="../js/load-unit-table-data.js"></script>
 </head>
 <body>
     
@@ -72,9 +72,17 @@ if(isNotLoggedIn()){
 
         <div class="main-content">
             <a class="btn-option" href="db/clear-unit-table.php">Clear Table</a>
-            <?php 
-                echo_unit_table_data();
-            ?>
+            <table id="unit-table" class="unit-table">
+                <tr>
+                    <td>Faction:</td>
+                    <td>Unit Name:</td>
+                    <td>Num Models:</td>
+                    <td>Unit Points:</td>
+                </tr>
+                <script>loadUnitTableData(1);</script>
+            </table>
+
+            <p id="total-points"></p>
         </div>
 
     </div>
