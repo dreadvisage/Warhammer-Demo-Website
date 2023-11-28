@@ -109,11 +109,13 @@ INSERT INTO `search_suggestions` (`suggestionID`, `suggestionMatchOn`, `suggesti
 --
 
 CREATE TABLE `unit_table` (
+  `UnitTableID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
   `faction` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `models` varchar(255) NOT NULL,
-  `points` varchar(255) NOT NULL
+  `points` varchar(255) NOT NULL,
+  PRIMARY KEY(`UnitTableID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
