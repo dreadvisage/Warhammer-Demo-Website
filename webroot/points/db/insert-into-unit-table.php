@@ -31,11 +31,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $param_name = $name;
         
+        
+        $optional_models_key_value = array();
+        for ($i = 0; $i < count($optional_models); ++$i) {
+
+            $exists = 0;
+            $index = 0;
+            for ($j = 0; $j < count($optional_models_key_value); ++$j) {
+                $array_key = $optional_models_key_value[$j][0];
+                if ($optional_models[$i][2] == $array_key) {
+                    $exists = 1;
+                    $index = $j;
+                    break;
+                }
+            }
+
+
+
+            if (!$exists) {
+                array_push($optional_models_key_value, [$optional_models[$i][2], 1]);
+            } else {
+                ++$optional_models_key_value[$index][1];
+            }
+        } 
+
         // name plus any optional units pending
         $param_models = $models;
-        for ($i = 0; $i < count($optional_models); ++$i) {
-            $param_models .= ", " . $optional_models[$i][2];
-        } 
+        for ($i = 0; $i < count($optional_models_key_value); ++$i) {
+            $param_models .= ", " . $optional_models_key_value[$i][1] . " " . $optional_models_key_value[$i][0];
+        }
+
+        
 
         $param_points = $points;
         for ($i = 0; $i < count($optional_models); ++$i) {

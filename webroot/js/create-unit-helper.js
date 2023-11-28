@@ -63,7 +63,7 @@ class UnitBuilder {
         liButton.addEventListener("click", () => {
             clearIfNotBelongsTo(unitName);
             hideAllCancelBtnsAndClearNotifyTexts();
-            makeRequest(faction, unitName, models, points);
+            requestInsertUnitIntoDatabase(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -102,7 +102,7 @@ class UnitBuilder {
         liButton.addEventListener("click", () => {
             clearIfNotBelongsTo(unitName);
             hideAllCancelBtnsAndClearNotifyTexts();
-            makeRequest(faction, unitName, models, points);
+            requestInsertUnitIntoDatabase(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -152,7 +152,7 @@ class UnitBuilder {
             liButton.addEventListener("click", () => {
                 clearIfNotBelongsTo(unitName);
                 hideAllCancelBtnsAndClearNotifyTexts();
-                makeRequest(faction, unitName, models, points);
+                requestInsertUnitIntoDatabase(faction, unitName, models, points);
                 notifyTextMonitor("notifytext" + num);
             });
         }
@@ -329,7 +329,7 @@ function resetNotifyTexts() {
  **********************************************************/
 
 let httpRequest;
-function makeRequest(faction, name, models, points) {
+function requestInsertUnitIntoDatabase(faction, name, models, points) {
     httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
