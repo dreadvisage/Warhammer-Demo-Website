@@ -32,6 +32,10 @@ body {
     /* Centers items vertically */
     align-items: center;
     background-image: linear-gradient(to right, rgb(139, 0, 0), rgb(133, 0, 0));
+
+    /* Helps ensure everything belonging to the navbar is on top of everything. 
+    (Including the dropdowns) */
+    z-index: 1;
 }
 
 #search-suggestions {

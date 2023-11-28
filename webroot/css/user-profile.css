@@ -6,7 +6,7 @@
 .main-content {
     display: block;
     margin-top: 4em;
-    margin-left: 350px;
+    padding: 15px;
 }
 
 .left-panel {

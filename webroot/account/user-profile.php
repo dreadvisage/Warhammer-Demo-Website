@@ -29,6 +29,7 @@ if(isNotLoggedIn()){
     <script src="../js/pfp-table-values.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/load-unit-table-data.js"></script>
+    <script src="../js/user-profile.js"></script>
 </head>
 <body>
     
@@ -36,8 +37,7 @@ if(isNotLoggedIn()){
         echoNavbar(1);
     ?>
 
-    <div class="main-wrapper">
-        <div class="left-panel">
+<div class="left-panel">
             <div> <!-- Outer div needed for flexbox spacing -->
                 <div class="profile-picture-content">
                     <div id="pfp-frame-id" class="profile-picture-frame">
@@ -58,6 +58,7 @@ if(isNotLoggedIn()){
             </div>
         </div>
 
+    <div class="main-wrapper">
         <div id="model-pfp" class="modal">
             <div id="modal-pfp-content" class="modal-content">
                 <div class="wrapper-table">
@@ -78,6 +79,8 @@ if(isNotLoggedIn()){
 
             <p id="total-points"></p>
         </div>
+
+        <script>registerLeftPanelListener();</script>
 
     </div>
 </body>
