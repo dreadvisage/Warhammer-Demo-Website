@@ -73,12 +73,6 @@ if(isNotLoggedIn()){
         <div class="main-content">
             <a class="btn-option" href="db/clear-unit-table.php">Clear Table</a>
             <table id="unit-table" class="unit-table">
-                <tr>
-                    <td>Faction:</td>
-                    <td>Unit Name:</td>
-                    <td>Num Models:</td>
-                    <td>Unit Points:</td>
-                </tr>
                 <script>loadUnitTableData(1);</script>
             </table>
 

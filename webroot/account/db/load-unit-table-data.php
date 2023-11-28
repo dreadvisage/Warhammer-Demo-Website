@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $total_points = 0;
     $i = 0;
     while($unit_table_row = mysqli_fetch_array($results)) {
+        $unit_table_id = $unit_table_row['UnitTableID'];
         $faction = $unit_table_row['faction'];
         $name = $unit_table_row['name'];
         $models = $unit_table_row['models'];
@@ -31,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         $total_points += $points;
     
-        $data[$i++] = [$faction, $name, $models, $points];
+        $data[$i++] = [$unit_table_id, $faction, $name, $models, $points];
     }
     echo json_encode([$data, $total_points]);
 }
