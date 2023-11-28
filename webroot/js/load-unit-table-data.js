@@ -55,7 +55,7 @@ function loadUnitTableData() {
                     removeModelBtn.innerText = "➖";
                     removeModelBtn.addEventListener("click", () => {
                         // unitTableData[0][i][0] is the `UnitTableID` that indicates a unique row
-                        makeRequest(unitTableData[0][i][0]);
+                        requestDeleteUnitTableRowAndReload(unitTableData[0][i][0]);
                     });
     
                     
@@ -74,7 +74,7 @@ function loadUnitTableData() {
     httpRequest.send();
 }
 
-function makeRequest(rowIndex) {
+function requestDeleteUnitTableRowAndReload(rowIndex) {
     var httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
