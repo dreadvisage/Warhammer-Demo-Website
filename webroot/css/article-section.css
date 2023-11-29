@@ -54,6 +54,6 @@ body {
     width: calc(50vw - 200px);
 }
 
-a {
-    color: #8f2f2f;
+#article a, #article a:visited {
+    color: #0000EE;
 }

@@ -118,8 +118,8 @@ function setWidthBreakpoints() {
     var liList = document.getElementById("link-list").getElementsByTagName("li");
     var liListLen = liList.length;
     // Hardcoded values for navbar @media rules
-    widthBreakpoint1 = liListLen == 5 ? 1060 : 960;
-    widthBreakpoint2 = liListLen == 5 ? 810 : 710;
+    widthBreakpoint1 = liListLen == 6 ? 1200 : 1070;
+    widthBreakpoint2 = liListLen == 6 ? 950 : 820;
 }
 
 function appendNavbarAndArticleSectionMediaRulesStylesheet() {
