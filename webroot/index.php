@@ -15,11 +15,10 @@ require '../utils/navbar.php';
     <link rel="stylesheet" href="css/article-section.css">
 </head>
 <body>
-    <div id="background-image"></div>
     
-    <?php 
-        echoNavbar(0); 
-    ?>
+    <div id="background-image"><img src="images/warhammer-background.jpg" alt="Warhammer Background"></div>
+    
+    <?php echoNavbar(0); ?>
     
     <div class="display">
         <div class="pad"></div>
@@ -70,5 +69,13 @@ require '../utils/navbar.php';
     </div>    
     
 
+    <footer>
+        <div class="pad"></div>
+        <div class="footer-content">
+            <hr>
+            <p>Author(s): Seth Pommer, Tyler Sobojinski</p>
+        </div>
+        <div class="pad"></div>
+    </footer>
 </body>
 </html>

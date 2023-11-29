@@ -27,8 +27,7 @@ if (isNotLoggedIn()) {
     <script src="../js/create-unit-helper.js"></script>
 </head>
 <body>
-
-    <div id="background-image"></div>
+    <div id="background-image"><img src="../images/warhammer-background.jpg" alt="Warhammer Background"></div>
 
     <?php
     echoNavbar(1);
@@ -96,6 +95,15 @@ if (isNotLoggedIn()) {
         </div>
         <div class="pad"></div>
     </div>
+
+    <footer>
+        <div class="pad"></div>
+        <div class="footer-content">
+            <hr>
+            <p>Author(s): Seth Pommer</p>
+        </div>
+        <div class="pad"></div>
+    </footer>
 </body>
 
 </html>

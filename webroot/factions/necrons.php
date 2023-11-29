@@ -15,7 +15,7 @@ require '../../utils/navbar.php';
     </head>
     <body>
         
-        <div id="background-image"></div>
+        <div id="background-image"><img src="../images/warhammer-background.jpg" alt="Warhammer Background"></div>
 
         <?php 
             echoNavbar(1);
@@ -87,5 +87,14 @@ require '../../utils/navbar.php';
             </div>
             <div class="pad"></div>
         </div>
+
+        <footer>
+            <div class="pad"></div>
+            <div class="footer-content">
+                <hr>
+                <p>Author(s): Seth Pommer</p>
+            </div>
+            <div class="pad"></div>
+        </footer>
     </body>
 </html>
