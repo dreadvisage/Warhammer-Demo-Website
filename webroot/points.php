@@ -23,7 +23,7 @@ require '../utils/navbar.php';
         <div class="pad"></div>
         <div id="article"> 
 
-            <h1>Points</h1>
+            <h2>Points</h2>
 
             <p>
                 Welcome to the Points main page. Click on your desired faction to be taken to the respective point page.
