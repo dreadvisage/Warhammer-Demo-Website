@@ -34,36 +34,38 @@ if (isNotLoggedIn()) {
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>Adeptus Titanicus</h2>
-            <hr>
+                <h2>Adeptus Titanicus</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
 
                     <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    Builder.setFaction("Adeptus Titanicus");
-                    
-                    insertRawHtml("points-list", "<h2>Forge World Units</h2>");
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("Adeptus Titanicus");
 
-                    Builder.addUnit("Reaver Titan", 1, 12, 2200);
+                        insertRawHtml("points-list", "<h2>Forge World Units</h2>");
 
-                    Builder.addUnit("Warbringer Nemesis Titan", 1, 12, 2600);
+                        Builder.addUnit("Reaver Titan", 1, 12, 2200);
 
-                    Builder.addUnit("Warhound Titan", 1, 12, 1100);
+                        Builder.addUnit("Warbringer Nemesis Titan", 1, 12, 2600);
 
-                    Builder.addUnit("Warlord Titan", 1, 12, 3500);
+                        Builder.addUnit("Warhound Titan", 1, 12, 1100);
+
+                        Builder.addUnit("Warlord Titan", 1, 12, 3500);
                     </script>
 
                 </ul>
 
+            </div>
+            <div class="pad"></div>
         </div>
-        <div class="pad"></div>
-    </div>
+    </main>
 
     <footer>
         <div class="pad"></div>

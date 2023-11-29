@@ -34,62 +34,64 @@ if (isNotLoggedIn()) {
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>Chaos Knights</h2>
-            <hr>
+                <h2>Chaos Knights</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
                     <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    Builder.setFaction("Chaos Knights");
-                    
-                    Builder.addUnit("Knight Abominant", 1, 12, 455);
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("Chaos Knights");
 
-                    Builder.addUnit("Knight Desecrator", 1, 12, 450);
+                        Builder.addUnit("Knight Abominant", 1, 12, 455);
 
-                    Builder.addUnit("Knight Despoiler", 1, 12, 470);
+                        Builder.addUnit("Knight Desecrator", 1, 12, 450);
 
-                    Builder.addUnit("Knight Rampager", 1, 12, 380);
+                        Builder.addUnit("Knight Despoiler", 1, 12, 470);
 
-                    Builder.addUnit("Knight Tyrant", 1, 12, 555);
+                        Builder.addUnit("Knight Rampager", 1, 12, 380);
 
-                    Builder.addUnit("War Dog Executioner", 1, 12, 150);
+                        Builder.addUnit("Knight Tyrant", 1, 12, 555);
 
-                    Builder.addUnit("War Dog Huntsman", 1, 12, 150);
+                        Builder.addUnit("War Dog Executioner", 1, 12, 150);
 
-                    Builder.addUnit("War Dog Karnivore", 1, 12, 140);
+                        Builder.addUnit("War Dog Huntsman", 1, 12, 150);
 
-                    Builder.addUnit("War Dog Stalker", 1, 12, 150);
+                        Builder.addUnit("War Dog Karnivore", 1, 12, 140);
 
-                    insertRawHtml("points-list", "<br><h2>Forge World Units<h2>");
+                        Builder.addUnit("War Dog Stalker", 1, 12, 150);
 
-                    Builder.addUnit("Chaos Acastus Knight Asterius", 1, 12, 840);
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<h2>");
 
-                    Builder.addUnit("Chaos Acastus Knight Porphyrion", 1, 12, 740);
+                        Builder.addUnit("Chaos Acastus Knight Asterius", 1, 12, 840);
 
-                    Builder.addUnit("Chaos Cerastus Knight Acheron", 1, 12, 465);
+                        Builder.addUnit("Chaos Acastus Knight Porphyrion", 1, 12, 740);
 
-                    Builder.addUnit("Chaos Cerastus Knight Atrapos", 1, 12, 465);
+                        Builder.addUnit("Chaos Cerastus Knight Acheron", 1, 12, 465);
 
-                    Builder.addUnit("Chaos Cerastus Knight Castigator", 1, 12, 480);
+                        Builder.addUnit("Chaos Cerastus Knight Atrapos", 1, 12, 465);
 
-                    Builder.addUnit("Chaos Cerastus Knight Lancer", 1, 12, 465);
+                        Builder.addUnit("Chaos Cerastus Knight Castigator", 1, 12, 480);
 
-                    Builder.addUnit("Chaos Questoris Knight Magaera", 1, 12, 465);
+                        Builder.addUnit("Chaos Cerastus Knight Lancer", 1, 12, 465);
 
-                    Builder.addUnit("Chaos Questoris Knight Styrix", 1, 12, 505);
+                        Builder.addUnit("Chaos Questoris Knight Magaera", 1, 12, 465);
 
-                    Builder.addUnit("War Dog Moirax", 1, 12, 170);
+                        Builder.addUnit("Chaos Questoris Knight Styrix", 1, 12, 505);
+
+                        Builder.addUnit("War Dog Moirax", 1, 12, 170);
                     </script>
                 </ul>
-            
+
+            </div>
+            <div class="pad"></div>
         </div>
-        <div class="pad"></div>
-    </div>
+    </main>
 
     <footer>
         <div class="pad"></div>

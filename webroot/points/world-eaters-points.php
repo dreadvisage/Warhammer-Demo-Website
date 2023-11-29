@@ -34,85 +34,87 @@ if (isNotLoggedIn()) {
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>World Eaters</h2>
-            <hr>
+                <h2>World Eaters</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
                     <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    Builder.setFaction("World Eaters");
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("World Eaters");
 
-                    Builder.addUnit("Angron", 1, 12, 415);
-                    
-                    Builder.new("Eightbound")
-                        .model(3, 12, 135)
-                        .model(6, 12, 270)
-                        .add();
-                    
-                    Builder.new("Exalted Eightbound")
-                        .model(3, 12, 150)
-                        .model(6, 12, 300)
-                        .add();
+                        Builder.addUnit("Angron", 1, 12, 415);
 
-                    Builder.new("Jakhals")
-                        .model(10, 12, 70)
-                        .model(20, 10, 140)
-                        .add();
+                        Builder.new("Eightbound")
+                            .model(3, 12, 135)
+                            .model(6, 12, 270)
+                            .add();
 
-                    Builder.new("Khorne Berzerkers")
-                        .model(5, 12, 100)
-                        .model(10, 10, 200)
-                        .add();
+                        Builder.new("Exalted Eightbound")
+                            .model(3, 12, 150)
+                            .model(6, 12, 300)
+                            .add();
 
-                    Builder.addUnit("Khorne Lord of Skulls", 1, 12, 480);
+                        Builder.new("Jakhals")
+                            .model(10, 12, 70)
+                            .model(20, 10, 140)
+                            .add();
 
-                    Builder.addUnit("Khârn the Betrayer", 1, 14, 80);
+                        Builder.new("Khorne Berzerkers")
+                            .model(5, 12, 100)
+                            .model(10, 10, 200)
+                            .add();
 
-                    Builder.addUnit("Lord Invocatus", 1, 12, 140);
+                        Builder.addUnit("Khorne Lord of Skulls", 1, 12, 480);
 
-                    Builder.addUnit("World Eaters Chaos Spawn", 2, 14, 65);
+                        Builder.addUnit("Khârn the Betrayer", 1, 14, 80);
 
-                    Builder.addUnit("World Eaters Daemon Prince", 1, 12, 200);
+                        Builder.addUnit("Lord Invocatus", 1, 12, 140);
 
-                    Builder.addUnit("World Eaters Daemon Prince with Wings", 1, 12, 195);
+                        Builder.addUnit("World Eaters Chaos Spawn", 2, 14, 65);
 
-                    Builder.addUnit("World Eaters Defiler", 1, 12, 190);
+                        Builder.addUnit("World Eaters Daemon Prince", 1, 12, 200);
 
-                    Builder.addUnit("World Eaters Forgefiend", 1, 12, 170);
+                        Builder.addUnit("World Eaters Daemon Prince with Wings", 1, 12, 195);
 
-                    Builder.addUnit("World Eaters Helbrute", 1, 12, 140);
+                        Builder.addUnit("World Eaters Defiler", 1, 12, 190);
 
-                    Builder.addUnit("World Eaters Heldrake", 1, 12, 210);
+                        Builder.addUnit("World Eaters Forgefiend", 1, 12, 170);
 
-                    Builder.addUnit("World Eaters Land Raider", 1, 12, 240);
+                        Builder.addUnit("World Eaters Helbrute", 1, 12, 140);
 
-                    Builder.addUnit("World Eaters Lord on Juggernaut", 1, 12, 100);
+                        Builder.addUnit("World Eaters Heldrake", 1, 12, 210);
 
-                    Builder.addUnit("World Eaters Master of Executions", 1, 14, 80);
+                        Builder.addUnit("World Eaters Land Raider", 1, 12, 240);
 
-                    Builder.addUnit("World Eaters Maulerfiend", 1, 12, 155);
+                        Builder.addUnit("World Eaters Lord on Juggernaut", 1, 12, 100);
 
-                    Builder.addUnit("World Eaters Predator Annihilator", 1, 12, 130);
+                        Builder.addUnit("World Eaters Master of Executions", 1, 14, 80);
 
-                    Builder.addUnit("World Eaters Predator Destructor", 1, 12, 130);
+                        Builder.addUnit("World Eaters Maulerfiend", 1, 12, 155);
 
-                    Builder.addUnit("World Eaters Rhino", 1, 14, 75);
+                        Builder.addUnit("World Eaters Predator Annihilator", 1, 12, 130);
 
-                    Builder.new("World Eaters Terminator Squad")
-                        .model(5, 12, 190)
-                        .model(10, 10, 380)
-                        .add();
+                        Builder.addUnit("World Eaters Predator Destructor", 1, 12, 130);
+
+                        Builder.addUnit("World Eaters Rhino", 1, 14, 75);
+
+                        Builder.new("World Eaters Terminator Squad")
+                            .model(5, 12, 190)
+                            .model(10, 10, 380)
+                            .add();
                     </script>
                 </ul>
 
+            </div>
+            <div class="pad"></div>
         </div>
-        <div class="pad"></div>
-    </div>
+    </main>
 
     <footer>
         <div class="pad"></div>

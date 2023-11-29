@@ -8,8 +8,8 @@ $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 require_once $is_logged_in_path;
 
 if (isNotLoggedIn()) {
-    header("location: ../account/login.php");
-    exit;
+  header("location: ../account/login.php");
+  exit;
 }
 
 ?>
@@ -34,70 +34,71 @@ if (isNotLoggedIn()) {
   echoNavbar(1);
   ?>
 
-  <div class="display">
-    <div class="pad"></div>
-    <div id="article">
-      <h2>Leagues of Votann</h2>
-      <hr>
+  <main>
+    <div class="display">
+      <div class="pad"></div>
+      <div id="article">
+        <h2>Leagues of Votann</h2>
+        <hr>
 
-      <ul id="points-list">
+        <ul id="points-list">
           <script>
-          const Builder = UnitBuilder;
-          Builder.setParentId("points-list");
-          Builder.setFaction("Leagues of Votann");
-          
-          Builder.addUnit("Brôkhy Iron-master", 5, 14, 65);
+            const Builder = UnitBuilder;
+            Builder.setParentId("points-list");
+            Builder.setFaction("Leagues of Votann");
 
-          Builder.new("Brôkhy Thunderkyn")
-            .model(3, 14, 75)
-            .model(6, 12, 150)
-            .add();
+            Builder.addUnit("Brôkhy Iron-master", 5, 14, 65);
 
-          Builder.new("Cthonian Beserks")
-            .model(5, 12, 100)
-            .model(10, 10, 200)
-            .add();
+            Builder.new("Brôkhy Thunderkyn")
+              .model(3, 14, 75)
+              .model(6, 12, 150)
+              .add();
 
-          Builder.addUnit("Einhyr Champion", 1, 14, 60);
+            Builder.new("Cthonian Beserks")
+              .model(5, 12, 100)
+              .model(10, 10, 200)
+              .add();
 
-          Builder.new("Einhyr Hearthguard")
-            .model(5, 12, 150)
-            .model(10, 10, 300)
-            .add();
+            Builder.addUnit("Einhyr Champion", 1, 14, 60);
 
-          Builder.addUnit("Grimnyr", 3, 14, 65);
+            Builder.new("Einhyr Hearthguard")
+              .model(5, 12, 150)
+              .model(10, 10, 300)
+              .add();
 
-          Builder.addUnit("Hearthkyn Warriors", 5, 12, 110);
+            Builder.addUnit("Grimnyr", 3, 14, 65);
 
-          Builder.addUnit("Hekaton Land Fortress", 1, 12, 225);
+            Builder.addUnit("Hearthkyn Warriors", 5, 12, 110);
 
-          Builder.new("Hernkyn Pioneers")
-            .model(3, 14, 90)
-            .model(6, 12, 180)
-            .add();
+            Builder.addUnit("Hekaton Land Fortress", 1, 12, 225);
 
-          Builder.addUnit("Kâhl", 1, 14, 70);
+            Builder.new("Hernkyn Pioneers")
+              .model(3, 14, 90)
+              .model(6, 12, 180)
+              .add();
 
-          Builder.addUnit("Sagitaur", 1, 12, 100);
+            Builder.addUnit("Kâhl", 1, 14, 70);
 
-          Builder.addUnit("Ûthar the Destined", 1, 14, 90);
+            Builder.addUnit("Sagitaur", 1, 12, 100);
 
+            Builder.addUnit("Ûthar the Destined", 1, 14, 90);
           </script>
         </ul>
 
 
+      </div>
+      <div class="pad"></div>
     </div>
-    <div class="pad"></div>
-  </div>
+  </main>
 
   <footer>
-        <div class="pad"></div>
-        <div class="footer-content">
-            <hr>
-            <p>Author(s): Seth Pommer</p>
-        </div>
-        <div class="pad"></div>
-    </footer>
+    <div class="pad"></div>
+    <div class="footer-content">
+      <hr>
+      <p>Author(s): Seth Pommer</p>
+    </div>
+    <div class="pad"></div>
+  </footer>
 </body>
 
 </html>

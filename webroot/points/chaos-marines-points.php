@@ -34,156 +34,158 @@ if (isNotLoggedIn()) {
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>Chaos Space Marines</h2>
-            <hr>
+                <h2>Chaos Space Marines</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
 
-                <script>
-                const Builder = UnitBuilder;
-                Builder.setParentId("points-list");
-                Builder.setFaction("Chaos Space Marines");
-                
-                Builder.addUnit("Abaddon the Despoiler", 1, 12, 310);
+                    <script>
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("Chaos Space Marines");
 
-                Builder.new("Accursed Cultists")
-                    .model(8, 14, 95)
-                    .model(16, 10, 190)
-                    .add();
+                        Builder.addUnit("Abaddon the Despoiler", 1, 12, 310);
 
-                Builder.new("Chaos Bikers")
-                    .model(3, 14, 85)
-                    .model(6, 12, 170)
-                    .add();
+                        Builder.new("Accursed Cultists")
+                            .model(8, 14, 95)
+                            .model(16, 10, 190)
+                            .add();
 
-                Builder.addUnit("Chaos Land Raider", 1, 12, 240);
+                        Builder.new("Chaos Bikers")
+                            .model(3, 14, 85)
+                            .model(6, 12, 170)
+                            .add();
 
-                Builder.addUnit("Chaos Lord", 1, 14, 75);
+                        Builder.addUnit("Chaos Land Raider", 1, 12, 240);
 
-                Builder.addUnit("Chaos Lord in Terminator Armour", 1, 14, 95);
+                        Builder.addUnit("Chaos Lord", 1, 14, 75);
 
-                Builder.addUnit("Chaos Predator Annihilator", 1, 12, 130);
+                        Builder.addUnit("Chaos Lord in Terminator Armour", 1, 14, 95);
 
-                Builder.addUnit("Chaos Predator Destructor", 1, 12, 130);
+                        Builder.addUnit("Chaos Predator Annihilator", 1, 12, 130);
 
-                Builder.addUnit("Chaos Rhino", 1, 14, 75);
+                        Builder.addUnit("Chaos Predator Destructor", 1, 12, 130);
 
-                Builder.addUnit("Chaos Spawn", 1, 14, 70);
+                        Builder.addUnit("Chaos Rhino", 1, 14, 75);
 
-                Builder.new("Chaos Terminator Squad")
-                    .model(5, 12, 195)
-                    .model(10, 10, 390)
-                    .add();
+                        Builder.addUnit("Chaos Spawn", 1, 14, 70);
 
-                Builder.addUnit("Chaos Vindicator", 1, 12, 190);
+                        Builder.new("Chaos Terminator Squad")
+                            .model(5, 12, 195)
+                            .model(10, 10, 390)
+                            .add();
 
-                Builder.new("Chosen")
-                    .model(5, 12, 110)
-                    .model(10, 10, 220)
-                    .add();
+                        Builder.addUnit("Chaos Vindicator", 1, 12, 190);
 
-                Builder.new("Cultist Mob")
-                    .model(10, 12, 55)
-                    .model(20, 10, 110)
-                    .add();
+                        Builder.new("Chosen")
+                            .model(5, 12, 110)
+                            .model(10, 10, 220)
+                            .add();
 
-                Builder.addUnit("Cypher", 1, 12, 105);
+                        Builder.new("Cultist Mob")
+                            .model(10, 12, 55)
+                            .model(20, 10, 110)
+                            .add();
 
-                Builder.addUnit("Dark Apostle", 3, 14, 75);
+                        Builder.addUnit("Cypher", 1, 12, 105);
 
-                Builder.addUnit("Dark Commune", 5, 14, 55);
+                        Builder.addUnit("Dark Apostle", 3, 14, 75);
 
-                Builder.addUnit("Defiler", 1, 12, 190);
+                        Builder.addUnit("Dark Commune", 5, 14, 55);
 
-                Builder.addUnit("Exalted Champion", 1, 14, 70);
+                        Builder.addUnit("Defiler", 1, 12, 190);
 
-                Builder.addUnit("Fabius Bile", 2, 14, 85);
+                        Builder.addUnit("Exalted Champion", 1, 14, 70);
 
-                Builder.addUnit("Fellgor Beastmen", 10, 12, 95);
+                        Builder.addUnit("Fabius Bile", 2, 14, 85);
 
-                Builder.addUnit("Forgefiend", 1, 12, 180);
+                        Builder.addUnit("Fellgor Beastmen", 10, 12, 95);
 
-                Builder.addUnit("Haarken Worldclaimer", 1, 14, 90);
+                        Builder.addUnit("Forgefiend", 1, 12, 180);
 
-                Builder.addUnit("Havocs", 5, 12, 135);
+                        Builder.addUnit("Haarken Worldclaimer", 1, 14, 90);
 
-                Builder.addUnit("Helbrute", 1, 12, 140);
+                        Builder.addUnit("Havocs", 5, 12, 135);
 
-                Builder.addUnit("Heldrake", 1, 12, 205);
+                        Builder.addUnit("Helbrute", 1, 12, 140);
 
-                Builder.addUnit("Heretic Astartes Daemon Prince", 1, 12, 180);
+                        Builder.addUnit("Heldrake", 1, 12, 205);
 
-                Builder.addUnit("Heretic Astartes Daemon Prince with Wings", 1, 12, 195);
+                        Builder.addUnit("Heretic Astartes Daemon Prince", 1, 12, 180);
 
-                Builder.addUnit("Huron Blackheart", 1, 14, 80);
+                        Builder.addUnit("Heretic Astartes Daemon Prince with Wings", 1, 12, 195);
 
-                Builder.addUnit("Khorne Lord of Skulls", 1, 12, 480);
+                        Builder.addUnit("Huron Blackheart", 1, 14, 80);
 
-                Builder.new("Legionaries")
-                    .model(5, 14, 90)
-                    .model(10, 10, 180)
-                    .add();
+                        Builder.addUnit("Khorne Lord of Skulls", 1, 12, 480);
 
-                Builder.addUnit("Lord Discordant on Helstalker", 1, 12, 190);
+                        Builder.new("Legionaries")
+                            .model(5, 14, 90)
+                            .model(10, 10, 180)
+                            .add();
 
-                Builder.addUnit("Lucius the Eternal", 1, 14, 95);
+                        Builder.addUnit("Lord Discordant on Helstalker", 1, 12, 190);
 
-                Builder.addUnit("Master of Executions", 1, 14, 80);
+                        Builder.addUnit("Lucius the Eternal", 1, 14, 95);
 
-                Builder.addUnit("Master of Possession", 1, 14, 80);
+                        Builder.addUnit("Master of Executions", 1, 14, 80);
 
-                Builder.addUnit("Maulerfiend", 1, 12, 155);
+                        Builder.addUnit("Master of Possession", 1, 14, 80);
 
-                Builder.addUnit("Noctilith Crown", 1, 12, 125);
+                        Builder.addUnit("Maulerfiend", 1, 12, 155);
 
-                Builder.new("Noise Marines")
-                    .model(5, 14, 85)
-                    .model(10, 10, 170)
-                    .add();
+                        Builder.addUnit("Noctilith Crown", 1, 12, 125);
 
-                Builder.new("Obliterators")
-                    .model(2, 12, 170)
-                    .model(4, 12, 340)
-                    .add();
+                        Builder.new("Noise Marines")
+                            .model(5, 14, 85)
+                            .model(10, 10, 170)
+                            .add();
 
-                Builder.new("Possessed")
-                    .model(5, 12, 140)
-                    .model(10, 10, 280)
-                    .add();
+                        Builder.new("Obliterators")
+                            .model(2, 12, 170)
+                            .model(4, 12, 340)
+                            .add();
 
-                Builder.new("Raptors")
-                    .model(5, 14, 90)
-                    .model(10, 10, 180)
-                    .add();
+                        Builder.new("Possessed")
+                            .model(5, 12, 140)
+                            .model(10, 10, 280)
+                            .add();
 
-                Builder.addUnit("Sorcerer", 1, 14, 60);
+                        Builder.new("Raptors")
+                            .model(5, 14, 90)
+                            .model(10, 10, 180)
+                            .add();
 
-                Builder.addUnit("Sorcerer in Terminator Armour", 1, 14, 90);
+                        Builder.addUnit("Sorcerer", 1, 14, 60);
 
-                Builder.addUnit("Traitor Enforcer", 2, 14, 65);
+                        Builder.addUnit("Sorcerer in Terminator Armour", 1, 14, 90);
 
-                Builder.addUnit("Traitor Guardsmen Squad", 10, 12, 70);
+                        Builder.addUnit("Traitor Enforcer", 2, 14, 65);
 
-                Builder.addUnit("Vashtorr the Arkifane", 1, 12, 190);
+                        Builder.addUnit("Traitor Guardsmen Squad", 10, 12, 70);
 
-                Builder.addUnit("Venomcrawler", 1, 12, 120);
+                        Builder.addUnit("Vashtorr the Arkifane", 1, 12, 190);
 
-                Builder.new("Warp Talons")
-                    .model(5, 12, 100)
-                    .model(10, 10, 200)
-                    .add();
+                        Builder.addUnit("Venomcrawler", 1, 12, 120);
 
-                Builder.addUnit("Warpsmith", 1, 14, 70);
-                </script>
-            </ul>
+                        Builder.new("Warp Talons")
+                            .model(5, 12, 100)
+                            .model(10, 10, 200)
+                            .add();
 
+                        Builder.addUnit("Warpsmith", 1, 14, 70);
+                    </script>
+                </ul>
+
+            </div>
+            <div class="pad"></div>
         </div>
-        <div class="pad"></div>
-    </div>
+    </main>
 
     <footer>
         <div class="pad"></div>

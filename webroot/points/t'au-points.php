@@ -34,153 +34,155 @@ if (isNotLoggedIn()) {
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>T'au Empire</h2>
-            <hr>
+                <h2>T'au Empire</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
                     <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    Builder.setFaction("T'au Empire");
-                    
-                    Builder.addUnit("Aun'Shi", 1, 14, 95);
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("T'au Empire");
 
-                    Builder.addUnit("Aun'Va", 3, 14, 65);
+                        Builder.addUnit("Aun'Shi", 1, 14, 95);
 
-                    Builder.addUnit("Breacher Team", 10, 12, 90);
+                        Builder.addUnit("Aun'Va", 3, 14, 65);
 
-                    Builder.new("Broadside Battlesuits")
-                        .model(1, 14, 90)
-                        .model(2, 12, 180)
-                        .model(3, 12, 270)
-                        .add();
-                    
-                    Builder.addUnit("Cadre Fireblade", 1, 14, 40);
+                        Builder.addUnit("Breacher Team", 10, 12, 90);
 
-                    Builder.addUnit("Commander Farsight", 1, 14, 90);
+                        Builder.new("Broadside Battlesuits")
+                            .model(1, 14, 90)
+                            .model(2, 12, 180)
+                            .model(3, 12, 270)
+                            .add();
 
-                    Builder.addUnit("Commander in Coldstar Battlesuit", 1, 12, 110);
+                        Builder.addUnit("Cadre Fireblade", 1, 14, 40);
 
-                    Builder.addUnit("Commander in Crisis Battlesuit", 1, 14, 90);
+                        Builder.addUnit("Commander Farsight", 1, 14, 90);
 
-                    Builder.addUnit("Commander in Enforcer Battlesuit", 1, 12, 100);
+                        Builder.addUnit("Commander in Coldstar Battlesuit", 1, 12, 110);
 
-                    Builder.addUnit("Commander Shadowsun", 1, 12, 100);
+                        Builder.addUnit("Commander in Crisis Battlesuit", 1, 14, 90);
 
-                    Builder.new("Crisis Battlesuits")
-                        .model(3, 12, 180)
-                        .model(6, 12, 360)
-                        .add();
+                        Builder.addUnit("Commander in Enforcer Battlesuit", 1, 12, 100);
 
-                    Builder.addUnit("Darkstrider", 1, 14, 60);
+                        Builder.addUnit("Commander Shadowsun", 1, 12, 100);
 
-                    Builder.addUnit("Devilfish", 1, 14, 75);
+                        Builder.new("Crisis Battlesuits")
+                            .model(3, 12, 180)
+                            .model(6, 12, 360)
+                            .add();
 
-                    Builder.addUnit("Ethereal", 1, 14, 50);
+                        Builder.addUnit("Darkstrider", 1, 14, 60);
 
-                    Builder.addUnit("Firesight Team", 1, 14, 70);
+                        Builder.addUnit("Devilfish", 1, 14, 75);
 
-                    Builder.addUnit("Ghostkeel Battlesuit", 1, 12, 160);
+                        Builder.addUnit("Ethereal", 1, 14, 50);
 
-                    Builder.addUnit("Hammerhead Gunship", 1, 12, 130);
+                        Builder.addUnit("Firesight Team", 1, 14, 70);
 
-                    Builder.new("Kroot Carnivores")
-                        .model(10, 12, 55)
-                        .model(20, 10, 110)
-                        .add();
+                        Builder.addUnit("Ghostkeel Battlesuit", 1, 12, 160);
 
-                    Builder.addUnit("Kroot Farstalkers", 12, 12, 70);
+                        Builder.addUnit("Hammerhead Gunship", 1, 12, 130);
 
-                    Builder.new("Kroot Hounds")
-                        .model(4, 14, 30)
-                        .model(8, 14, 60)
-                        .model(12, 12, 90)
-                        .add();
+                        Builder.new("Kroot Carnivores")
+                            .model(10, 12, 55)
+                            .model(20, 10, 110)
+                            .add();
 
-                    Builder.addUnit("Kroot Shaper", 1, 14, 40);
+                        Builder.addUnit("Kroot Farstalkers", 12, 12, 70);
 
-                    Builder.new("Krootox Riders")
-                        .model(1, 14, 35)
-                        .model(2, 14, 70)
-                        .model(3, 12, 105)
-                        .add();
+                        Builder.new("Kroot Hounds")
+                            .model(4, 14, 30)
+                            .model(8, 14, 60)
+                            .model(12, 12, 90)
+                            .add();
 
-                    Builder.addUnit("Longstrike", 1, 12, 140);
+                        Builder.addUnit("Kroot Shaper", 1, 14, 40);
 
-                    Builder.addUnit("Pathfinder Team", 10, 12, 90);
+                        Builder.new("Krootox Riders")
+                            .model(1, 14, 35)
+                            .model(2, 14, 70)
+                            .model(3, 12, 105)
+                            .add();
 
-                    Builder.new("Piranhas")
-                        .model(1, 14, 55)
-                        .model(2, 12, 110)
-                        .model(3, 12, 165)
-                        .add();
+                        Builder.addUnit("Longstrike", 1, 12, 140);
 
-                    Builder.addUnit("Razorshark Strike Fighter", 1, 12, 165);
+                        Builder.addUnit("Pathfinder Team", 10, 12, 90);
 
-                    Builder.addUnit("Riptide Battlesuit", 1, 12, 180);
+                        Builder.new("Piranhas")
+                            .model(1, 14, 55)
+                            .model(2, 12, 110)
+                            .model(3, 12, 165)
+                            .add();
 
-                    Builder.addUnit("Sky Ray Gunship", 1, 12, 130);
+                        Builder.addUnit("Razorshark Strike Fighter", 1, 12, 165);
 
-                    Builder.new("Stealth Battlesuits")
-                        .model(3, 14, 60)
-                        .model(6, 12, 120)
-                        .add();
+                        Builder.addUnit("Riptide Battlesuit", 1, 12, 180);
 
-                    Builder.addUnit("Stormsurge", 1, 12, 400);
+                        Builder.addUnit("Sky Ray Gunship", 1, 12, 130);
 
-                    Builder.addUnit("Strike Team", 10, 12, 80);
+                        Builder.new("Stealth Battlesuits")
+                            .model(3, 14, 60)
+                            .model(6, 12, 120)
+                            .add();
 
-                    Builder.addUnit("Sun Shark Bomber", 1, 12, 150);
+                        Builder.addUnit("Stormsurge", 1, 12, 400);
 
-                    Builder.new("Tactical Drones")
-                        .model(4, 14, 70)
-                        .model(8, 12, 140)
-                        .model(12, 10, 210)
-                        .add();
+                        Builder.addUnit("Strike Team", 10, 12, 80);
 
-                    Builder.addUnit("Tidewall Droneport", 1, 14, 85);
+                        Builder.addUnit("Sun Shark Bomber", 1, 12, 150);
 
-                    Builder.addUnit("Tidewall Gunrig", 1, 14, 90);
+                        Builder.new("Tactical Drones")
+                            .model(4, 14, 70)
+                            .model(8, 12, 140)
+                            .model(12, 10, 210)
+                            .add();
 
-                    Builder.new("Tidewall Shieldline")
-                        .model(1, 14, 85)
-                        .modelCustom("Tidewall Defence Platform", 5, +20)
-                        .add();
+                        Builder.addUnit("Tidewall Droneport", 1, 14, 85);
 
-                    Builder.addUnit("Vespid Stingwings", 5, 14, 75);
+                        Builder.addUnit("Tidewall Gunrig", 1, 14, 90);
 
-                    insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        Builder.new("Tidewall Shieldline")
+                            .model(1, 14, 85)
+                            .modelCustom("Tidewall Defence Platform", 5, +20)
+                            .add();
 
-                    Builder.addUnit("AX-1-0 Tiger Shark", 1, 12, 315);
+                        Builder.addUnit("Vespid Stingwings", 5, 14, 75);
 
-                    Builder.addUnit("Barracuda", 1, 12, 220);
+                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
 
-                    Builder.addUnit("Manta", 1, 10, 2100);
+                        Builder.addUnit("AX-1-0 Tiger Shark", 1, 12, 315);
 
-                    Builder.addUnit("Remora Stealth Drones", 1, 12, 160);
+                        Builder.addUnit("Barracuda", 1, 12, 220);
 
-                    Builder.addUnit("R'varna Battlesuit", 1, 12, 200);
+                        Builder.addUnit("Manta", 1, 10, 2100);
 
-                    Builder.addUnit("Ta'unar Supremacy Armour", 1, 12, 790);
+                        Builder.addUnit("Remora Stealth Drones", 1, 12, 160);
 
-                    Builder.new("Tetras")
-                        .model(2, 14, 80)
-                        .model(4, 12, 160)
-                        .add();
+                        Builder.addUnit("R'varna Battlesuit", 1, 12, 200);
 
-                    Builder.addUnit("Tiger Shark", 1, 12, 275);
+                        Builder.addUnit("Ta'unar Supremacy Armour", 1, 12, 790);
 
-                    Builder.addUnit("Y'vahra Battlesuit", 1, 12, 210);
+                        Builder.new("Tetras")
+                            .model(2, 14, 80)
+                            .model(4, 12, 160)
+                            .add();
+
+                        Builder.addUnit("Tiger Shark", 1, 12, 275);
+
+                        Builder.addUnit("Y'vahra Battlesuit", 1, 12, 210);
                     </script>
                 </ul>
 
+            </div>
+            <div class="pad"></div>
         </div>
-        <div class="pad"></div>
-    </div>
+    </main>
 
     <footer>
         <div class="pad"></div>

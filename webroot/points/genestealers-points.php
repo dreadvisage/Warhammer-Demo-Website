@@ -34,89 +34,91 @@ if (isNotLoggedIn()) {
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>Genestealer Cults</h2>
-            <hr>
+                <h2>Genestealer Cults</h2>
+                <hr>
 
-            <ul id="points-list">
-                <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    Builder.setFaction("Genestealer Cults");
-                    
-                    Builder.new("Aberrants")
-                        .model(5, 12, 185)
-                        .model(10, 10, 370)
-                        .add();
+                <ul id="points-list">
+                    <script>
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("Genestealer Cults");
 
-                    Builder.addUnit("Abominant", 1, 14, 75);
+                        Builder.new("Aberrants")
+                            .model(5, 12, 185)
+                            .model(10, 10, 370)
+                            .add();
 
-                    Builder.new("Achilles Ridgerunners")
-                        .model(1, 14, 85)
-                        .model(2, 12, 170)
-                        .add();
+                        Builder.addUnit("Abominant", 1, 14, 75);
 
-                    Builder.new("Acolyte Hybrids")
-                        .model(5, 14, 85)
-                        .model(10, 10,170)
-                        .add();
+                        Builder.new("Achilles Ridgerunners")
+                            .model(1, 14, 85)
+                            .model(2, 12, 170)
+                            .add();
 
-                    Builder.addUnit("Acolyte Iconward", 1, 14, 50);
+                        Builder.new("Acolyte Hybrids")
+                            .model(5, 14, 85)
+                            .model(10, 10, 170)
+                            .add();
 
-                    Builder.new("Atalan Jackals")
-                        .model(5, 14, 90)
-                        .model(10, 10, 180)
-                        .add();
+                        Builder.addUnit("Acolyte Iconward", 1, 14, 50);
 
-                    Builder.addUnit("Biophagus", 1, 14, 60);
+                        Builder.new("Atalan Jackals")
+                            .model(5, 14, 90)
+                            .model(10, 10, 180)
+                            .add();
 
-                    Builder.addUnit("Clamavus", 1, 14, 50);
+                        Builder.addUnit("Biophagus", 1, 14, 60);
 
-                    Builder.addUnit("Goliath Rockgrinder", 1, 12, 155);
+                        Builder.addUnit("Clamavus", 1, 14, 50);
 
-                    Builder.addUnit("Goliath Truck", 1, 12, 110);
+                        Builder.addUnit("Goliath Rockgrinder", 1, 12, 155);
 
-                    Builder.new("Hybrid Metamorphs")
-                        .model(5, 14, 80)
-                        .model(10, 10, 160)
-                        .add();
+                        Builder.addUnit("Goliath Truck", 1, 12, 110);
 
-                    Builder.addUnit("Jackal Alphus", 1, 14, 60);
+                        Builder.new("Hybrid Metamorphs")
+                            .model(5, 14, 80)
+                            .model(10, 10, 160)
+                            .add();
 
-                    Builder.addUnit("Kelermorph", 1, 14, 55);
+                        Builder.addUnit("Jackal Alphus", 1, 14, 60);
 
-                    Builder.addUnit("Locus", 1, 14, 45);
+                        Builder.addUnit("Kelermorph", 1, 14, 55);
 
-                    Builder.addUnit("Magus", 1, 14, 50);
+                        Builder.addUnit("Locus", 1, 14, 45);
 
-                    Builder.new("Neophyte Hybrids")
-                        .model(10, 12, 90)
-                        .model(20, 10, 180)
-                        .add();
+                        Builder.addUnit("Magus", 1, 14, 50);
 
-                    Builder.addUnit("Nexos", 1, 14, 60);
+                        Builder.new("Neophyte Hybrids")
+                            .model(10, 12, 90)
+                            .model(20, 10, 180)
+                            .add();
 
-                    Builder.addUnit("Patriarch", 1, 14, 85);
+                        Builder.addUnit("Nexos", 1, 14, 60);
 
-                    Builder.addUnit("Primus", 1, 14, 90);
+                        Builder.addUnit("Patriarch", 1, 14, 85);
 
-                    Builder.new("Purestrain Genestealers")
-                        .model(5, 14, 85)
-                        .model(10, 10, 170)
-                        .add();
+                        Builder.addUnit("Primus", 1, 14, 90);
 
-                    Builder.addUnit("Reductus Saboteur", 1, 14, 65);
+                        Builder.new("Purestrain Genestealers")
+                            .model(5, 14, 85)
+                            .model(10, 10, 170)
+                            .add();
 
-                    Builder.addUnit("Sanctus", 1, 14, 50);
+                        Builder.addUnit("Reductus Saboteur", 1, 14, 65);
+
+                        Builder.addUnit("Sanctus", 1, 14, 50);
                     </script>
                 </ul>
 
+            </div>
+            <div class="pad"></div>
         </div>
-        <div class="pad"></div>
-    </div>
+    </main>
 
     <footer>
         <div class="pad"></div>
