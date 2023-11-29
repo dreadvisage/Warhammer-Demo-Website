@@ -21,7 +21,7 @@ body {
     position: fixed;
     /* Helps ensure that the background image stays behind all other elements */
     z-index: -1;
-    background-image: url(../images/warhammer-background.jpg);
+    /*background-image: url(../images/warhammer-background.jpg);*/
     width: 100vw;
     height: 100vh;
 }
@@ -41,6 +41,26 @@ body {
     padding: 2em;
     background-color: white;
     font-family: NotoSans-Regular;
+}
+
+footer {
+    display: flex;
+}
+
+footer .footer-content {
+    width: 100%;
+    background-color: white;
+    font-size: 12px;
+    padding: 2.7em;
+    font-family: NotoSans-Regular;
+}
+
+footer .footer-content p {
+    display: inline;
+}
+
+footer hr {
+    margin-bottom: 2em;
 }
 
 #article img {

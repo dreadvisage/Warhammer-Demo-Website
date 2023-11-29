@@ -28,198 +28,208 @@ if (isNotLoggedIn()) {
 </head>
 
 <body>
-
-    <div id="background-image"></div>
+    <div id="background-image"><img src="../images/warhammer-background.jpg" alt="Warhammer Background"></div>
 
     <?php
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>Tyranids</h2>
-            <hr>
+                <h2>Tyranids</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
                     <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    Builder.setFaction("Tyranids");
-                    
-                    Builder.new("Barbgaunts")
-                        .model(5, 14, 60)
-                        .model(10, 10, 120)
-                        .add();
-                    
-                    Builder.new("Barbgaunts")
-                        .model(1, 14, 75)
-                        .model(2, 12, 150)
-                        .model(3, 12, 225)
-                        .add();
-                    
-                    Builder.addUnit("Broodlord", 1, 14, 90);
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("Tyranids");
 
-                    Builder.new("Carnifexes")
-                        .model(1, 12, 125)
-                        .model(2, 12, 250)
-                        .add();
+                        Builder.new("Barbgaunts")
+                            .model(5, 14, 60)
+                            .model(10, 10, 120)
+                            .add();
 
-                    Builder.addUnit("Deathleaper", 1, 14, 70);
+                        Builder.new("Barbgaunts")
+                            .model(1, 14, 75)
+                            .model(2, 12, 150)
+                            .model(3, 12, 225)
+                            .add();
 
-                    Builder.addUnit("Deathleaper", 1, 14, 70);
+                        Builder.addUnit("Broodlord", 1, 14, 90);
 
-                    Builder.addUnit("Exocrine", 1, 12, 135);
+                        Builder.new("Carnifexes")
+                            .model(1, 12, 125)
+                            .model(2, 12, 250)
+                            .add();
 
-                    Builder.new("Gargoyles")
-                        .model(10, 12, 75)
-                        .model(20, 10, 150)
-                        .add();
+                        Builder.addUnit("Deathleaper", 1, 14, 70);
 
-                    Builder.new("Genestealers")
-                        .model(5, 14, 85)
-                        .model(10, 10, 170)
-                        .add();
+                        Builder.addUnit("Deathleaper", 1, 14, 70);
 
-                    Builder.addUnit("Harpy", 1, 12, 215);
+                        Builder.addUnit("Exocrine", 1, 12, 135);
 
-                    Builder.addUnit("Haruspex", 1, 12, 125);
+                        Builder.new("Gargoyles")
+                            .model(10, 12, 75)
+                            .model(20, 10, 150)
+                            .add();
 
-                    Builder.addUnit("Hive Crone", 1, 12, 200);
+                        Builder.new("Genestealers")
+                            .model(5, 14, 85)
+                            .model(10, 10, 170)
+                            .add();
 
-                    Builder.new("Hive Guard")
-                        .model(3, 12, 110)
-                        .model(6, 12, 220)
-                        .add();
+                        Builder.addUnit("Harpy", 1, 12, 215);
 
-                    Builder.addUnit("Hive Tyrant", 1, 12, 235);
+                        Builder.addUnit("Haruspex", 1, 12, 125);
 
-                    Builder.new("Hormagaunts")
-                        .model(10, 12, 65)
-                        .model(20, 10, 130)
-                        .add();
+                        Builder.addUnit("Hive Crone", 1, 12, 200);
 
-                    Builder.addUnit("Lictor", 1, 14, 60);
+                        Builder.new("Hive Guard")
+                            .model(3, 12, 110)
+                            .model(6, 12, 220)
+                            .add();
 
-                    Builder.addUnit("Maleceptor", 1, 12, 170);
+                        Builder.addUnit("Hive Tyrant", 1, 12, 235);
 
-                    Builder.addUnit("Mawloc", 1, 12, 145);
+                        Builder.new("Hormagaunts")
+                            .model(10, 12, 65)
+                            .model(20, 10, 130)
+                            .add();
 
-                    Builder.new("Mucolid Spores")
-                        .model(1, 14, 50)
-                        .model(2, 12, 100)
-                        .add();
+                        Builder.addUnit("Lictor", 1, 14, 60);
 
-                    Builder.new("Neurogaunts")
-                        .model(11, 12, 45)
-                        .model(22, 12, 90)
-                        .add();
+                        Builder.addUnit("Maleceptor", 1, 12, 170);
 
-                    Builder.addUnit("Neurolictor", 1, 12, 105);
+                        Builder.addUnit("Mawloc", 1, 12, 145);
 
-                    Builder.addUnit("Norn Assimilator", 1, 12, 310);
+                        Builder.new("Mucolid Spores")
+                            .model(1, 14, 50)
+                            .model(2, 12, 100)
+                            .add();
 
-                    Builder.addUnit("Norn Emissary", 1, 12, 290);
+                        Builder.new("Neurogaunts")
+                            .model(11, 12, 45)
+                            .model(22, 12, 90)
+                            .add();
 
-                    Builder.addUnit("Old One Eye", 1, 12, 140);
+                        Builder.addUnit("Neurolictor", 1, 12, 105);
 
-                    Builder.addUnit("Parasite of Mortrex", 1, 14, 80);
+                        Builder.addUnit("Norn Assimilator", 1, 12, 310);
 
-                    Builder.addUnit("Psychophage", 1, 12, 125);
+                        Builder.addUnit("Norn Emissary", 1, 12, 290);
 
-                    Builder.new("Pyrovores")
-                        .model(1, 14, 30)
-                        .model(2, 14, 60)
-                        .model(3, 14, 90)
-                        .add();
+                        Builder.addUnit("Old One Eye", 1, 12, 140);
 
-                    Builder.new("Raveners")
-                        .model(3, 14, 75)
-                        .model(6, 12, 150)
-                        .add();
+                        Builder.addUnit("Parasite of Mortrex", 1, 14, 80);
 
-                    Builder.new("Ripper Swarms")
-                        .model(1, 14, 20)
-                        .model(2, 14, 40)
-                        .model(3, 14, 60)
-                        .add();
+                        Builder.addUnit("Psychophage", 1, 12, 125);
 
-                    Builder.addUnit("Screamer-Killer", 1, 12, 170);
+                        Builder.new("Pyrovores")
+                            .model(1, 14, 30)
+                            .model(2, 14, 60)
+                            .model(3, 14, 90)
+                            .add();
 
-                    Builder.new("Spore Mines")
-                        .model(3, 14, 55)
-                        .model(6, 12, 110)
-                        .add();
+                        Builder.new("Raveners")
+                            .model(3, 14, 75)
+                            .model(6, 12, 150)
+                            .add();
 
-                    Builder.addUnit("Sporocyst", 1, 12, 145);
+                        Builder.new("Ripper Swarms")
+                            .model(1, 14, 20)
+                            .model(2, 14, 40)
+                            .model(3, 14, 60)
+                            .add();
 
-                    Builder.new("Termagants")
-                        .model(10, 12, 60)
-                        .model(20, 10, 120)
-                        .add();
+                        Builder.addUnit("Screamer-Killer", 1, 12, 170);
 
-                    Builder.addUnit("Tervigon", 1, 12, 190);
+                        Builder.new("Spore Mines")
+                            .model(3, 14, 55)
+                            .model(6, 12, 110)
+                            .add();
 
-                    Builder.addUnit("The Swarmlord", 1, 12, 270);
+                        Builder.addUnit("Sporocyst", 1, 12, 145);
 
-                    Builder.addUnit("Toxicrene", 1, 12, 180);
+                        Builder.new("Termagants")
+                            .model(10, 12, 60)
+                            .model(20, 10, 120)
+                            .add();
 
-                    Builder.addUnit("Trygon", 1, 12, 180);
+                        Builder.addUnit("Tervigon", 1, 12, 190);
 
-                    Builder.new("Tyranid Warriors with Melee Bio-weapons")
-                        .model(3, 14, 85)
-                        .model(6, 12, 170)
-                        .add();
+                        Builder.addUnit("The Swarmlord", 1, 12, 270);
 
-                    Builder.new("Tyranid Warriors with Ranged Bio-weapons")
-                        .model(3, 14, 70)
-                        .model(6, 12, 140)
-                        .add();
+                        Builder.addUnit("Toxicrene", 1, 12, 180);
 
-                    Builder.addUnit("Tyrannocyte", 1, 12, 105);
+                        Builder.addUnit("Trygon", 1, 12, 180);
 
-                    Builder.addUnit("Tyrannofex", 1, 12, 245);
+                        Builder.new("Tyranid Warriors with Melee Bio-weapons")
+                            .model(3, 14, 85)
+                            .model(6, 12, 170)
+                            .add();
 
-                    Builder.new("Tyrant Guard")
-                        .model(3, 14, 95)
-                        .model(6, 12, 190)
-                        .add();
+                        Builder.new("Tyranid Warriors with Ranged Bio-weapons")
+                            .model(3, 14, 70)
+                            .model(6, 12, 140)
+                            .add();
 
-                    Builder.new("Venomthropes")
-                        .model(3, 14, 70)
-                        .model(6, 12, 140)
-                        .add();
+                        Builder.addUnit("Tyrannocyte", 1, 12, 105);
 
-                    Builder.new("Von Ryan's Leapers")
-                        .model(3, 14, 75)
-                        .model(6, 12, 150)
-                        .add();
+                        Builder.addUnit("Tyrannofex", 1, 12, 245);
 
-                    Builder.addUnit("Winged Hive Tyrant", 1, 12, 210);
+                        Builder.new("Tyrant Guard")
+                            .model(3, 14, 95)
+                            .model(6, 12, 190)
+                            .add();
 
-                    Builder.addUnit("Winged Tyranid Prime", 1, 14, 65);
+                        Builder.new("Venomthropes")
+                            .model(3, 14, 70)
+                            .model(6, 12, 140)
+                            .add();
 
-                    Builder.new("Zoanthropes")
-                        .model(3, 12, 110)
-                        .model(6, 12, 220)
-                        .add();
+                        Builder.new("Von Ryan's Leapers")
+                            .model(3, 14, 75)
+                            .model(6, 12, 150)
+                            .add();
 
-                    insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        Builder.addUnit("Winged Hive Tyrant", 1, 12, 210);
 
-                    Builder.addUnit("Barbed Hierodule", 1, 12, 340);
+                        Builder.addUnit("Winged Tyranid Prime", 1, 14, 65);
 
-                    Builder.addUnit("Harridan", 1, 12, 610);
+                        Builder.new("Zoanthropes")
+                            .model(3, 12, 110)
+                            .model(6, 12, 220)
+                            .add();
 
-                    Builder.addUnit("Hierophant", 1, 12, 810);
+                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
 
-                    Builder.addUnit("Scythed Hierodule", 1, 12, 330);
+                        Builder.addUnit("Barbed Hierodule", 1, 12, 340);
+
+                        Builder.addUnit("Harridan", 1, 12, 610);
+
+                        Builder.addUnit("Hierophant", 1, 12, 810);
+
+                        Builder.addUnit("Scythed Hierodule", 1, 12, 330);
                     </script>
                 </ul>
 
+            </div>
+            <div class="pad"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="pad"></div>
+        <div class="footer-content">
+            <hr>
+            <p>Author(s): Seth Pommer</p>
         </div>
         <div class="pad"></div>
-    </div>
+    </footer>
 </body>
 
 </html>

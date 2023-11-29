@@ -17,7 +17,8 @@ function echoNavbar($num_dirs_up) {
     echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-dropdown-manager.js"></script>';
     echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/live-search.js"></script>';
     echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-init.js"></script>';
-    echo '<div id="navbar">
+    echo '<header>';
+    echo '<nav id="navbar">
     <div class="inner1">
         <a id="warhammer-logo-link" href="' . getDirsUp($num_dirs_up) . 'index.php"><img class="warhammer-logo" src="' . getDirsUp($num_dirs_up) . 'images/warhammer-logo-black.png" alt="Warhammer Logo"></a>
         <div class="alt-dropdown">
@@ -84,7 +85,8 @@ function echoNavbar($num_dirs_up) {
             echo '<a href="' . getDirsUp($num_dirs_up) . 'account/login.php"><img class="account-icon" src="' . getDirsUp($num_dirs_up) . 'images/account-logo-skull.svg" alt="Account Logo"></a>';
         }
     echo '</div>
-    </div>';
+    </nav>';
+    echo '</header>';
     echo '<script>initNavbarTools('. $num_dirs_up .')</script>';
 
 }
