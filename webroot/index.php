@@ -35,7 +35,7 @@ require '../utils/navbar.php';
             </p>
 
             <br>
-            <p>At INSERT NAME HERE, we provide multiple services for Warhammer 40k players of any level or experience.</p>
+            <p>At Warhammer Haven, we provide multiple services for Warhammer 40k players of any level or experience.</p>
 
             <br>
             <h2 style = "text-align: center">Army List Builder</h2>
