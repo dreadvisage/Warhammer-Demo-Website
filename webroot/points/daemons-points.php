@@ -28,173 +28,185 @@ if (isNotLoggedIn()) {
 </head>
 
 <body>
-    <div id="background-image"></div>
+    <div id="background-image"><img src="../images/warhammer-background.jpg" alt="Warhammer Background"></div>
 
     <?php
     echoNavbar(1);
     ?>
 
-    <div class="display">
-        <div class="pad"></div>
-        <div id="article">
+    <main>
+        <div class="display">
+            <div class="pad"></div>
+            <div id="article">
 
-            <h2>Chaos Daemons</h2>
-            <hr>
+                <h2>Chaos Daemons</h2>
+                <hr>
 
-            <ul id="points-list">
+                <ul id="points-list">
                     <script>
-                    const Builder = UnitBuilder;
-                    Builder.setParentId("points-list");
-                    
-                    Builder.new("Beast of Nurgle")
-                        .model(1, 14, 70)
-                        .model(2, 12, 140)
-                        .add();
+                        const Builder = UnitBuilder;
+                        Builder.setParentId("points-list");
+                        Builder.setFaction("Chaos Daemons");
 
-                    Builder.addUnit("Be'lakor", 1, 12, 350);
+                        Builder.new("Beast of Nurgle")
+                            .model(1, 14, 70)
+                            .model(2, 12, 140)
+                            .add();
 
-                    Builder.new("Bloodcrushers")
-                        .model(3, 12, 120)
-                        .model(6, 12, 240)
-                        .add();
+                        Builder.addUnit("Be'lakor", 1, 12, 350);
 
-                    Builder.addUnit("Bloodletters", 10, 10, 140);
+                        Builder.new("Bloodcrushers")
+                            .model(3, 12, 120)
+                            .model(6, 12, 240)
+                            .add();
 
-                    Builder.addUnit("Bloodmaster", 1, 14, 75);
+                        Builder.addUnit("Bloodletters", 10, 10, 140);
 
-                    Builder.addUnit("Bloodthirster", 1, 12, 320);
+                        Builder.addUnit("Bloodmaster", 1, 14, 75);
 
-                    Builder.addUnit("Blue Horrors", 1, 12, 125);
+                        Builder.addUnit("Bloodthirster", 1, 12, 320);
 
-                    Builder.addUnit("Burning Chariot", 1, 12, 115);
+                        Builder.addUnit("Blue Horrors", 1, 12, 125);
 
-                    Builder.addUnit("Changecaster", 1, 14, 65);
+                        Builder.addUnit("Burning Chariot", 1, 12, 115);
 
-                    Builder.addUnit("Contorted Epitome", 1, 14, 85);
+                        Builder.addUnit("Changecaster", 1, 14, 65);
 
-                    Builder.addUnit("Daemon Prince of Chaos", 1, 12, 200);
+                        Builder.addUnit("Contorted Epitome", 1, 14, 85);
 
-                    Builder.addUnit("Daemon Prince of Chaos with Winges", 1, 12, 195);
+                        Builder.addUnit("Daemon Prince of Chaos", 1, 12, 200);
 
-                    Builder.addUnit("Daemonettes", 1, 12, 120);
+                        Builder.addUnit("Daemon Prince of Chaos with Winges", 1, 12, 195);
 
-                    Builder.addUnit("Epidemius", 1, 14, 85);
+                        Builder.addUnit("Daemonettes", 1, 12, 120);
 
-                    Builder.addUnit("Exalted Flamer", 1, 14, 70);
+                        Builder.addUnit("Epidemius", 1, 14, 85);
 
-                    Builder.addUnit("Exalted Seeker Chariot", 1, 12, 115);
+                        Builder.addUnit("Exalted Flamer", 1, 14, 70);
 
-                    Builder.addUnit("Fateskimmer", 1, 12, 105);
+                        Builder.addUnit("Exalted Seeker Chariot", 1, 12, 115);
 
-                    Builder.addUnit("Feculent Gnarimaw", 1, 12, 100);
+                        Builder.addUnit("Fateskimmer", 1, 12, 105);
 
-                    Builder.new("Fiends")
-                        .model(3, 12, 130)
-                        .model(6, 12, 260)
-                        .add();
+                        Builder.addUnit("Feculent Gnarimaw", 1, 12, 100);
 
-                    Builder.new("Flamers")
-                        .model(3, 14, 80)
-                        .model(6, 12, 160)
-                        .add();
+                        Builder.new("Fiends")
+                            .model(3, 12, 130)
+                            .model(6, 12, 260)
+                            .add();
 
-                    Builder.new("Flesh Hounds")
-                        .model(5, 14, 70)
-                        .model(10, 10, 140)
-                        .add();
+                        Builder.new("Flamers")
+                            .model(3, 14, 80)
+                            .model(6, 12, 160)
+                            .add();
 
-                    Builder.addUnit("Fluxmaster", 1, 14, 60);
+                        Builder.new("Flesh Hounds")
+                            .model(5, 14, 70)
+                            .model(10, 10, 140)
+                            .add();
 
-                    Builder.addUnit("Great Unclean One", 1, 12, 250);
+                        Builder.addUnit("Fluxmaster", 1, 14, 60);
 
-                    Builder.new("Hellflayer")
-                        .model(1, 12, 105)
-                        .model(2, 12, 210)
-                        .add();
+                        Builder.addUnit("Great Unclean One", 1, 12, 250);
 
-                    Builder.addUnit("Horticulous Slimux", 1, 12, 120);
+                        Builder.new("Hellflayer")
+                            .model(1, 12, 105)
+                            .model(2, 12, 210)
+                            .add();
 
-                    Builder.addUnit("Infernal Enrapturess", 1, 14, 65);
+                        Builder.addUnit("Horticulous Slimux", 1, 12, 120);
 
-                    Builder.addUnit("Kairos Fateweaver", 1, 12, 285);
+                        Builder.addUnit("Infernal Enrapturess", 1, 14, 65);
 
-                    Builder.addUnit("Karanak", 1, 14, 75);
+                        Builder.addUnit("Kairos Fateweaver", 1, 12, 285);
 
-                    Builder.addUnit("Keeper of Secrets", 1, 12, 330);
+                        Builder.addUnit("Karanak", 1, 14, 75);
 
-                    Builder.addUnit("Lord of Change", 1, 12, 260);
+                        Builder.addUnit("Keeper of Secrets", 1, 12, 330);
 
-                    Builder.new("Nurglings")
-                        .model(3, 14, 35)
-                        .model(6, 14, 70)
-                        .model(9, 12, 105)
-                        .add();
+                        Builder.addUnit("Lord of Change", 1, 12, 260);
 
-                    Builder.addUnit("Pink Horrors", 10, 10, 140);
+                        Builder.new("Nurglings")
+                            .model(3, 14, 35)
+                            .model(6, 14, 70)
+                            .model(9, 12, 105)
+                            .add();
 
-                    Builder.new("Plague Drones")
-                        .model(3, 12, 120)
-                        .model(6, 12, 240)
-                        .add();
+                        Builder.addUnit("Pink Horrors", 10, 10, 140);
 
-                    Builder.addUnit("Plaguebearers", 10, 10, 125);
+                        Builder.new("Plague Drones")
+                            .model(3, 12, 120)
+                            .model(6, 12, 240)
+                            .add();
 
-                    Builder.addUnit("Poxbringer", 1, 14, 65);
+                        Builder.addUnit("Plaguebearers", 10, 10, 125);
 
-                    Builder.addUnit("Rendmaster on Blood Throne", 1, 12, 150);
+                        Builder.addUnit("Poxbringer", 1, 14, 65);
 
-                    Builder.addUnit("Rotigus", 1, 12, 260);
+                        Builder.addUnit("Rendmaster on Blood Throne", 1, 12, 150);
 
-                    Builder.new("Screamers")
-                        .model(3, 14, 80)
-                        .model(6, 12, 180)
-                        .add();
+                        Builder.addUnit("Rotigus", 1, 12, 260);
 
-                    Builder.new("Seeker Chariot")
-                        .model(1, 14, 75)
-                        .model(2, 12, 150)
-                        .add();
+                        Builder.new("Screamers")
+                            .model(3, 14, 80)
+                            .model(6, 12, 180)
+                            .add();
 
-                    Builder.new("Seekers")
-                        .model(5, 14, 85)
-                        .model(10, 10, 170)
-                        .add();
+                        Builder.new("Seeker Chariot")
+                            .model(1, 14, 75)
+                            .model(2, 12, 150)
+                            .add();
 
-                    Builder.addUnit("Shalaxi Helbane", 1, 12, 450);
+                        Builder.new("Seekers")
+                            .model(5, 14, 85)
+                            .model(10, 10, 170)
+                            .add();
 
-                    Builder.addUnit("Skarbrand", 1, 12, 345);
+                        Builder.addUnit("Shalaxi Helbane", 1, 12, 450);
 
-                    Builder.addUnit("Skull Altar", 1, 12, 105);
+                        Builder.addUnit("Skarbrand", 1, 12, 345);
 
-                    Builder.addUnit("Skull Cannon", 1, 12, 105);
+                        Builder.addUnit("Skull Altar", 1, 12, 105);
 
-                    Builder.addUnit("Skullmaster", 1, 12, 105);
+                        Builder.addUnit("Skull Cannon", 1, 12, 105);
 
-                    Builder.addUnit("Skulltaker", 1, 14, 95);
+                        Builder.addUnit("Skullmaster", 1, 12, 105);
 
-                    Builder.addUnit("Sloppity Bilepiper", 1, 14, 55);
+                        Builder.addUnit("Skulltaker", 1, 14, 95);
 
-                    Builder.addUnit("Soul Grinder", 1, 12, 200);
+                        Builder.addUnit("Sloppity Bilepiper", 1, 14, 55);
 
-                    Builder.addUnit("Spoilpox Scrivener", 1, 14, 65);
+                        Builder.addUnit("Soul Grinder", 1, 12, 200);
 
-                    Builder.addUnit("Syll'esske", 1, 12, 120);
+                        Builder.addUnit("Spoilpox Scrivener", 1, 14, 65);
 
-                    Builder.addUnit("The Blue Scribes", 1, 14, 65);
+                        Builder.addUnit("Syll'esske", 1, 12, 120);
 
-                    Builder.addUnit("The Changeling", 1, 14, 90);
+                        Builder.addUnit("The Blue Scribes", 1, 14, 65);
 
-                    Builder.addUnit("The Masque of Slaanesh", 1, 12, 105);
+                        Builder.addUnit("The Changeling", 1, 14, 90);
 
-                    Builder.addUnit("Tormenbringer on Exalted Seeker Chariot", 1, 12, 140);
+                        Builder.addUnit("The Masque of Slaanesh", 1, 12, 105);
 
-                    Builder.addUnit("Tranceweaver", 1, 14, 60);
+                        Builder.addUnit("Tormenbringer on Exalted Seeker Chariot", 1, 12, 140);
+
+                        Builder.addUnit("Tranceweaver", 1, 14, 60);
                     </script>
                 </ul>
 
+            </div>
+            <div class="pad"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="pad"></div>
+        <div class="footer-content">
+            <hr>
+            <p>Author(s): Seth Pommer</p>
         </div>
         <div class="pad"></div>
-    </div>
+    </footer>
 </body>
 
 </html>

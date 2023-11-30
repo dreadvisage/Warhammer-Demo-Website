@@ -38,7 +38,7 @@ function loadPfpTableValues(numCols, numDirsUp) {
             // at runtime
             const path = PFP_PATHS[counter];
             imageInput.addEventListener("click", () => {
-                makeRequest(path);
+                requestSetPfp(path);
             });
             col.appendChild(imageInput);
 
@@ -61,7 +61,7 @@ function getDirsUp(numDirsUp) {
  *************************************/
 
 let httpRequest;
-function makeRequest(path) {
+function requestSetPfp(path) {
     httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
@@ -71,7 +71,17 @@ function makeRequest(path) {
 
     // What to do when the ready state changes.
     // We use it specifically when the XMLHttpRequest is DONE
-    httpRequest.onreadystatechange = reloadPage;
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                // If everything is good, we reload the page
+                // to update the pfp
+                location.reload();
+            } else {
+                alert("There was a problem with the request.");
+            }
+        }
+    };
     // Always send by POST. 
     httpRequest.open("POST", "db/update-pfp.php");
     // Needed to send url parameters
@@ -84,14 +94,3 @@ function makeRequest(path) {
     httpRequest.send(`path=${encodeURIComponent(path)}`);
 }
 
-function reloadPage() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        if (httpRequest.status === 200) {
-            // If everything is good, we reload the page
-            // to update the pfp
-            location.reload();
-        } else {
-            alert("There was a problem with the request.");
-        }
-    }
-}

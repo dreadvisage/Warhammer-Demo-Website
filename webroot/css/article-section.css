@@ -21,7 +21,7 @@ body {
     position: fixed;
     /* Helps ensure that the background image stays behind all other elements */
     z-index: -1;
-    background-image: url(../images/warhammer-background.jpg);
+    /*background-image: url(../images/warhammer-background.jpg);*/
     width: 100vw;
     height: 100vh;
 }
@@ -43,8 +43,32 @@ body {
     font-family: NotoSans-Regular;
 }
 
-#article img {
+footer {
+    display: flex;
+}
+
+footer .footer-content {
     width: 100%;
+    background-color: white;
+    font-size: 12px;
+    padding: 2.7em;
+    font-family: NotoSans-Regular;
+}
+
+footer .footer-content p {
+    display: inline;
+}
+
+footer hr {
+    margin-bottom: 2em;
+}
+
+#article img {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pad {
@@ -54,6 +78,6 @@ body {
     width: calc(50vw - 200px);
 }
 
-a {
-    color: #8f2f2f;
+#article a, #article a:visited {
+    color: #0000EE;
 }

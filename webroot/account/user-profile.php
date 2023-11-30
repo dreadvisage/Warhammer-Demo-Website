@@ -5,22 +5,22 @@ $is_logged_in_path .= "/project/../utils/is-logged-in.php";
 
 $get_user_pfp_path = $_SERVER['DOCUMENT_ROOT'];
 $get_user_pfp_path .= "/project/../utils/get-user-pfp.php";
-    
+
 require_once $is_logged_in_path;
 require_once $get_user_pfp_path;
-require '../../utils/navbar.php'; 
-require_once "db/load-unit-table-data.php"; 
- 
+require '../../utils/navbar.php';
+
 // Check if the user is logged in, if not then redirect him to login page
-if(isNotLoggedIn()){
+if (isNotLoggedIn()) {
     header("location: login.php");
     exit;
 }
 
 ?>
- 
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
@@ -29,14 +29,17 @@ if(isNotLoggedIn()){
     <link rel="stylesheet" href="../css/modal.css">
     <script src="../js/pfp-table-values.js"></script>
     <script src="../js/modal.js"></script>
+    <script src="../js/load-unit-table-data.js"></script>
+    <script src="../js/user-profile.js"></script>
 </head>
+
 <body>
-    
-    <?php 
-        echoNavbar(1);
+
+    <?php
+    echoNavbar(1);
     ?>
 
-    <div class="main-wrapper">
+    <main>
         <div class="left-panel">
             <div> <!-- Outer div needed for flexbox spacing -->
                 <div class="profile-picture-content">
@@ -58,25 +61,40 @@ if(isNotLoggedIn()){
             </div>
         </div>
 
-        <div id="model-pfp" class="modal">
-            <div id="modal-pfp-content" class="modal-content">
-                <div class="wrapper-table">
-                    <span class="close">&times;</span>
-                    <table class="image-table">
-                        <script>loadPfpTableValues(3, 1);</script>
-                    </table>
+        <div class="main-wrapper">
+            <div id="model-pfp" class="modal">
+                <div id="modal-pfp-content" class="modal-content">
+                    <div class="wrapper-table">
+                        <span class="close">&times;</span>
+                        <table class="image-table">
+                            <script>
+                                loadPfpTableValues(3, 1);
+                            </script>
+                        </table>
+                    </div>
+                    <script>
+                        registerModelListeners();
+                    </script>
                 </div>
-                <script>registerModelListeners();</script>
             </div>
-        </div>
 
-        <div class="main-content">
-            <a class="btn-option" href="db/clear-unit-table.php">Clear Table</a>
-            <?php 
-                echo_unit_table_data();
-            ?>
-        </div>
+            <div class="main-content">
+                <a class="btn-option" href="db/clear-unit-table.php">Clear Table</a>
+                <table id="unit-table" class="unit-table">
+                    <script>
+                        loadUnitTableData(1);
+                    </script>
+                </table>
 
-    </div>
+                <p id="total-points"></p>
+            </div>
+
+            <script>
+                registerLeftPanelListener();
+            </script>
+
+        </div>
+    </main>
 </body>
+
 </html>

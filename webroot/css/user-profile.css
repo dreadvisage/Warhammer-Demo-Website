@@ -1,12 +1,12 @@
 
 .main-wrapper {
     display: flex;
-    
 }
 
 .main-content {
     display: block;
     margin-top: 4em;
+    padding: 15px;
 }
 
 .left-panel {
@@ -16,6 +16,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    position: fixed;
 
     margin-top: 4em;
     width: 20vw;
@@ -199,9 +201,10 @@ a.btn-pad {
 .unit-table {
 
 }
+/*
 .unit-table tr td {
     min-width: 100px;
 }
 .unit-table tr td:nth-child(1) {
     min-width: 200px;
-}
+}*/

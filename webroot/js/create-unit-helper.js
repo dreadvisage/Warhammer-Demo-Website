@@ -6,12 +6,20 @@
 
 class UnitBuilder {
     static id = "";
+    static faction = "";
     static counter = 0;
 
-    constructor(name) {
-        this.name = name;
+    // idk if there is a better way to do this.
+    static optionalModelsBelongTo = "";
+    static optionalModelsPending = [];
+
+    // corresponding cancel btns and their notify texts for optional units
+    static cancelBtnAndNotifyTextIds = [];
+
+    constructor(unitName) {
+        this.unitName = unitName;
         this.li = document.createElement("li");
-        this.li.append(document.createTextNode(this.name));
+        this.li.append(document.createTextNode(this.unitName));
         this.ul = document.createElement("ul");
         this.ul.className = "unit-type-list";
     }
@@ -20,13 +28,17 @@ class UnitBuilder {
         UnitBuilder.id = id;
     }
 
+    static setFaction(faction) {
+        UnitBuilder.faction = faction;
+    }
+
     static new(name) {
         return new UnitBuilder(name);
     }
 
-    static addUnit(name, models, padding, points) {
+    static addUnit(unitName, models, padding, points) {
         let li = document.createElement("li");
-        li.append(document.createTextNode(name));
+        li.append(document.createTextNode(unitName));
         let ul = document.createElement("ul");
         ul.className = "unit-type-list";
 
@@ -47,8 +59,11 @@ class UnitBuilder {
         liButton.type = "submit";
         liButton.innerText = "➕";
         let num = UnitBuilder.counter;
+        let faction = UnitBuilder.faction;
         liButton.addEventListener("click", () => {
-            makeRequest(name, models, points);
+            clearIfNotBelongsTo(unitName);
+            hideAllCancelBtnsAndClearNotifyTexts();
+            requestInsertUnitIntoDatabase(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -82,8 +97,12 @@ class UnitBuilder {
         liButton.type = "submit";
         liButton.innerText = "➕";
         let num = UnitBuilder.counter;
+        let faction = UnitBuilder.faction;
+        let unitName = this.unitName;
         liButton.addEventListener("click", () => {
-            makeRequest(this.name, models, points);
+            clearIfNotBelongsTo(unitName);
+            hideAllCancelBtnsAndClearNotifyTexts();
+            requestInsertUnitIntoDatabase(faction, unitName, models, points);
             notifyTextMonitor("notifytext" + num);
         });
         liContent.append(liButton);
@@ -97,7 +116,7 @@ class UnitBuilder {
         return this;
     }
 
-    modelCustom(models, padding, points) {
+    modelCustom(models, padding, points, isOptionalUnit) {
         let liContent = document.createElement("li");
         this.ul.append(liContent);
 
@@ -115,11 +134,52 @@ class UnitBuilder {
         liButton.type = "submit";
         liButton.innerText = "➕";
         let num = UnitBuilder.counter;
-        liButton.addEventListener("click", () => {
-            makeRequest(this.name, models, points);
-            notifyTextMonitor("notifytext" + num);
-        });
+        let faction = UnitBuilder.faction;
+        let counter = UnitBuilder.counter;
+        let unitName = this.unitName;
+        if (isOptionalUnit) {
+            // only for optional units
+            liButton.addEventListener("click", () => {
+                clearIfNotBelongsTo(unitName);
+                UnitBuilder.optionalModelsBelongTo = unitName;
+                UnitBuilder.optionalModelsPending.push([faction, unitName, models, points]);
+                document.getElementById("cancelBtn" + counter).style.display = "inline";
+
+                let count = countModelsFromPending(models);
+                document.getElementById("notifytext" + num).innerText = "x" + count + " pending optional units";
+            });
+        } else {
+            liButton.addEventListener("click", () => {
+                clearIfNotBelongsTo(unitName);
+                hideAllCancelBtnsAndClearNotifyTexts();
+                requestInsertUnitIntoDatabase(faction, unitName, models, points);
+                notifyTextMonitor("notifytext" + num);
+            });
+        }
         liContent.append(liButton);
+
+        if (isOptionalUnit) {
+            let liCancelButton = document.createElement("button");
+            liCancelButton.className = "cancelBtn";
+            liCancelButton.id = "cancelBtn" + UnitBuilder.counter;
+            liCancelButton.type = "submit";
+            liCancelButton.innerText = "➖";
+            liCancelButton.addEventListener("click", () => {
+                removeSingleModelFromPending(models);
+                let count = countModelsFromPending(models);
+                if (count == 0) {
+                    document.getElementById("cancelBtn" + counter).style.display = "none";
+                    document.getElementById("notifytext" + num).innerText = '';
+                } else {
+                    document.getElementById("notifytext" + num).innerText = "x" + count + " pending optional units";
+                }
+            });
+
+            UnitBuilder.cancelBtnAndNotifyTextIds.push(["cancelBtn" + UnitBuilder.counter, "notifytext" + num]);
+
+            liContent.append(liCancelButton);
+        }
+        
 
         let liNotifyText = document.createElement("p");
         liNotifyText.className = "notify-text";
@@ -137,6 +197,53 @@ class UnitBuilder {
     }
 }
 
+function clearIfNotBelongsTo(unitName) {
+    /* if not empty and if the current pending units no don't belong in the same model group
+    (from what we currently have on the website, we don't have optional units that belong to 
+    different model groups as part of the same faction, so we can't pend different optional units 
+    from different models groups) */
+    if (UnitBuilder.optionalModelsPending.length && UnitBuilder.optionalModelsBelongTo != unitName) {
+        UnitBuilder.optionalModelsPending = [];
+    }
+}
+
+function hideAllCancelBtnsAndClearNotifyTexts() {
+    for (let i = 0; i < UnitBuilder.cancelBtnAndNotifyTextIds.length; ++i) {
+        document.getElementById(UnitBuilder.cancelBtnAndNotifyTextIds[i][0]).style.display = "none";
+        document.getElementById(UnitBuilder.cancelBtnAndNotifyTextIds[i][1]).innerText = '';
+    }
+}
+
+function removeSingleModelFromPending(models) {
+    let firstIndex = -1;
+    for (let i = 0; i < UnitBuilder.optionalModelsPending.length; ++i) {
+        let pending = UnitBuilder.optionalModelsPending[i][2];
+        if (pending == models) {
+            firstIndex = i;
+            break;
+        }
+    }
+
+    if (firstIndex == -1) {
+        throw new Error("Failed to find the first index of model from pending");
+    } 
+
+    UnitBuilder.optionalModelsPending.splice(firstIndex, 1);
+}
+
+function countModelsFromPending(models) {
+    let count = 0;
+    for (let i = 0; i < UnitBuilder.optionalModelsPending.length; ++i) {
+        let pending = UnitBuilder.optionalModelsPending[i][2];
+        if (pending == models) {
+            ++count;
+        }
+    }
+
+    return count;
+}
+
+
 /* Insert raw html values when executing scripts. Because scripts are executed after
  * the regular HTML is loaded, if you want to insert something in between other dynamically
  * generated HTML elements, you need to do it through Javascript when executing a script. */
@@ -153,6 +260,7 @@ function insertRawHtml(id, html) {
     template.innerHTML += html;
     document.getElementById(id).append(template.content);
 }
+
 
 
 /*
@@ -199,12 +307,12 @@ function notifyTextMonitor(id) {
     clearTimeout(notifyTextTimeout);
     // Timer of 2000ms or 2 seconds
     notifyTextTimeout = setTimeout(function() {
-        resetNotifyTexts(id)
+        resetNotifyTexts()
     }, 2000);
 }
 
 // Resets all relevant notify texts
-function resetNotifyTexts(id) {
+function resetNotifyTexts() {
     if (prevNotifyText != null)
         prevNotifyText.innerHTML = '';
     prevNotifyText = null;
@@ -221,7 +329,7 @@ function resetNotifyTexts(id) {
  **********************************************************/
 
 let httpRequest;
-function makeRequest(name, models, points) {
+function requestInsertUnitIntoDatabase(faction, name, models, points) {
     httpRequest = new XMLHttpRequest();
 
     if (!httpRequest) {
@@ -239,10 +347,21 @@ function makeRequest(name, models, points) {
         "Content-Type",
         "application/x-www-form-urlencoded",
     );
+
     // Backticks mean it will attempt to execute the contents as a shell command.
     // Use of the backtick operator is identical to shell_exec().
     // You can separate multiple data values by inserting an ampersand (&) in between each value
-    httpRequest.send(`name=${encodeURIComponent(name)}&models=${encodeURIComponent(models)}&points=${encodeURIComponent(points)}`);
+    httpRequest.send(`\
+    faction=${encodeURIComponent(faction)}&\
+    name=${encodeURIComponent(name)}&\
+    models=${encodeURIComponent(models)}&\
+    points=${encodeURIComponent(points)}&\
+    optionalmodels=${encodeURIComponent(JSON.stringify(UnitBuilder.optionalModelsPending))}\
+    `);
+
+    UnitBuilder.optionalModelsPending = [];
+
+    
 }
 
 function promptAlert() {
