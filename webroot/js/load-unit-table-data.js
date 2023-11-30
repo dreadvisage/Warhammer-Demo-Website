@@ -51,7 +51,9 @@ function loadUnitTableData() {
                     let tdUnitPoints = document.createElement("td");
                     tdUnitPoints.append(document.createTextNode(unitTableData[0][i][4]));
 
+                    let tdRemoveBtn = document.createElement("td");
                     let removeModelBtn = document.createElement("button");
+                    tdRemoveBtn.append(removeModelBtn);
                     removeModelBtn.innerText = "➖";
                     removeModelBtn.addEventListener("click", () => {
                         // unitTableData[0][i][0] is the `UnitTableID` that indicates a unique row
@@ -59,7 +61,7 @@ function loadUnitTableData() {
                     });
     
                     
-                    tr.append(tdFaction, tdUnitName, tdNumModels, tdUnitPoints, removeModelBtn);
+                    tr.append(tdFaction, tdUnitName, tdNumModels, tdUnitPoints, tdRemoveBtn);
                     table.append(tr);
                 }
             }
