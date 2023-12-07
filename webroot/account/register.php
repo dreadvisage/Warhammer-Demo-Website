@@ -190,9 +190,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="submit" class="btn-primary" value="Submit">
                         <input type="reset" class="btn-secondary" value="Reset">
                     </div>
-                    <p class="instruct">Already have an account? <a href="login.php">Login here</a>.</p>
+                    <p class="instruct">Already have an account? <a href="login.php">Login here</a></p>
+                </form>
             </div>
-            </form>
         </div>
     </main>
 
