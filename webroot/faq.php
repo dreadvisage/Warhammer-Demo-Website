@@ -96,25 +96,25 @@ require '../utils/navbar.php';
                 <a href="factions/necrons.php">Necrons</a>
 
                 <br><br>
-                <a href="factions/orks.php">Orks<a>
+                <a href="factions/orks.php">Orks</a>
 
-                        <br><br>
-                        <a href="factions/space-marine.php">Space Marines</a>
+                <br><br>
+                <a href="factions/space-marine.php">Space Marines</a>
 
-                        <br><br>
-                        <a href="factions/space-wolves.php">Space Wolves</a>
+                <br><br>
+                <a href="factions/space-wolves.php">Space Wolves</a>
 
-                        <br><br>
-                        <a href="factions/t'au-empire.php">T'au Empire</a>
+                <br><br>
+                <a href="factions/t'au-empire.php">T'au Empire</a>
 
-                        <br><br>
-                        <a href="factions/thousand-sons.php">Thousand Sons</a>
+                <br><br>
+                <a href="factions/thousand-sons.php">Thousand Sons</a>
 
-                        <br><br>
-                        <a href="factions/tyranids.php">Tyranids</a>
+                <br><br>
+                <a href="factions/tyranids.php">Tyranids</a>
 
-                        <br><br>
-                        <a href="factions/world-eaters.php">World Eaters</a>
+                <br><br>
+                <a href="factions/world-eaters.php">World Eaters</a>
             </div>
             <div class="pad"></div>
         </div>

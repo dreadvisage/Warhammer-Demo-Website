@@ -123,7 +123,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Wyches", 10, 12, 90);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Tantalus", 1, 12, 230);
                     </script>

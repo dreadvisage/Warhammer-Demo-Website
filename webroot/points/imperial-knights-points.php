@@ -70,7 +70,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Knight Warden", 1, 12, 480);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Acastus Knight Asterius", 1, 12, 840);
 

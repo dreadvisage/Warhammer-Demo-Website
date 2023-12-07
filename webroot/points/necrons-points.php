@@ -191,7 +191,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Vargard Obyron", 1, 14, 85);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.new("Canoptek Acanthrites")
                             .model(3, 14, 85)

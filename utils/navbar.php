@@ -14,9 +14,9 @@ function getDirsUp($num_dirs_up) {
 }
 
 function echoNavbar($num_dirs_up) {
-    echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-dropdown-manager.js"></script>';
-    echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/live-search.js"></script>';
-    echo '<script type="text/javascript" src="' . getDirsUp($num_dirs_up) . 'js/navbar-init.js"></script>';
+    echo '<script src="' . getDirsUp($num_dirs_up) . 'js/navbar-dropdown-manager.js"></script>';
+    echo '<script src="' . getDirsUp($num_dirs_up) . 'js/live-search.js"></script>';
+    echo '<script src="' . getDirsUp($num_dirs_up) . 'js/navbar-init.js"></script>';
     echo '<header>';
     echo '<nav id="navbar">
     <div class="inner1">

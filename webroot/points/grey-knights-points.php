@@ -120,7 +120,7 @@ if (isNotLoggedIn()) {
                             .model(10, 10, 250)
                             .add();
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Grey Knights Thunderhawk Gunship", 1, 12, 805);
 

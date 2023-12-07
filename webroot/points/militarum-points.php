@@ -196,7 +196,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Wyvern", 1, 12, 110);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Avenger Strike Force", 1, 12, 130);
 

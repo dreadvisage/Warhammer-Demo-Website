@@ -307,7 +307,7 @@ if (isNotLoggedIn()) {
                             .model(6, 12, 150)
                             .add();
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.new("Scout Sniper Squad")
                             .model(3, 14, 75)

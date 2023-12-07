@@ -44,8 +44,8 @@ if (isNotLoggedIn()) {
             <div> <!-- Outer div needed for flexbox spacing -->
                 <div class="profile-picture-content">
                     <div id="pfp-frame-id" class="profile-picture-frame">
-                        <img class="profile-picture" src="../<?php echo getUserPfp(); ?>">
-                        <img class="file-upload-icon" src="../images/file-upload.png">
+                        <img class="profile-picture" src="../<?php echo getUserPfp(); ?>" alt="Profile Picture">
+                        <img class="file-upload-icon" src="../images/file-upload.png" alt="File Upload Icon">
                     </div>
                 </div>
                 <p class="profile-name"><?php echo htmlspecialchars($_SESSION["username"]); ?></p>
@@ -66,32 +66,22 @@ if (isNotLoggedIn()) {
                 <div id="modal-pfp-content" class="modal-content">
                     <div class="wrapper-table">
                         <span class="close">&times;</span>
-                        <table class="image-table">
-                            <script>
-                                loadPfpTableValues(3, 1);
-                            </script>
-                        </table>
+                        <table class="image-table"></table>
+                        <script>loadPfpTableValues(3, 1);</script>
                     </div>
-                    <script>
-                        registerModelListeners();
-                    </script>
+                    <script>registerModelListeners();</script>
                 </div>
             </div>
 
             <div class="main-content">
                 <a class="btn-option" href="db/clear-unit-table.php">Clear Table</a>
-                <table id="unit-table" class="unit-table">
-                    <script>
-                        loadUnitTableData(1);
-                    </script>
-                </table>
+                <table id="unit-table" class="unit-table"></table>
+                <script>loadUnitTableData(1);</script>
 
                 <p id="total-points"></p>
             </div>
 
-            <script>
-                registerLeftPanelListener();
-            </script>
+            <script>registerLeftPanelListener();</script>
 
         </div>
     </main>

@@ -68,10 +68,6 @@
     border-radius: 50%;
 }
 
-
-
-
-
 .profile-picture-frame:hover {
     cursor: pointer;
 }
@@ -198,9 +194,9 @@ a.btn-pad {
     margin-right: 8px;
 }
 
-.unit-table {
+/* .unit-table {
 
-}
+} */
 /*
 .unit-table tr td {
     min-width: 100px;

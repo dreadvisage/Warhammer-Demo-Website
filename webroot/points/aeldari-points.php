@@ -226,7 +226,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Yvraine", 1, 12, 100);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Cobra", 1, 12, 415);
 

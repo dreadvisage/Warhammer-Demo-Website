@@ -38,8 +38,8 @@ body {
     z-index: 1;
 }
 
-#search-suggestions {
-}
+/* #search-suggestions {
+} */
 
 .search-dropdown-content {
     font-family: NotoSans-Regular;
@@ -124,8 +124,8 @@ body {
 .alt-dropdown-content a:hover {
     background-color: #8f2f2f;
 }
-.alt-search-suggestions {   
-}
+/* .alt-search-suggestions {   
+} */
 
 .alt-search-dropdown-content {
     font-family: NotoSans-Regular;
@@ -246,8 +246,8 @@ unless we specify this directly from #inner2. */
   
 /* INNER 3 BELOW */
 
-#search-suggestions-dropdown {
-}
+/* #search-suggestions-dropdown {
+} */
 
 #search-bar {
     color: black;
@@ -259,9 +259,8 @@ unless we specify this directly from #inner2. */
     width: 240px;
 }
 
-#search-bar:focus {
-    
-}
+/* #search-bar:focus {
+} */
 
 .inner4 {
     padding-right: 0.5em;

@@ -96,7 +96,7 @@ require '../utils/navbar.php';
                 <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/H5pO90rzYSAY6dHG.pdf" target="_blank">Necrons</a>
 
                 <br><br>
-                <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/EE2Pdickp8sNe1NX.pdf" target="_blank">Orks<a>
+                <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/EE2Pdickp8sNe1NX.pdf" target="_blank">Orks</a>
 
                 <br><br>
                 <a href="https://www.warhammer-community.com/wp-content/uploads/2023/06/uVN1M55L0U3dQeWZ.pdf" target="_blank">Space Marines</a>

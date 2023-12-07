@@ -154,7 +154,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Vespid Stingwings", 5, 14, 75);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("AX-1-0 Tiger Shark", 1, 12, 315);
 

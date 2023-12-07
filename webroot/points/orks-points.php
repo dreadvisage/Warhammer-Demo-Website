@@ -209,7 +209,7 @@ if (isNotLoggedIn()) {
 
                         Builder.addUnit("Zodgrod Wortsnagga", 1, 14, 80);
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Big Trakk", 1, 14, 90);
 

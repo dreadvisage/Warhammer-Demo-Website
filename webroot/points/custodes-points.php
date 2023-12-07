@@ -113,9 +113,7 @@ if (isNotLoggedIn()) {
                             .model(10, 11, 130)
                             .add();
 
-                        // insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
-                        // Builder.insertH2Header("Forge World Units");
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.new("Agamatus Custodians")
                             .model(3, 12, 240)

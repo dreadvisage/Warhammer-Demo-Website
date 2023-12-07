@@ -205,7 +205,7 @@ if (isNotLoggedIn()) {
                             .model(6, 12, 220)
                             .add();
 
-                        insertRawHtml("points-list", "<br><h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<br><h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Barbed Hierodule", 1, 12, 340);
 

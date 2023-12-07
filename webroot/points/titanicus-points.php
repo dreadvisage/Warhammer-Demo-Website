@@ -49,7 +49,7 @@ if (isNotLoggedIn()) {
                         Builder.setParentId("points-list");
                         Builder.setFaction("Adeptus Titanicus");
 
-                        insertRawHtml("points-list", "<h2>Forge World Units</h2>");
+                        insertRawHtml("points-list", "<h2>Forge World Units<\/h2>");
 
                         Builder.addUnit("Reaver Titan", 1, 12, 2200);
 

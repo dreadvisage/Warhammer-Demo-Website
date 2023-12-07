@@ -96,7 +96,7 @@ require '../utils/navbar.php';
                 <a href="points/necrons-points.php">Necrons</a>
 
                 <br><br>
-                <a href="points/orks-points.php">Orks<a>
+                <a href="points/orks-points.php">Orks</a>
 
                 <br><br>
                 <a href="points/space-marines-points.php">Space Marines</a>
