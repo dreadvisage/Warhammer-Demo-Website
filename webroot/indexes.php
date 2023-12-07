@@ -26,7 +26,7 @@ require '../utils/navbar.php';
             <div class="pad"></div>
             <div id="article">
 
-                <h2>Indexes</h2>
+                <h2 style="text-align: center;">Indexes</h2>
 
                 <p>Welcome to the Indexes page! An index contains army rules for any particular faction, as well as the
                     rules and stats for all units within that army. Click on the desired faction to find your index now!
