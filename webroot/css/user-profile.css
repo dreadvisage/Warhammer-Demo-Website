@@ -20,25 +20,12 @@
     position: fixed;
 
     margin-top: 4em;
-    width: 20vw;
+    width: 275px;
     background-color: rgb(212, 212, 212);
     height: calc(100vh - 4em);
     border-right: 1px solid black;
 }
 
-/* Sets left-panel min width */
-@media (max-width: 1100px) {
-    .left-panel {
-        width: 200px;
-    }
-}
-
-/* Sets left-panel max width */
-@media (min-width: 1500px) {
-    .left-panel {
-        width: 300px;
-    }
-}
 
 
 .profile-picture-content {
@@ -67,6 +54,10 @@
     /* Makes image a circle */
     border-radius: 50%;
 }
+
+
+
+
 
 .profile-picture-frame:hover {
     cursor: pointer;
@@ -97,20 +88,9 @@
 
 .profile-name {
     margin: 20px 0 20px 0;
-    font-size: 1.6vw;
+    font-family: NotoSans-Regular;
+    font-size: 18px;
     text-align: center;
-}
-
-@media (max-width: 1150px) {
-    .profile-name {
-        font-size: 18px;
-    }
-}
-
-@media (min-width: 1300px) {
-    .profile-name {
-        font-size: 20px;
-    }
 }
 
 .account-control {
@@ -124,21 +104,9 @@ hr {
 
 .section-header {
     margin: 0;
-    font-size: 1.6vw;
+    font-family: NotoSans-Regular;
+    font-size: 16px;
     text-align: center;
-}
-
-
-@media (max-width: 1000px) {
-    .section-header {
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 1150px) {
-    .section-header {
-        font-size: 18px;
-    }
 }
 
 /* Removes the "account control" label and it's <hr>  
@@ -162,28 +130,14 @@ a.btn-option {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 1vw;
+    font-size: 12px;
     color: white;
     /* No border element. Makes the 'a' button too big if there's any border*/
     border-radius: 4px;
     background-color: rgb(127, 145, 165);
     font-family: NotoSans-Regular;
-    width: 8vw;
+    width: 110px;
     height: 35px;
-}
-
-@media (max-width: 980px) {
-    a.btn-option {
-        font-size: 10px;
-        width: 80px;
-    }
-}
-
-@media (min-width: 1350px) {
-    a.btn-option {
-        font-size: 14px;
-        width: 110px;
-    }
 }
 
 a.btn-option:hover {
@@ -194,13 +148,51 @@ a.btn-pad {
     margin-right: 8px;
 }
 
-/* .unit-table {
-
-} */
-/*
-.unit-table tr td {
-    min-width: 100px;
+#unit-table {
+    font-family: NotoSans-Regular;
 }
-.unit-table tr td:nth-child(1) {
+
+#total-points {
+    font-family: NotoSans-Regular;
+}
+
+
+
+#unit-table td {
+    text-wrap: nowrap;
+    padding: 5px 10px 5px 0;
+    max-width: 300px;
+}
+
+#unit-table td:nth-child(3) {
+    text-wrap: wrap;
     min-width: 200px;
-}*/
+}
+
+/* Centers the js buttons horizontally */
+#unit-table td:nth-child(5) button {
+    margin: auto;
+}
+
+/* same width as defined in navbar-init.js */
+@media (max-width: 949px) {
+    .left-panel {
+        width: 200px;
+    }
+    .profile-name {
+        font-size: 16px;
+    }
+    .section-header {
+        font-size: 16px;
+    }
+    a.btn-option {
+        font-size: 9px;
+        width: 80px;
+    }
+    #unit-table {
+        font-size: 13px;
+    }
+    #total-points {
+        font-size: 13px;
+    }
+}
