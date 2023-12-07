@@ -29,8 +29,10 @@ Once the secrets.php file has been created and you placed your relevant data int
 
 ## PHPMyAdmin Database Creation
 Ensure that within the XAMPP Control Panel, you start the processes "Apache" and "MySQL". You can test if these are running by using a web browser and navigating to "localhost". If you get an XAMPP-related welcome screen, you are good to go. It's time to create the database that this website will use. Inside the `webroot` there is an initialization script for the database. To call this script, you need to navigate to the file in the web browser
+
 * If you created a soft-link: `localhost/project/cs268groupproject10databasesetup.php`
 * If you placed the folder in htdocs: `localhost/CS268GroupProject/webroot/cs268groupproject10databasesetup.php`
-Whatever you choose, if you set everything up correctly, you should get a screen that tells you all the database and tables were created successfully. Once that is done, the website is now full operational, you can navigate to the to the webroot and use the website.
+
+\.Whatever you choose, if you set everything up correctly, you should get a screen that tells you all the database and tables were created successfully. Once that is done, the website is now full operational, you can navigate to the to the webroot and use the website.
 
 
