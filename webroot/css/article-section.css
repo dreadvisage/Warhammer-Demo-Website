@@ -127,18 +127,17 @@ h1 {
     text-align: center;
     font-size: 70px;
     font-family: WHFont;
-    /* background: -webkit-linear-gradient(bottom, #645f5f, rgb(184, 16, 16)); */
-    /* background-clip: text; */
+    background: -webkit-linear-gradient(top, silver, rgb(129, 104, 72));
+    background-clip: text;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
-    color: rgb(168, 0, 0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .quote {
     font-family: NotoSans-SemiBold;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     padding: 20px 0;
 }

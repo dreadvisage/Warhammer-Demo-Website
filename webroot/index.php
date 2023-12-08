@@ -32,8 +32,8 @@ require '../utils/navbar.php';
 
 
             <p class="quote">"Forget the promise of progress and understanding, for in the grim dark future there is only war"<br>- Vulkan He'Stan</p>
-
-            <div class="aspect-ratio">
+            <hr>
+            <div style="margin-top: 50px;" class="aspect-ratio">
                 <iframe src="https://www.youtube.com/embed/cy4CJ4F-epA?si=QBrchI3Hki34CBWM" allowFullscreen></iframe>
             </div>
 
