@@ -31,12 +31,11 @@ require '../utils/navbar.php';
 
                 <h1 style="text-align: center">Warhammer Haven</h1>
 
-                <p>
-                Forget the promise of progress and understanding, for in the grim dark future there is only war. - Vulkan He'Stan
-                </p>
+                <p>"Forget the promise of progress and understanding, for in the grim dark future there is only war" - Vulkan He'Stan</p>
 
-                <iframe width=100% height="315" src="https://www.youtube.com/embed/cy4CJ4F-epA?si=QBrchI3Hki34CBWM" frameborder="0" allowfullscreen></iframe>
-                </iframe>
+                <div class="aspect-ratio">
+                    <iframe src="https://www.youtube.com/embed/cy4CJ4F-epA?si=QBrchI3Hki34CBWM" allowFullscreen></iframe>
+                </div>
 
                 <br>
                 <p>At Warhammer Haven, we provide multiple services for Warhammer 40k players of any level or experience. Services include faction information and lore,
