@@ -27,22 +27,22 @@ require '../utils/navbar.php';
             <div class="pad"></div>
             <div id="article">
 
+            <h1>Warhammer Haven</h1>
             <img src="images/aquila-image.webp" alt="Warhammer 40k Aquila">
 
-                <h1 style="text-align: center">Warhammer Haven</h1>
 
-                <p>"Forget the promise of progress and understanding, for in the grim dark future there is only war" - Vulkan He'Stan</p>
+            <p>"Forget the promise of progress and understanding, for in the grim dark future there is only war" - Vulkan He'Stan</p>
 
-                <div class="aspect-ratio">
-                    <iframe src="https://www.youtube.com/embed/cy4CJ4F-epA?si=QBrchI3Hki34CBWM" allowFullscreen></iframe>
-                </div>
+            <div class="aspect-ratio">
+                <iframe src="https://www.youtube.com/embed/cy4CJ4F-epA?si=QBrchI3Hki34CBWM" allowFullscreen></iframe>
+            </div>
 
-                <br>
-                <p>At Warhammer Haven, we provide multiple services for Warhammer 40k players of any level or experience. Services include faction information and lore,
-                    various online resources to help new players get you started, our one of a kind, beginner friendly army list builder (with creation of account), 
-                    and much more! If you are an existing 40k player, someone looking to get into the hobby, or are just interested in the universe of Warhammer 40k,
-                     visit the About page to learn more about what Warhammer Haven can do for you!
-                </p>
+            <br>
+            <p>At Warhammer Haven, we provide multiple services for Warhammer 40k players of any level or experience. Services include faction information and lore,
+                various online resources to help new players get you started, our one of a kind, beginner friendly army list builder (with creation of account), 
+                and much more! If you are an existing 40k player, someone looking to get into the hobby, or are just interested in the universe of Warhammer 40k,
+                    visit the About page to learn more about what Warhammer Haven can do for you!
+            </p>
         </div>
         <div class="pad"></div>
     </div>    

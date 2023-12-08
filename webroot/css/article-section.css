@@ -4,6 +4,11 @@
     src: url("../fonts/Noto_Sans/NotoSans-Regular.ttf");
 }
 
+@font-face {
+    font-family: WHFont;
+    src: url("../fonts/kvc-warhammer-base.otf");
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -110,4 +115,16 @@ https://stackoverflow.com/questions/38078957/can-we-define-min-margin-and-max-ma
     height: 100%;
     left: 0;
     top: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 65px;
+    font-family: WHFont;
+    background: -webkit-linear-gradient(bottom, #645f5f, rgb(184, 16, 16));
+    background-clip: text;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
