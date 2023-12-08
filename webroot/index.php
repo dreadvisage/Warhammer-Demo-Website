@@ -31,7 +31,7 @@ require '../utils/navbar.php';
             <img src="images/aquila-image.webp" alt="Warhammer 40k Aquila">
 
 
-            <p>"Forget the promise of progress and understanding, for in the grim dark future there is only war" - Vulkan He'Stan</p>
+            <p class="quote">"Forget the promise of progress and understanding, for in the grim dark future there is only war"<br>- Vulkan He'Stan</p>
 
             <div class="aspect-ratio">
                 <iframe src="https://www.youtube.com/embed/cy4CJ4F-epA?si=QBrchI3Hki34CBWM" allowFullscreen></iframe>
