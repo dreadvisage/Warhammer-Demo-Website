@@ -26,7 +26,7 @@ require '../utils/navbar.php';
             <div class="pad"></div>
             <div id="article">
 
-                <h2>Points</h2>
+                <h2 style="text-align: center;">Points</h2>
 
                 <p>
                     Welcome to the Points main page. Click on your desired faction to be taken to the respective point page.
